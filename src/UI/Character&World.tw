@@ -1,0 +1,13 @@
+:: Achievements[noreturn]
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Achievements Page</h2>
+[[Return|$return]] 
+
+:: PlayerPage[noreturn]
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Player Page</h2>
+
+[[Return|$return]]
+
+
+:: Codex[noreturn]
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Codex Page</h2>
+[[Return|$return]] 

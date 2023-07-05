@@ -1,0 +1,180 @@
+:: Start
+<style>
+	.parent {
+	width: calc(75vh*1.33/2);
+	max-width: 533px;
+	}
+	.menu, .gametitle, .navig, .cover:after, .passage a::before {display: none}
+	.cover {
+        grid-area: 3 / 3 / 12 / 21;
+        display: flex;
+        box-shadow: 0 5px 10px 0 rgba(206, 4, 4, 0.5),
+    0 4px 20px 0 rgba(209, 9, 9, 0.5);
+        background-color: var(--cover);
+        background-image: url("./src/images/cover.jpg");
+        background-size: cover;
+        border-radius: none;
+        border: none;
+
+
+	}
+	.inside {
+        background: none;
+	    color: var(--white);
+        display: flex;
+
+	}
+    #passages {
+        margin: auto;
+    }
+	.passage a {
+	color: white;
+	font-family: 'Bangers', cursive;
+	}
+	.passage {
+  	    text-align: center;
+	}
+    p {
+        line-height: 1;
+    }
+    h1 {
+        font-size: 550%;
+        margin: 0;
+        line-height: 1.25;
+        color: white;
+        font-family: 'Germania one', cursive;
+        opacity: 0.7;
+        text-shadow: 1px 1px 2px red;
+    }
+	@media screen and (max-height: 700px) {
+	.parent {
+		width: calc(100vh*1.33/2);
+		height: 100vh;
+	}
+	}
+</style><<nobr>>
+<<audio "frontpage" loop play>> <<timed 8s>><<notify 5s>>Welcome, dear players/readers! 
+This game have audio tracks which you can adjust the volume at the settings.
+<</notify>> <<timed 5s>>
+    <<notify>>Hope you enjoy the story!<</notify>>
+<</timed>><</timed>>
+ <</nobr>>
+<h1>Racing Heart</h1>
+<p><<if Save.autosave.ok() and Save.autosave.has()>><<link "Resume Game">><<script>>Save.autosave.load()<</script>><</link>> | <</if>><<link "New Game" "Next">><</link>> <br>
+<<link "Load Game">><<run UI.saves()>><</link>> | <<link "Settings">><<run UI.settings()>><</link>></p>
+/*You can also add whatever you want*/
+
+:: Next
+<<audio "frontpage" stop>><<audio "crypt" loop play>><<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<notify 10s>>You can hover over bold word for more additional info!<</notify>> 
+Billowing wind makes its entrance to the old, run-down ruin. Its main inhabitants are the damned souls long past, their mortal coils buried deep underneath.
+
+A group of men, women and person adorned in shimmering steel armor, bravely trot forward. The blistering cold makes every step they take feel like torture.
+
+Incantations start from the mouths of young women, full of radiance, who wear intricate robes as they follow the warriors.
+
+Bubbles of light manifest in their hands, circling back and forth, spreading heat and a source of light around the group.
+
+The room reverberated back in details, all the sound it receives by a million.
+
+The Vice-captain, a man named Aidenn. Walking upright in conviction and a blank expression.
+
+His old-captain had gone missing after his solo entrance, investigating this very ruins.
+
+The stubborn goat, telling his subordinate to go without him and immediately reporting back to the capital if he doesn't send any words in the first 72 hours.
+
+Of course, such command would only get unheard by the lot of them. The raven has been unleashed, heading back to the capital, with the message securely tied at its feet.
+
+The only thing that's left to do is to drag the old fool back to his squad, with or without his expressed permission.
+
+<div class="choice"><<link "Continue" "PL-1">><</link>>
+</div>
+<</fadein>>
+:: PL-1
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
+The group keep going forward, further and further. They were many intersections along the way, but fortunately the group were bringing <div class="tooltip-container">Wolorb<span class="tooltip-text">A summon familiar resembled a big hound.</span></div> so they can just follow closely behind.
+
+The ruin is plain looking, with only a handful of architectural decorations you can count with your fingers.
+
+Which is strange considering its massive size. There weren't any signs of nature like bats or centipedes and the like that are commonly found in such an abandoned building.
+
+The <div class="tooltip-container">Wolorb<span class="tooltip-text">A summon familiar resembled a big hound.</span></div> whined and needed to be calmed down by its summoner every so often. Their kind are great at search and rescue missions with their renowned fearlessness. But now, whatever is bothering them seems to be something they have never encountered before.
+
+Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-piercing shrieks. 
+
+"Void-Walker!" one of the scouts exclaimed, sprinting like a gust of wind.
+
+"How many?" Aidenn asked, signaling the others with his hand to assume battle formations.
+
+"At least four dozen of 'em." he replied, locking eyes with Aidenn conveying the gravity of the situation.
+
+<div class="choice"><<link "Continue" "PL-2">><</link>>
+</div>
+<br>
+:: PL-2
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<audio "crypt" pause>> <<audio "transition1" play>> <<timed 2s>><<audio "battlestart" loop play>><</timed>>
+The fighting erupted, as archers and other ranged personnel swiftly scaled the walls of the ruins or levitated to gain advantageous positions. From there, they unleashed barrages of attacks, strategically aiming five feet in front of the ground troops to prevent friendly fire.
+
+Aidenn wielded his shields and hammer, pummeling and feigning attacks on the remaining monsters that escaped the onslaught of ranged missiles. He shouted commands to those around him to hold the line.
+
+Meanwhile, countless support mages activated their cloaks, making themselves invisible to the naked eye. They observed the battle in clustered groups, paying rapt attention and watching for any ground personnel receiving too much damage or needing better positioning. They would teleport those individuals to the back line for quick medical healing or regrouping.
+
+The Void-walkers seems to came in waves, relentless and greater in number than the scouts had estimated. That's the case if the group didn't understand the nature of the Void-walkers, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull don't get properly disposed of.
+
+Swinging his hammer, Aidenn knocked down the Void-walkers one by one, targeting their heads before moving on. Sam, his close companion, and others behind him swiftly stabbed the stunned monsters on the ground for good measure. The group moved with cohesive coordination and order, steadily gaining more ground and eliminating threats before them.
+
+The ground shook once again, the tremors repeating like a heartbeat and growing closer with each thump.
+"We have a medium construct approaching!" someone hanging from the top wall shouted.
+
+<div class="choice"><<link "Continue" "PL-3">><</link>>
+</div>
+<br>
+:: PL-3
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<timed 5s>><<audio "crypt" loop play>><</timed>>
+“This is definitely above our pay grade,” one of the guys chimed in, breaking the silence.
+A couple of the guys chuckled, hearing the sentiment.
+“Since when do we get pay anyway?” another quipped, inviting more laughter.
+
+A woman with blindfolded eyes stepped closer to Aidenn, wanting to offer her counsel. Aidenn acknowledged her and allowed her to speak.
+
+Lowering her white cloak, the woman spoke.
+“The man we seek is no longer here. The more prudent course of action would be to initiate a retreat, just as what he advised before his leave.”
+
+Aidenn bristled, trying hard to rein in his feelings. He doesn't want to believe it, but it's the more likely outcome that has happened. Aidenn looked back at his people, gauging their mood and intentions.
+
+He sighed and relented, "I will consider it only after I know how they all feel about it."
+
+The woman nodded gratefully before walking back to her group of people.
+
+Standing in front, Aidenn addressed the crowd. They all stood at the ready.
+
+"I'm aware of how you all feel about the disappearance of our foolish captain before we venture into this ruin," he started, staring at the people he called his brothers, sisters and siblings one by one.
+
+Aidenn continued, "Despite the reluctance some of you may harbor, in the end, all of you have agreed to lend your strength to me, for which I am grateful. Let us pause and remind ourselves that this is the reason we are all here now."
+
+They nodded in agreement, prompting Aidenn to proceed further.
+
+"We are here now, good men, women, and every person under the same banner of Saint Farhein," he declared, raising his voice.
+
+"I don't want to deceive you about what we may face, which could send us all to the same fate as our poor captain. So, in turn, I don't want you to deceive me either about how you feel regarding this arrangement. If you don't wish to venture further with me, speak now. There is no shame in expressing your honest opinion and making a decision!"
+
+The crowd descent to a murmur of silence barely audible, while Aidenn patiently crossed his hands waiting their answers.
+
+Standing proudly with a grin on their faces they washed away all of Aidenn doubt and concern. They seems ready to follow him to the hell and back.
+
+Raising her hand the woman from earlier send gesture to Aidenn wishing for her turn to talk publictly now, realizing of that fact the people promptly part out of the way for her.
+
+"It's an honor to meet such a loyal group of people." she said slowly, making some of them chuckled.
+
+She continued "Allowed me to introduce myself for the second time. My name is Narielle of Alk, I'm employed under the direct command of His Majesty Radwar IV. My duty and many others like me are to oversee the movements and activity of the gatespawn in the territory of our Empire." 
+
+<div class="choice"><<link "They are all stand and smile." "PL-4-a">><</link>>
+</div>
+<div class="choice"><<link "Some of them smile guiltily" "PL-4-b">><</link>>
+</div>
+<br>
+:: PL-4-a
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
+
+
+:: PL-4-b
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>

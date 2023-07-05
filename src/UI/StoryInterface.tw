@@ -1,0 +1,110 @@
+:: StoryTitle
+Test
+
+
+:: StoryData
+{
+	"ifid": "8A84FA19-3747-4078-A732-F1A036AA7DA8",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "Start",
+	"zoom": 1
+}
+
+:: StoryInterface
+<div class="parent"> <!--Main Grid-->
+<div class="gametitle" data-passage="sidemenu"><!--Side menu, editable in the sidemenu passage--> </div>
+<div class="cover"><!--Large Border, CSS editable only--><div class= "inside"><!--background for passage, CSS editable only--><div id="passages"><!--DO NOT REMOVE, needed to show the passages--></div></div></div>
+<div class="navig" data-passage="navigation"><!--Forward/Bacs menu at the bottom, editable in the navigation passage--> </div>
+<div class="footer-container">
+	<a href="https://pixabay.com/id/sound-effects/search/battle/" target=”_blank”>Patreon</a>
+</div>
+</div>
+
+:: StoryInit
+/*Enter your starting variables here */
+<<set $menu = true>> /*This is for the menu, you can remove if you want it toggled off when you start the game*/
+<<preload './src/images/cover.jpg' './src/images/front-page.jgp' './src/audio/front-page.mp3' './src/audio/sfx/hover.mp3' './src/audio/sfx/click.mp3' './src/audio/sfx/transition.mp3' './src/audio/sfx/transition.mp3' './src/audio/sfx/battlestart.mp3'>>
+<<cacheaudio "frontpage" "./src/audio/front-page.mp3">>
+<<cacheaudio "link_click" "./src/audio/sfx/click.mp3">>
+<<cacheaudio "link_hover" "./src/audio/sfx/hover.mp3">>
+<<cacheaudio "transition1" "./src/audio/sfx/transition1.mp3">>
+<<cacheaudio "crypt" "./src/audio/crypt.mp3">>
+<<cacheaudio "battlestart" "./src/audio/battlestart.mp3">>
+
+:: sidemenu
+/*<<liveblock>> updates the menu toggle
+p title will show the hovertip (name when you hover)
+you should keep the p's otherwise formating will be weird*/
+<<nobr>>
+<<liveblock>><<if $menu is true>><p style="margin: 0;" title="Player Character"><<link '<i class="fa-solid fa-user"></i>' 'PlayerPage'>><</link>></p>
+<p style="margin: 0;" title="Achievements"><<link '<i class="fa-solid fa-trophy"></i>' 'Achievements'>><</link>></p>
+<p style="margin: 0;" title="Codex"><<link '<i class="fa-solid fa-sticky-note"></i>' 'Codex'>><</link>></p>
+<p style="margin: 0;" title="Credits"><<link '<i class="fa-solid fa-share-nodes"></i>'>><<script>>
+		Dialog.setup("Credits");
+		Dialog.wiki(Story.get("Credits").processText());
+		Dialog.open();
+	<</script>><</link>></p>
+<p style="margin: 0;" title="Saves"><<link '<i class="fa-solid fa-floppy-disk"></i>'>><<script>>UI.saves();<</script>><</link>></p>
+<p style="margin: 0;" title="Settings"><<link '<i class="fa-solid fa-gears"></i>'>><<script>>UI.settings();<</script>><</link>></p>
+<p style="margin: 0;" title="Restart"><<link '<i class="fa-solid fa-rotate-left"></i>'>><<script>>UI.restart();<</script>><</link>></p><</if>><</liveblock>> <</nobr>>
+/*You can also add whatever you want, it can also be links to passages rather than dialog boxes*/
+
+/*This is where you should put your widgets (lines of code/text you don't to clutter your main passages
+You can have as many widget passages as you want (as long as you tag them with "widget"
+This one only has CSS-related ones*/
+
+
+:: widget
+
+<<widget "endpage">><style>
+	.parent {
+	width: calc(75vh*1.33/2);
+	max-width: 533px;
+	}
+	.menu, .gametitle, .navig, .cover:after, .passage a::before {display: none}
+	.cover {
+	border-radius: 5% 2% 2% 5%;
+	  border: 3px solid var(--hover);
+	}
+	.inside {
+        background: none;
+	    color: var(--white);
+        display: flex;
+	}
+	#passages {
+      margin: auto;
+    }
+	.passage {
+  	text-align: center;
+      line-height: 1;
+	}
+	.passage img {
+	width: 100%;
+	}
+	@media screen and (max-height: 700px) {
+	.parent {
+		width: calc(100vh*1.33/2);
+		height: 100vh;
+	}
+	}
+</style><</widget>>
+
+:: navigation
+<<link '<i class="fa-solid fa-backward"></i>'>><<run Engine.backward()>><</link>> | <<if State.length === State.size>><i class="fa-solid fa-forward"></i><<else>><<link '<i class="fa-solid fa-forward"></i>'>><<run Engine.forward()>><</link>><</if>>
+/*You can also add whatever you want*/
+
+
+
+
+:: Credits
+Template created by manonamora ([[Tumblr|https://manonamora-if.tumblr.com/]]/[[Itch|https://manonamora.itch.io/]]) on Twine (v2.3.15)/Tweego with Sugarcube (v2.34.1)
+Macros:
+* [[Chapel: Notification|https://twinelab.net/custom-macros-for-sugarcube-2/demo/]]
+* [[Cycy: Liveupdate|https://github.com/cyrusfirheir/cycy-wrote-custom-macros/tree/master/live-update]]
+Assets:
+* [[FontAwesome|https://fontawesome.com/]]
+* [[GoogleFonts|https://fonts.google.com]]
+* [[OpenDyslexic|https://opendyslexic.org]]
+* [[Music by lemonmusicstudio| https://pixabay.com/users/lemonmusicstudio-14942887/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=149473]]
+* [[Images| https://www.freepik.com]]
