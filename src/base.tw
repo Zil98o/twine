@@ -101,11 +101,11 @@ The <div class="tooltip-container">Wolorb<span class="tooltip-text">A summon fam
 
 Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-piercing shrieks. 
 
-"Void-Walker!" one of the scouts exclaimed, sprinting like a gust of wind.
+"Void-Walker, and one possible golem!" one of the scouts exclaimed, sprinting like a gust of wind.
 
 "How many?" Aidenn asked, signaling the others with his hand to assume battle formations.
 
-"At least four dozen of 'em." he replied, locking eyes with Aidenn conveying the gravity of the situation.
+"At least four dozen of 'em." they replied, locking eyes with Aidenn conveying the gravity of the situation.
 
 <div class="choice"><<link "Continue" "PL-2">><</link>>
 </div>
@@ -116,20 +116,43 @@ The fighting erupted, as archers and other ranged personnel swiftly scaled the w
 
 Aidenn wielded his shields and hammer, pummeling and feigning attacks on the remaining monsters that escaped the onslaught of ranged missiles. He shouted commands to those around him to hold the line.
 
-Meanwhile, countless support mages activated their cloaks, making themselves invisible to the naked eye. They observed the battle in clustered groups, paying rapt attention and watching for any ground personnel receiving too much damage or needing better positioning. They would teleport those individuals to the back line for quick medical healing or regrouping.
+Meanwhile, a couple of support mages activated their cloaks, making themselves invisible to the naked eye. They observed the battle in clustered groups, paying rapt attention and watching for any ground personnel receiving too much damage or needing better positioning. They would teleport those individuals to the back line for quick medical healing or regrouping.
 
-The Void-walkers seems to came in waves, relentless and greater in number than the scouts had estimated. That's the case if the group didn't understand the nature of the Void-walkers, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull don't get properly disposed of.
+The Void-walkers seems to came in waves, relentless and greater in number than the scouts had estimated. That's the case if the group didn't understand the nature of the Void-walkers, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull get properly disposed of.
 
 Swinging his hammer, Aidenn knocked down the Void-walkers one by one, targeting their heads before moving on. Sam, his close companion, and others behind him swiftly stabbed the stunned monsters on the ground for good measure. The group moved with cohesive coordination and order, steadily gaining more ground and eliminating threats before them.
 
-The ground shook once again, the tremors repeating like a heartbeat and growing closer with each thump.
+The ground shook once again, the tremors repeating like a heartbeat and growing closer and louder with each thump.
 "We have a medium construct approaching!" someone hanging from the top wall shouted.
 
 <div class="choice"><<link "Continue" "PL-3">><</link>>
 </div>
 <br>
 :: PL-3
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<timed 5s>><<audio "crypt" loop play>><</timed>>
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
+In the face of the towering golem and the relentless onslaught of Void-Walkers, Aidenn and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy," as they assessed the situation.
+
+The golem, a massive 8-foot tall behemoth with boulder-like legs and a single glowing gold eye, advanced steadily. Aidenn remained silent, his mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Aidenn and Sam to come up with a plan.
+
+Clicking his tongue in a moment of desperation, Aidenn exchanged a knowing look with Sam. Without uttering a word, they both knew what needed to be done. Upon their request, Sam is quickly teleported back to a safer position, while Aidenn barked out a command, "Mage! Open barrier! Enact protocol C!"
+
+The mages sprang into action, and a translucent barrier began to rise before the ground troops, temporarily obstructing the encroaching Void-Walkers from advancing. Seizing the opportunity, a group of mages conjured potent spells of fire and thunder, obliterating a cluster of unsuspecting Void-Walkers, reducing them to mere ashes
+
+However, the exertion took its toll on the mages who open fire, leaving them gasping for breath and in need of rest after their descent. Undeterred, Aidenn raised his hand, shouting with a commanding roar, "Who's with me?! Shout your hearts out, let the world know you're still here, alive and kicking! For we still receive His Lordship blessing!"
+
+Each defiant shout from the group clashed with the thumping and shrieking sounds of impending doom before them. The resounding roar of the group echoed through the air, defying the imminent fate.
+
+Aidenn reached into his pouch, hand trembling, he retrieved a small shard of red stone. With a gulp, he swallowed it, feeling a surge of power that threatened to overwhelm him. 
+
+His sudden bloodshot eyes and pale gray complexion revealed the toll it took, as if his life force had been drained in an instant. Black veins protruded through his skin, and a manic yet radiant glint emanated surrounding his aura. 
+
+Aidenn launched into the air, caught by the majestic wings of Sam's familiar, which stood ready with sharp claws and beak beneath him.
+
+<div class="choice"><<link "Continue" "PL-4">><</link>>
+</div>
+<br>
+:: PL-4
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
 “This is definitely above our pay grade,” one of the guys chimed in, breaking the silence.
 A couple of the guys chuckled, hearing the sentiment.
 “Since when do we get pay anyway?” another quipped, inviting more laughter.
@@ -167,14 +190,7 @@ Raising her hand the woman from earlier send gesture to Aidenn wishing for her t
 
 She continued "Allowed me to introduce myself for the second time. My name is Narielle of Alk, I'm employed under the direct command of His Majesty Radwar IV. My duty and many others like me are to oversee the movements and activity of the gatespawn in the territory of our Empire." 
 
-<div class="choice"><<link "They are all stand and smile." "PL-4-a">><</link>>
-</div>
 <div class="choice"><<link "Some of them smile guiltily" "PL-4-b">><</link>>
 </div>
-<br>
-:: PL-4-a
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
-
-
 :: PL-4-b
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
