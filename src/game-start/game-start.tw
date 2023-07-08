@@ -1,5 +1,6 @@
 :: Start [game-start]
 <div class="game-start-container"> 
+<h1>Title</h1>
 <p><<if Save.autosave.ok() and Save.autosave.has()>><<link "Resume Game">><<script>>Save.autosave.load()<</script>><</link>> | <</if>><<link "New Game" "Warning">><</link>> <br>
 <<link "Load Game">><<run UI.saves()>><</link>> | <<link "Settings">><<run UI.settings()>><</link>></p>
 </div>
