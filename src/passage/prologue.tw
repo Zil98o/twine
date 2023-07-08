@@ -1,2 +1,8 @@
-:: Warning 
-Yo
+:: Warning [passage]
+<style>
+body {
+    background: url("./src/images/cover.jpg");
+    background-size: cover;
+    background-position: center;
+}
+</style>Yo

@@ -1,7 +1,7 @@
 :: PassageFooter
 <<if tags().includes("game-start")>>
 <<else>>
-<div class="SystemButton"><<button "P:~$">>
+<div class="systemButton"><<button "P:~$">>
 <<script>>
 Dialog.setup("System");
 Dialog.wiki(Story.get("System").processText());
@@ -27,3 +27,17 @@ Dialog.open();
 </li>
 </ul>
 </nav>\
+
+:: PassageHeader
+<style>@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css");</style><<nobr>><<if tags().includes("game-start")>>
+<<else>><div class="header-container"><p style="margin: 0;" title="Player Character"><<link '<i class="fa-solid fa-user"></i>' 'PlayerPage'>><</link>></p>
+<p style="margin: 0;" title="Achievements"><<link '<i class="fa-solid fa-trophy"></i>' 'Achievements'>><</link>></p>
+<p style="margin: 0;" title="Codex"><<link '<i class="fa-solid fa-sticky-note"></i>' 'Codex'>><</link>></p>
+<p style="margin: 0;" title="Credits"><<link '<i class="fa-solid fa-share-nodes"></i>'>><<script>>
+		Dialog.setup("Credits");
+		Dialog.wiki(Story.get("Credits").processText());
+		Dialog.open();
+	<</script>><</link>></p>
+<p style="margin: 0;" title="Saves"><<link '<i class="fa-solid fa-floppy-disk"></i>'>><<script>>UI.saves();<</script>><</link>></p>
+<p style="margin: 0;" title="Settings"><<link '<i class="fa-solid fa-gears"></i>'>><<script>>UI.settings();<</script>><</link>></p>
+<p style="margin: 0;" title="Restart"><<link '<i class="fa-solid fa-rotate-left"></i>'>><<script>>UI.restart();<</script>><</link>></p></div><</if>><</nobr>>
