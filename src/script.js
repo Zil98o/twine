@@ -1,0 +1,2 @@
+// REMOVE SIDEBAR
+UIBar.destroy();

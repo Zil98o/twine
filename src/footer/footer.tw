@@ -1,0 +1,29 @@
+:: PassageFooter
+<<if tags().includes("game-start")>>
+<<else>>
+<div class="SystemButton"><<button "P:~$">>
+<<script>>
+Dialog.setup("System");
+Dialog.wiki(Story.get("System").processText());
+Dialog.open();
+<</script>>
+<</button>></div>
+<</if>>
+
+:: System
+<center>\
+</center>\
+<<link "Fullscreen">><<run Fullscreen.toggle()>><</link>>
+\
+\
+<nav id="menu" role="navigation">\
+	<ul id="system-core">\
+		<li id="system-item-saves">\
+			<a onclick="SugarCube.UI.saves();" tabindex="0">Saves</a></li>
+		<li id="sytem-item-restart">
+			<a onclick="SugarCube.UI.restart();" tabindex="0">Restart</a></li>
+		<li id="sytem-item-settings">
+			<a onclick="SugarCube.UI.settings();" tabindex="0">Settings</a>
+</li>
+</ul>
+</nav>\
