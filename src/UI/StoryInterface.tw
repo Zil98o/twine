@@ -32,6 +32,56 @@ Test
 <<cacheaudio "crypt" "./src/audio/crypt.mp3">>
 <<cacheaudio "battlestart" "./src/audio/battlestart.mp3">>
 
+/*RO PRONOUNS AND GENDER */
+<<set $agender = "">>
+<<set $as = "">>
+<<set $ao = "">>
+<<set $ap = "">>
+<<set $ar = "">>
+<<set $As = "">>
+<<set $Ao = "">>
+<<set $Ap = "">>
+<<set $Ar = "">>
+<<set $Atobe = "">>
+<<set $atobe = "">>
+
+/* <<set $bgender = "">>
+<<set $bs = "">>
+<<set $bo = "">>
+<<set $bp = "">>
+<<set $br = "">>
+<<set $Bs = "">>
+<<set $Bo = "">>
+<<set $Bp = "">>
+<<set $Br = "">>
+<<set $Btobe = "">>
+<<set $btobe = "">>
+
+<<set $cgender = "">>
+<<set $cs = "">>
+<<set $co = "">>
+<<set $cp = "">>
+<<set $cr = "">>
+<<set $Cs = "">>
+<<set $Co = "">>
+<<set $Cp = "">>
+<<set $Cr = "">>
+<<set $Ctobe = "">>
+<<set $btobe = "">>
+
+<<set $dgender = "">>
+<<set $ds = "">>
+<<set $do = "">>
+<<set $dp = "">>
+<<set $dr = "">>
+<<set $Ds = "">>
+<<set $Do = "">>
+<<set $Dp = "">>
+<<set $Dr = "">>
+<<set $Dtobe = "">>
+<<set $dtobe = "">> */
+
+
 :: sidemenu
 /*<<liveblock>> updates the menu toggle
 p title will show the hovertip (name when you hover)

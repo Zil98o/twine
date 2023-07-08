@@ -12,7 +12,6 @@
 //----MACROS----
 //--Liveupdate
 //--Notify
-
 //--------UI BASE--------
 UIBar.destroy();
 // reset passage to top
@@ -120,7 +119,6 @@ Setting.addToggle("autoname", {
     "<b>Autoname</b><br>If enabled the saves will be named after your character.",
   default: false,
 });
-
 Setting.addHeader("Other Settings");
 //--NOTIFICATIONS--
 
@@ -468,18 +466,6 @@ Macro.add("fadeout", {
   },
 });
 
-/* Title Save Script */
-Config.saves.onSave = function (save, details) {
-  if (details.type === "slot") {
-    var title = prompt(
-      "Title your save. (It's highly recommended that you Save to Disk, in the event that you lose your browser data.)",
-      save.title
-    );
-    if (title !== null) {
-      save.title = title;
-    }
-  }
-};
 /* Splash Screen by MadExile */
 (function () {
   // Duration of the splash image's fade in.
@@ -516,3 +502,5 @@ predisplay["Menu Return"] = function (taskName) {
     State.variables.return = passage();
   }
 };
+/*Limit story history*/
+Config.history.maxStates = 3;

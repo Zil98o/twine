@@ -75,12 +75,12 @@
   --page: #f2dde9;
   --link: #ff0000;
   --hover: #ff0000;
-  --navig: #f0b9b9;
-  --cover: #9f86c0;
+  --navig: #000000;
+  --cover: #000000;
   --title: #000000;
   --scrollfront: #ff0000;
   --scrollback: #000;
-  --front: #413768;
+  --front: #800000;
   --area: rgb(94, 84, 142, 0.3);
   --text: #111111;
   --white: #f2f3f4;
@@ -110,7 +110,6 @@ body {
   width: calc(75vw * 1.33);
   height: 75vh;
   min-width: 766px;
-  max-height: 800px;
   max-width: 766px;
   margin: auto;
   position: absolute;
@@ -408,8 +407,9 @@ html.nonotif #notify.open {
 input,
 textarea,
 select {
-  background-color: var(--area);
-  color: var(--link);
+  background: url(./src/images/cover.jpg);
+  background-position: center;
+  color: var(--page);
   border: 1px var(--text);
   border-style: dashed;
 }
@@ -548,10 +548,10 @@ button:disabled {
 }
 
 /*--------------MOBILE CSS--------------*/
-@media screen and (max-height: 700px) {
+@media screen and (max-width: 700px) {
   .parent {
-    min-width: calc(100vw * 0);
-    min-height: 100vh;
+    min-width: 100%;
+    min-height: 90vh;
   }
   #ui-dialog-body {
     min-width: 100%;
@@ -569,7 +569,7 @@ button:disabled {
     font-size: 150%;
   }
 }
-@media screen and (max-height: 530px) {
+@media screen and (max-width: 530px) {
   .title {
     font-size: 200%;
   }
@@ -578,7 +578,7 @@ button:disabled {
     font-size: 125%;
   }
 }
-@media screen and (max-height: 420px) {
+@media screen and (max-width: 420px) {
   .title {
     font-size: 150%;
   }
