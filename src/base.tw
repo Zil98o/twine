@@ -89,8 +89,8 @@ You can configure the Romantic Options first thing first.
 <<set $roall = "W">>
 <<set $agender = "woman">>
 <<set $Agender = "Woman">>
-<<set $agender = "female">>
-<<set $Agender = "Female">>
+<<set $agender2 = "female">>
+<<set $Agender2 = "Female">>
 <<set $as = "she">>
 <<set $ao = "her">>
 <<set $ap = "her">>
@@ -106,6 +106,9 @@ You can configure the Romantic Options first thing first.
 <div class="choice"><<link "Set all to non-binary" "Next">>
 <<set $roall = "N">>
 <<set $agender = "person">>
+<<set $Agender = "Person">>
+<<set $agender2 = "non-binary">>
+<<set $Agender2 = "Non-binary">>
 <<set $as = "they">>
 <<set $ao = "them">>
 <<set $ap = "their">>
@@ -182,13 +185,17 @@ The room reverberated back in details, all the sound it receives by a million.
 
 The captain, a young $agender named Aidenn. Walking upright in conviction and a blank expression.
 
-$Ap old-mentor had gone missing after his solo entrance, entering this very ruins.
+$Ap old-mentor had gone missing for months after his solo entrance, entering this very ruins.
 
-The stubborn goat, He's telling Aidenn to go back without him and immediately reporting back to the capital if he doesn't send any words in the first 72 hours.
+The former Wizard King of Rome, Maverus IV. He's telling Aidenn to not followed him and return to the capital if he doesn't send any words in the first place.
 
-Of course, such command would only get unheard by the lot of them. The raven has been unleashed as instructed by Aidenn, heading back to the capital with the message securely tied at its feet.
+Of course, such command would only get unheard by the lot of them. Aidenn know he was still grieving, Lord knows the entire nation still do. But in Aidenn's mind it's still isn't healthy to actively isolate oneself no matter the reason.
 
-The only thing that's left to do is to drag the old fool back, with or without his expressed permission.
+Besides, the man still have a lot of responsibility to his nation despite no longer assume the throne. King Phillip his succesor and the only living relatives he has now certainly isn't a weak Monarc or unpopular by any means. 
+
+It's the opposite they are bold and ambitiounious which make them popular in Rome Imperial nobility, but that ambition slightly disturb Aidenn in the back of his mind. Former King Maverus need to be in the capital, massive changes for Rome are in the air Aidenn can feel it.
+
+Multiple Ravens has been unleashed carrying message securely at its feet, updating their current location and their next course of action. The only thing that's left to do is to drag the stubborn old man back, with or without his expressed permission.
 
 <div class="choice"><<link "Continue" "PL-1">><</link>>
 </div>
@@ -204,7 +211,7 @@ They arrive at a massive hall spanning as wide as one-third of the Alsheer grand
 
 Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-piercing shrieks. 
 
-"Void-Walkers!" one of the scouts exclaimed, sprinting like a gust of wind.
+"Void-Walkers, and  one possible golem!" one of the scouts exclaimed, sprinting like a gust of wind.
 
 "How many?" Aidenn asked, signaling the others with $ap hand to assume battle formations.
 

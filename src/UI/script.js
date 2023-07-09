@@ -504,3 +504,26 @@ predisplay["Menu Return"] = function (taskName) {
 };
 /*Limit story history*/
 Config.history.maxStates = 3;
+
+/** Fullscreen */
+var settingFullscreenHandler = function () {
+  if (settings.fullscreen) {
+    // is true
+
+    Fullscreen.request();
+  } else {
+    // is false
+
+    Fullscreen.exit();
+  }
+};
+
+Setting.addToggle("fullscreen", {
+  label: "<b>FULLSCREEN</b><br>Toggles fullscreen mode.",
+
+  default: false,
+
+  onInit: settingFullscreenHandler,
+
+  onChange: settingFullscreenHandler,
+});
