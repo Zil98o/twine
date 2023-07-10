@@ -132,7 +132,7 @@ Atobe : "are"}>>
 
 :: Custom
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">RO Setting</h2>
-<center><strong>Aidenn, The Royal Guard Captain.</strong></center>
+<center><strong>Asher Durand, The Knight.</strong></center>
 <center><<listbox "$aCh.agender">>
 	<<option "man">>
 	<<option "woman">>
@@ -176,28 +176,26 @@ Atobe : "are"}>>
     <<set $aCh.Ar = "Themself">>
     <<set $aCh.atobe = "are">>
     <<set $aCh.Atobe = "Are">>
-<</if>><</nobr>>Billowing wind makes its entrance to the old, run-down ruin. Its main inhabitants are the damned souls long past, their mortal coils buried deep underneath.
+<</if>><</nobr>>Billowing wind makes its entrance into the old, run-down ruin. Its main inhabitants are the damned souls long past, their mortal coils buried deep underneath.
 
-A group of men, women, and person adorned in shimmering steel armor, bravely trot forward. The blistering cold makes every step they take feel like torture.
+A group of men, women, and a person adorned in shimmering steel armor bravely trot forward. The blistering cold makes every step they take feel like torture.
 
 Incantations start from the mouths of young women, full of radiance, who wear intricate robes as they follow the warriors.
 
 Bubbles of light manifest in their hands, circling back and forth, spreading heat and a source of light around the group.
 
-The room reverberated back in details, all the sound it receives by a million.
+The room reverberates back in detail, capturing every sound it received by a million.
 
-The captain, a young $aCh.agender named Aidenn. Walking upright in conviction and a blank expression.
+The captain, a young man named Asher, walks upright with conviction and a blank expression.
 
-$aCh.Ap old-charge had gone missing for months after his solo entrance, entering this very ruins.
+His old charge had gone missing for close to half a year after his solo entrance into this very ruin. The Grand Duke of Volais, Henri de Montclair, is telling Asher not to follow him and to return to the capital if he doesn't send any words requesting Asher's team and his presence.
 
-The Grand Duke of Rome, Maverus. He's telling Aidenn to not followed him and return to the capital if he doesn't send any words requesting Aiden's team and $aCh.ap present.
+Of course, such a command would go unheard by the lot of them. Asher knows the man is still grieving, all of them do. But Asher can't leave him alone any longer; perhaps in Asher's mind, $aCh.as thinks such an action of actively isolating oneself, no matter the reason, isn't a healthy coping mechanism.
 
-Of course, such command would only get unheard by the lot of them. Aidenn know the man was still grieving. But Aidenn can't let him alone, perhaps in Aidenn's mind $aCh.as think such action of actively isolate oneself no matter the reason isn't healthy coping mechanism.
+Besides, the man still has a lot of responsibility to his people. Monarch Phillipe IV will soon abdicate the throne, and their successor is still a subject of open debate and discussion.
+The Grand Duke Henri needs to be in the capital. There are massive changes in the air for Volais; everyone can feel it.
 
-Besides, the man still have a lot of responsibility to his people. Monarch Phillip would soon abdicate the throne, his succesor still in open debate of discussion. 
-The Grand Duke Maverus need to be in the capital, massive changes for Rome are in the air Aidenn can feel it.
-
-Multiple ravens has been unleashed carrying message securely tied at its feet, updating their current location and their next course of action. The only thing that's left to do is to drag the stubborn old man back, with or without his expressed permission.
+Multiple ravens have been unleashed, carrying messages securely tied to their feet, updating their current location and their next course of action. The only thing left to do is to drag the stubborn old man back, with or without his expressed permission.
 
 <div class="choice"><<link "Continue" "PL-1">><</link>>
 </div>
@@ -215,9 +213,9 @@ Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-pierci
 
 "Void-Walkers, and  one possible golem!" one of the scouts exclaimed, sprinting like a gust of wind.
 
-"How many?" Aidenn asked, signaling the others with $aCh.ap hand to assume battle formations.
+"How many?" Asher asked, signaling the others with $aCh.ap hand to assume battle formations.
 
-"At least four dozen of 'em." they replied, locking eyes with Aidenn conveying the gravity of the situation.
+"At least four dozen of 'em." they replied, locking eyes with Asher conveying the gravity of the situation.
 
 <div class="choice"><<link "Continue" "PL-2">><</link>>
 </div>
@@ -226,13 +224,13 @@ Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-pierci
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<audio "crypt" pause>> <<audio "transition1" play>> <<timed 2s>><<audio "battlestart" loop play>><</timed>>
 The fighting erupted, as rangers swiftly scaled the walls of the ruins, the mages levitated to gain advantageous positions. From there, they unleashed barrages of attacks, strategically aiming five feet in front of the ground troops to prevent friendly fire.
 
-Aidenn wielded $aCh.ap shield and hammer, pummeling and feigning attacks on the remaining monsters that escaped the onslaught of ranged missiles. $aCh.As shouted commands to those around $aCh.ao to hold the line.
+Asher wielded $aCh.ap shield and hammer, pummeling and feigning attacks on the remaining monsters that escaped the onslaught of ranged missiles. $aCh.As shouted commands to those around $aCh.ao to hold the line.
 
 Meanwhile, a couple of support mages activated their cloaks, making themselves invisible to the naked eye. They observed the battle in clustered groups, paying rapt attention and watching for any ground personnel receiving too much damage or needing better positioning. They would teleport those individuals to the back line for quick medical healing or regrouping.
 
-The Void-walkers seems to came in waves, relentless and greater in number than the scouts had estimated. That's the case if the group didn't understand the nature of the Void-walkers, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull get properly disposed of.
+The Void-walkers seems to came in waves, relentless and greater in number than the scouts had estimated. It's the case because the nature of the Void-walkers itself, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull get properly disposed of.
 
-Swinging $aCh.ap medium-sized hammer, Aidenn knocked down the Void-walkers one by one, targeting their heads eliciting a satisfying crack before moving on. Sam, $aCh.ap close companion, and others behind $aCh.ao swiftly stabbed the stunned monsters on the ground for good measure. The group moved with cohesive coordination and order, steadily gaining more ground and eliminating threats before them.
+Swinging $aCh.ap medium-sized hammer, Asher knocked down the Void-walkers one by one, targeting their heads eliciting a satisfying crack before moving on. Sam, $aCh.ap close companion, and others behind $aCh.ao swiftly stabbed the stunned monsters on the ground for good measure. The group moved with cohesive coordination and order, steadily gaining more ground and eliminating threats before them.
 
 The ground shook once again, the tremors repeating like a heartbeat growing closer and louder with each thump.
 "We have a medium construct approaching!" someone hanging from the top wall shouted.
@@ -242,61 +240,66 @@ The ground shook once again, the tremors repeating like a heartbeat growing clos
 <br>
 :: PL-3
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
-In the face of the towering golem and the relentless onslaught of Void-Walkers, Aidenn and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy. He doesn't joke around about wanting to be left alone, Aidenn." completely baffled as they assessed the situation.
+In the face of the towering golem and the relentless onslaught of Void-Walkers, Asher and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy. His Highness doesn't joke around about wanting to be left alone, Asher." completely baffled as they assessed the situation.
 
-The golem, a massive 40-foot tall pristine behemoth with boulder-like legs and a single glowing gold eye, advanced steadily. Aidenn remained silent, $aCh.ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Aidenn and Sam to come up with a plan.
+The golem, a massive 50-foot tall pristine giant with boulder-like legs and a single glowing gold eye, advanced steadily. Asher remained silent, $aCh.ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Asher and Sam to come up with a plan.
 
-Clicking $aCh.ap tongue in a moment of desperation, Aidenn exchanged a knowing look with Sam. Without uttering a word, they both knew what needed to be done. Upon their request, Sam is quickly teleported back to a safer position, while Aidenn barked out a command, "Mage! Open barrier! Enact protocol C!"
+Clicking $aCh.ap tongue in a moment of desperation, Asher exchanged a knowing look with Sam. Without uttering a word, they both knew what needed to be done. Upon their request, Sam is quickly teleported back to a safer position, while Asher barked out a command, "Mage! Open barrier! Enact protocol C!"
 
 The mages sprang into action, and a translucent barrier began to rise before the ground troops, temporarily obstructing the encroaching Void-Walkers from advancing. Seizing the opportunity, a group of mages conjured potent spells of fire and thunder, obliterating a cluster of unsuspecting Void-Walkers, reducing them to mere ashes.
 
-However, the exertion took its toll on the mages who open fire, leaving them gasping for breath and in need of rest after their descent. Undeterred, Aidenn raised $aCh.ap hand, shouting with a commanding roar, "Who's with me?! Shout your hearts out, let the world know you're still here, alive and kicking! For we still receive His Lordship blessing!"
+However, the exertion took its toll on the mages who open fire, leaving them gasping for breath and in need of rest after their descent. Undeterred, Asher raised $aCh.ap hand, shouting with a commanding roar, "Who's with me?! Shout your hearts out, let the world know you're still here, alive and kicking! For we still receive His Lordship blessing!"
 
 Each defiant shout from the group clashed with the thumping and shrieking sounds of impending doom before them. The resounding roar of the group echoed through the air, defying the imminent fate.
 
 Sam safely sat in the back line, their focus unwavering as they channeled their power to summon their mightiest familiar from the ethereal Shade. This particular familiar was so formidable that it required Sam to become immobile, serving as an anchor or bridge between realms, enabling the manifestation of the powerful entity in this plane of existence.
 
-Aidenn reached into $aCh.ap pouch, hand trembling, $aCh.as retrieved a small shard of red stone. With a loud gulp, $aCh.as swallowed it, feeling a surge of power that threatened to overwhelm $aCh.ao. 
+Asher reached into $aCh.ap pouch, hand trembling, $aCh.as retrieved a small shard of red stone. With a loud gulp, $aCh.as swallowed it, feeling a surge of power that threatened to overwhelm $aCh.ao. 
 
 $aCh.Ap sudden bloodshot eyes and pale gray complexion revealed the toll it took, it looked as if $aCh.ap life force had been drained in an instant. Black veins protruded through $aCh.ap skin, and a manic yet radiant glint emanated surrounding $aCh.ao. 
 
-Aidenn launched into the air, caught by the majestic wings of Sam's familiar, which stood ready with sharp claws and beak beneath $aCh.ao.
+Asher launched into the air, caught by the majestic wings of Sam's familiar, which stood ready with sharp claws and beak beneath $aCh.ao.
 
 <div class="choice"><<link "Continue" "PL-4">><</link>>
 </div>
 <br>
 :: PL-4
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
-"Sorry about this, but Sam and I would need your help again, Tori," Aidenn said, lightly grazing $aCh.ap hand on Tori's soft brown feathers. Tori cawed agreeably, swiftly flying towards the moving boulder.
+"Sorry about this, but Sam and I would need your help again, Tori," Asher said, lightly grazing $aCh.ap hand on Tori's soft brown feathers. Tori cawed agreeably, swiftly flying towards the moving boulder.
 
-The golem raised its massive hand, it's body full of fresh created scribe and construction ring. Intent on blocking Tori, but Aidenn advanced confidently, knowing Tori's speed was unmatched. Tori easily outmaneuvered the golem, swiftly reaching the top of its head in flight.
+The golem raised its massive hand, it's body full of fresh created scribe and construction ring. Intent on blocking Tori, but Asher advanced confidently, knowing Tori's speed was unmatched. Tori easily outmaneuvered the golem, swiftly reaching the top of its head in flight.
 
-Aidenn quickly leaped towards the golem's golden eye, gripping $aCh.ap hammer with both hands raised high above $aCh.ap head, and brought it down with full force, pummeling the golem's eye with the entirety of $aCh.ap weight channeled into $aCh.ap hammer.
+Asher quickly leaped towards the golem's golden eye, gripping $aCh.ap hammer with both hands raised high above $aCh.ap head, and brought it down with full force, pummeling the golem's eye with the entirety of $aCh.ap weight channeled into $aCh.ap hammer.
 
-Realizing the danger it faced, the mighty golem attempted to crush Aidenn by bringing its hand down, but Aidenn easily anticipated its predictable movements and dodged the attack by leaping out of harm's way, in midair, Tori readily catching $aCh.ao.
+Attempting to retaliate, the mighty golem bringing its hand down to crush Asher, but Asher easily anticipated its predictable movements and dodged the attack by leaping out of harm's way, in midair, Tori readily catching $aCh.ao.
 
-And so the circle began: Aidenn repeatedly sent $aCh.ap hammer down, and the golem received each strike, sounding like a nightmarish drum.
+And so the circle began: Asher repeatedly sent $aCh.ap hammer down, and the golem received each strike, sounding like a nightmarish drum.
 
 Strangely, each resounding beat from the hammer sent an invigorating feeling to everyone who heard it. Their attacks became quicker and stronger, dispelling fatigue and fueling their determinations.
 
-It became a battle of endurance, with every thundering clash of Aidenn's hammer, $aCh.as started to feel weaker and slower.
-
+It became a battle of endurance, with every thundering clash of Asher's hammer, $aCh.as started to feel weaker and slower.
 Far in the back, drenched in sweat and with a pale face, Sam didn't appear to be doing well either. 
 
-There was a visible crack in the golem's eye, and its body buckled under the constant damage it was receiving. Aidenn realized that $aCh.p plan was actually working; it was just a matter of time. Time seemed to be the determining factor in deciding the victor of this encounter.
+There was a visible crack in the golem's eye, and its body buckled under the constant damage it was receiving. Asher realized that $aCh.ap plan was actually working; it was just a matter of time. Time seemed to be the determining factor in deciding the victor of this encounter.
 
 <div class="choice"><<link "Continue" "PL-5">><</link>> 
 </div>
 <br>
 :: PL-5
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
-Aidenn realized that even a rock could listen and learn if struck enough times. This revelation came to $aCh.ao when the golem changed its course of action, moving one of its hands up high. The golem's golden eye blared sending a blinding light through the crack, followed by a sudden burst of its speed, catching them off guard. The golem successfully landed a clean swipe on Aidenn and Tori, propelling them both far into the wall.
+Asher realized that even a rock could listen and learn if struck enough times. This revelation came to $aCh.ao when the golem changed its course of action, raising one of its hands to the side. 
 
-Sam, now coughing blood through their mouth and nose, lost all concentration. In an instant, the badly injured Tori vanished, and the battle took a turn for the worse. Fortunately, the rangers swiftly sprang into action in a desperate attempt to flee and abandon the mission. Using their agility to swing from one wall to another while opening fire, they created distractions for the golem. Despite a few mages' attempts to attack the golem's eye, they were unsuccessful as the golem actively protected its vulnerable area this time.
+The golem's golden eye blared, sending a blinding light through the crack, followed by a sudden burst of speed that caught them off guard. The golem landed a clean swipe on Asher and Tori, propelling them both into the wall like flies.
+
+Sam, now coughing blood from their mouth and nose, lost all concentration. The badly injured Tori vanished, and the battle took a turn for the worse.
+
+The rangers swiftly sprang into action in a desperate attempt to regain control of the battle. With the last of the Void-Walkers fallen, they used their agility to swing from one wall to another, opening fire and creating distractions for the golem.
+
+Many close calls occurred, but with the last calculated attack from a few mages that still stand targeting the golem's cracked eye in combination, they were finally successful. The golem's body stopped and slowly crumbled as they watched it fall in proud silence.
 
 <div class="choice"><<link "Continue" "PL-6">><</link>> 
 </div>
-
+<br>
 :: PL-6
 
 
@@ -306,34 +309,34 @@ Sam, now coughing blood through their mouth and nose, lost all concentration. In
 A couple of the guys chuckled, hearing the sentiment.
 “Since when do we get pay anyway?” another quipped, inviting more laughter.
 
-A woman with blindfolded eyes stepped closer to Aidenn, wanting to offer her counsel. Aidenn acknowledged her and allowed her to speak.
+A woman with blindfolded eyes stepped closer to Asher, wanting to offer her counsel. Asher acknowledged her and allowed her to speak.
 
 Lowering her white cloak, the woman spoke.
 “The man we seek is no longer here. The more prudent course of action would be to initiate a retreat, just as what he advised before his leave.”
 
-Aidenn bristled, trying hard to rein in his feelings. He doesn't want to believe it, but it's the more likely outcome that has happened. Aidenn looked back at his people, gauging their mood and intentions.
+Asher bristled, trying hard to rein in his feelings. He doesn't want to believe it, but it's the more likely outcome that has happened. Asher looked back at his people, gauging their mood and intentions.
 
 He sighed and relented, "I will consider it only after I know how they all feel about it."
 
 The woman nodded gratefully before walking back to her group of people.
 
-Standing in front, Aidenn addressed the crowd. They all stood at the ready.
+Standing in front, Asher addressed the crowd. They all stood at the ready.
 
 "I'm aware of how you all feel about the disappearance of our foolish captain before we venture into this ruin," he started, staring at the people he called his brothers, sisters and siblings one by one.
 
-Aidenn continued, "Despite the reluctance some of you may harbor, in the end, all of you have agreed to lend your strength to me, for which I am grateful. Let us pause and remind ourselves that this is the reason we are all here now."
+Asher continued, "Despite the reluctance some of you may harbor, in the end, all of you have agreed to lend your strength to me, for which I am grateful. Let us pause and remind ourselves that this is the reason we are all here now."
 
-They nodded in agreement, prompting Aidenn to proceed further.
+They nodded in agreement, prompting Asher to proceed further.
 
 "We are here now, good men, women, and every person under the same banner of Saint Farhein," he declared, raising his voice.
 
 "I don't want to deceive you about what we may face, which could send us all to the same fate as our poor captain. So, in turn, I don't want you to deceive me either about how you feel regarding this arrangement. If you don't wish to venture further with me, speak now. There is no shame in expressing your honest opinion and making a decision!"
 
-The crowd descent to a murmur of silence barely audible, while Aidenn patiently crossed his hands waiting their answers.
+The crowd descent to a murmur of silence barely audible, while Asher patiently crossed his hands waiting their answers.
 
-Standing proudly with a grin on their faces they washed away all of Aidenn doubt and concern. They seems ready to follow him to the hell and back.
+Standing proudly with a grin on their faces they washed away all of Asher doubt and concern. They seems ready to follow him to the hell and back.
 
-Raising her hand the woman from earlier send gesture to Aidenn wishing for her turn to talk publictly now, realizing of that fact the people promptly part out of the way for her.
+Raising her hand the woman from earlier send gesture to Asher wishing for her turn to talk publictly now, realizing of that fact the people promptly part out of the way for her.
 
 "It's an honor to meet such a loyal group of people." she said slowly, making some of them chuckled.
 
