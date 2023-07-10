@@ -1,5 +1,9 @@
-:: Start [noreturn]
-<style>
+:: Start [noreturn start]
+<<nobr>><<timed 8s>><<script>>
+			Dialog.setup("AuthorNote: About This game");
+			Dialog.wiki(Story.get("AuthorNote").processText());
+			Dialog.open();
+		<</script>><</timed>><</nobr>><style>
 	.parent {
 	width: calc(75vh*1.33/2);
 	max-width: 533px;
@@ -68,57 +72,60 @@ This game have audio tracks which you can adjust the volume at the settings.
 You can configure the Romantic Options first thing first.
 
 <div class="choice"><<link "Set all to man" "Next">>
-<<set $roall = "M">>
-<<set $agender = "man">>
-<<set $Agender = "Man">>
-<<set $agender2 = "male">>
-<<set $Agender2 = "Male">>
-<<set $as = "he">>
-<<set $ao = "him">>
-<<set $ap = "his">>
-<<set $ar = "himself">>
-<<set $As = "He">>
-<<set $Ao = "Him">>
-<<set $Ap = "His">>
-<<set $Ar = "Himself">>
-<<set $Atobe = "is">>
-<<set $atobe = "is">>
+<<set $roall = "W">>
+<<set $aCh = {
+agender : "man",
+Agender : "Man",
+agender2 : "male",
+Agender2 : "Male",
+as : "he",
+ao : "him",
+ap : "his",
+ar : "himself",
+As : "He",
+Ao : "Him",
+Ap : "His",
+Ar : "Himself",
+Atobe : "is",
+atobe : "is"}>>
 <</link>>
 </div>
 <div class="choice"><<link "Set all to woman" "Next">>
 <<set $roall = "W">>
-<<set $agender = "woman">>
-<<set $Agender = "Woman">>
-<<set $agender2 = "female">>
-<<set $Agender2 = "Female">>
-<<set $as = "she">>
-<<set $ao = "her">>
-<<set $ap = "her">>
-<<set $ar = "herself">>
-<<set $As = "She">>
-<<set $Ao = "Her">>
-<<set $Ap = "Her">>
-<<set $Ar = "Herself">>
-<<set $atobe = "is">>
-<<set $Atobe = "Is">>
+<<set $aCh = {
+agender : "woman",
+Agender : "Woman",
+agender2 : "female",
+Agender2 : "Female",
+as : "she",
+ao : "her",
+ap : "her",
+ar : "herself",
+As : "She",
+Ao : "Her",
+Ap : "Her",
+Ar : "Herself",
+atobe : "is",
+Atobe : "Is"}>>
 <</link>>
 </div>
 <div class="choice"><<link "Set all to non-binary" "Next">>
 <<set $roall = "N">>
-<<set $agender = "person">>
-<<set $Agender = "Person">>
-<<set $agender2 = "non-binary">>
-<<set $Agender2 = "Non-binary">>
-<<set $as = "they">>
-<<set $ao = "them">>
-<<set $ap = "their">>
-<<set $ar = "themself">>
-<<set $As = "They">>
-<<set $Ao = "Them">>
-<<set $Ap = "Their">>
-<<set $Ar = "Themself">>
-<<set $atobe = "are">>
-<<set $Atobe = "are">>
+<<set $aCh = {
+agender : "person",
+Agender : "Person",
+agender2 : "non-binary",
+Agender2 : "Non-binary",
+as : "they",
+ao : "them",
+ap : "their",
+ar : "themself",
+As : "They",
+Ao : "Them",
+Ap : "Their",
+Ar : "Themself",
+atobe : "are",
+Atobe : "are"}>>
 <</link>>
 </div>
 <div class="choice"> <<link "Choose One By One" "Custom">><<script>>
@@ -130,7 +137,7 @@ You can configure the Romantic Options first thing first.
 :: Custom
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">RO Setting</h2>
 <center><strong>Aidenn, The Royal Guard Captain.</strong></center>
-<center><<listbox "$agender" autoselect>>
+<center><<listbox "$aCh.agender">>
 	<<option "man">>
 	<<option "woman">>
 	<<option "person">>
@@ -140,39 +147,39 @@ You can configure the Romantic Options first thing first.
 <br>
 :: Next
 <<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
-<<nobr>><<audio "frontpage" stop>><<audio "crypt" loop play>><<notify 10s>>You can hover over bold word for more additional info!<</notify>><<if $agender === "man">> 
-    <<set $as = "he">>
-    <<set $ao = "him">>
-    <<set $ap = "his">>
-    <<set $ar = "himself">>
-    <<set $As = "He">>
-    <<set $Ao = "Him">>
-    <<set $Ap = "His">>
-    <<set $Ar = "Himself">>
-    <<set $atobe = "is">>
-    <<set $Atobe = "Is">>
-<<elseif $agender === "woman">>
-    <<set $as = "she">>
-    <<set $ao = "her">>
-    <<set $ap = "her">>
-    <<set $ar = "herself">>
-    <<set $As = "She">>
-    <<set $Ao = "Her">>
-    <<set $Ap = "Her">>
-    <<set $Ar = "Herself">>
-    <<set $atobe = "is">>
-    <<set $Atobe = "Is">>
-<<elseif $agender === "person">>
-    <<set $as = "they">>
-    <<set $ao = "them">>
-    <<set $ap = "their">>
-    <<set $ar = "themself">>
-    <<set $As = "They">>
-    <<set $Ao = "Them">>
-    <<set $Ap = "Their">>
-    <<set $Ar = "Themself">>
-    <<set $atobe = "are">>
-    <<set $Atobe = "Are">>
+<<nobr>><<audio "frontpage" stop>><<audio "crypt" loop play>><<notify 10s>>You can hover over bold word for more additional info!<</notify>><<if $aCh.agender === "man">> 
+    <<set $aCh.as = "he">>
+    <<set $aCh.ao = "him">>
+    <<set $aCh.ap = "his">>
+    <<set $aCh.ar = "himself">>
+    <<set $aCh.As = "He">>
+    <<set $aCh.Ao = "Him">>
+    <<set $aCh.Ap = "His">>
+    <<set $aCh.Ar = "Himself">>
+    <<set $aCh.atobe = "is">>
+    <<set $aCh.Atobe = "Is">>
+<<elseif $aCh.agender === "woman">>
+    <<set $aCh.as = "she">>
+    <<set $aCh.ao = "her">>
+    <<set $aCh.ap = "her">>
+    <<set $aCh.ar = "herself">>
+    <<set $aCh.As = "She">>
+    <<set $aCh.Ao = "Her">>
+    <<set $aCh.Ap = "Her">>
+    <<set $aCh.Ar = "Herself">>
+    <<set $aCh.atobe = "is">>
+    <<set $aCh.Atobe = "Is">>
+<<elseif $aCh.agender === "person">>
+    <<set $aCh.as = "they">>
+    <<set $aCh.ao = "them">>
+    <<set $aCh.ap = "their">>
+    <<set $aCh.ar = "themself">>
+    <<set $aCh.As = "They">>
+    <<set $aCh.Ao = "Them">>
+    <<set $aCh.Ap = "Their">>
+    <<set $aCh.Ar = "Themself">>
+    <<set $aCh.atobe = "are">>
+    <<set $aCh.Atobe = "Are">>
 <</if>><</nobr>>Billowing wind makes its entrance to the old, run-down ruin. Its main inhabitants are the damned souls long past, their mortal coils buried deep underneath.
 
 A group of men, women, and person adorned in shimmering steel armor, bravely trot forward. The blistering cold makes every step they take feel like torture.
@@ -183,9 +190,9 @@ Bubbles of light manifest in their hands, circling back and forth, spreading hea
 
 The room reverberated back in details, all the sound it receives by a million.
 
-The captain, a young $agender named Aidenn. Walking upright in conviction and a blank expression.
+The captain, a young $aCh.agender named Aidenn. Walking upright in conviction and a blank expression.
 
-$Ap old-mentor had gone missing for months after his solo entrance, entering this very ruins.
+$aCh.Ap old-mentor had gone missing for months after his solo entrance, entering this very ruins.
 
 The former Wizard King of Rome, Maverus IV. He's telling Aidenn to not followed him and return to the capital if he doesn't send any words in the first place.
 
@@ -195,7 +202,7 @@ Besides, the man still have a lot of responsibility to his nation despite no lon
 
 It's the opposite they are bold and ambitiounious which make them popular in Rome Imperial nobility, but that ambition slightly disturb Aidenn in the back of his mind. Former King Maverus need to be in the capital, massive changes for Rome are in the air Aidenn can feel it.
 
-Multiple Ravens has been unleashed carrying message securely at its feet, updating their current location and their next course of action. The only thing that's left to do is to drag the stubborn old man back, with or without his expressed permission.
+Multiple Ravens has been unleashed carrying message securely tied at its feet, updating their current location and their next course of action. The only thing that's left to do is to drag the stubborn old man back, with or without his expressed permission.
 
 <div class="choice"><<link "Continue" "PL-1">><</link>>
 </div>
@@ -213,7 +220,7 @@ Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-pierci
 
 "Void-Walkers, and  one possible golem!" one of the scouts exclaimed, sprinting like a gust of wind.
 
-"How many?" Aidenn asked, signaling the others with $ap hand to assume battle formations.
+"How many?" Aidenn asked, signaling the others with $aCh.ap hand to assume battle formations.
 
 "At least four dozen of 'em." they replied, locking eyes with Aidenn conveying the gravity of the situation.
 
@@ -224,13 +231,13 @@ Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-pierci
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<audio "crypt" pause>> <<audio "transition1" play>> <<timed 2s>><<audio "battlestart" loop play>><</timed>>
 The fighting erupted, as rangers swiftly scaled the walls of the ruins, the mages levitated to gain advantageous positions. From there, they unleashed barrages of attacks, strategically aiming five feet in front of the ground troops to prevent friendly fire.
 
-Aidenn wielded $ap shields and hammer, pummeling and feigning attacks on the remaining monsters that escaped the onslaught of ranged missiles. $As shouted commands to those around $ao to hold the line.
+Aidenn wielded $aCh.ap shield and hammer, pummeling and feigning attacks on the remaining monsters that escaped the onslaught of ranged missiles. $aCh.As shouted commands to those around $aCh.ao to hold the line.
 
 Meanwhile, a couple of support mages activated their cloaks, making themselves invisible to the naked eye. They observed the battle in clustered groups, paying rapt attention and watching for any ground personnel receiving too much damage or needing better positioning. They would teleport those individuals to the back line for quick medical healing or regrouping.
 
 The Void-walkers seems to came in waves, relentless and greater in number than the scouts had estimated. That's the case if the group didn't understand the nature of the Void-walkers, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull get properly disposed of.
 
-Swinging $ap medium-sized hammer, Aidenn knocked down the Void-walkers one by one, targeting their heads eliciting a satisfying crack before moving on. Sam, $ap close companion, and others behind $ao swiftly stabbed the stunned monsters on the ground for good measure. The group moved with cohesive coordination and order, steadily gaining more ground and eliminating threats before them.
+Swinging $aCh.ap medium-sized hammer, Aidenn knocked down the Void-walkers one by one, targeting their heads eliciting a satisfying crack before moving on. Sam, $aCh.ap close companion, and others behind $aCh.ao swiftly stabbed the stunned monsters on the ground for good measure. The group moved with cohesive coordination and order, steadily gaining more ground and eliminating threats before them.
 
 The ground shook once again, the tremors repeating like a heartbeat growing closer and louder with each thump.
 "We have a medium construct approaching!" someone hanging from the top wall shouted.
@@ -242,53 +249,53 @@ The ground shook once again, the tremors repeating like a heartbeat growing clos
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
 In the face of the towering golem and the relentless onslaught of Void-Walkers, Aidenn and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy. He doesn't joke around about wanting to be left alone, Aidenn." completely baffled as they assessed the situation.
 
-The golem, a massive 40-foot tall pristine behemoth with boulder-like legs and a single glowing gold eye, advanced steadily. Aidenn remained silent, $ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Aidenn and Sam to come up with a plan.
+The golem, a massive 40-foot tall pristine behemoth with boulder-like legs and a single glowing gold eye, advanced steadily. Aidenn remained silent, $aCh.ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Aidenn and Sam to come up with a plan.
 
-Clicking $ap tongue in a moment of desperation, Aidenn exchanged a knowing look with Sam. Without uttering a word, they both knew what needed to be done. Upon their request, Sam is quickly teleported back to a safer position, while Aidenn barked out a command, "Mage! Open barrier! Enact protocol C!"
+Clicking $aCh.ap tongue in a moment of desperation, Aidenn exchanged a knowing look with Sam. Without uttering a word, they both knew what needed to be done. Upon their request, Sam is quickly teleported back to a safer position, while Aidenn barked out a command, "Mage! Open barrier! Enact protocol C!"
 
 The mages sprang into action, and a translucent barrier began to rise before the ground troops, temporarily obstructing the encroaching Void-Walkers from advancing. Seizing the opportunity, a group of mages conjured potent spells of fire and thunder, obliterating a cluster of unsuspecting Void-Walkers, reducing them to mere ashes.
 
-However, the exertion took its toll on the mages who open fire, leaving them gasping for breath and in need of rest after their descent. Undeterred, Aidenn raised $ap hand, shouting with a commanding roar, "Who's with me?! Shout your hearts out, let the world know you're still here, alive and kicking! For we still receive His Lordship blessing!"
+However, the exertion took its toll on the mages who open fire, leaving them gasping for breath and in need of rest after their descent. Undeterred, Aidenn raised $aCh.ap hand, shouting with a commanding roar, "Who's with me?! Shout your hearts out, let the world know you're still here, alive and kicking! For we still receive His Lordship blessing!"
 
 Each defiant shout from the group clashed with the thumping and shrieking sounds of impending doom before them. The resounding roar of the group echoed through the air, defying the imminent fate.
 
 Sam safely sat in the back line, their focus unwavering as they channeled their power to summon their mightiest familiar from the ethereal Shade. This particular familiar was so formidable that it required Sam to become immobile, serving as an anchor or bridge between realms, enabling the manifestation of the powerful entity in this plane of existence.
 
-Aidenn reached into $ap pouch, hand trembling, $as retrieved a small shard of red stone. With a loud gulp, $as swallowed it, feeling a surge of power that threatened to overwhelm $ao. 
+Aidenn reached into $aCh.ap pouch, hand trembling, $aCh.as retrieved a small shard of red stone. With a loud gulp, $aCh.as swallowed it, feeling a surge of power that threatened to overwhelm $aCh.ao. 
 
-$Ap sudden bloodshot eyes and pale gray complexion revealed the toll it took, it looked as if $ap life force had been drained in an instant. Black veins protruded through $ap skin, and a manic yet radiant glint emanated surrounding $ao. 
+$aCh.Ap sudden bloodshot eyes and pale gray complexion revealed the toll it took, it looked as if $aCh.ap life force had been drained in an instant. Black veins protruded through $aCh.ap skin, and a manic yet radiant glint emanated surrounding $aCh.ao. 
 
-Aidenn launched into the air, caught by the majestic wings of Sam's familiar, which stood ready with sharp claws and beak beneath $ao.
+Aidenn launched into the air, caught by the majestic wings of Sam's familiar, which stood ready with sharp claws and beak beneath $aCh.ao.
 
 <div class="choice"><<link "Continue" "PL-4">><</link>>
 </div>
 <br>
 :: PL-4
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
-"Sorry about this, but Sam and I would need your help again, Tori," Aidenn said, lightly grazing $ap hand on Tori's soft brown feathers. Tori cawed agreeably, swiftly flying towards the moving boulder.
+"Sorry about this, but Sam and I would need your help again, Tori," Aidenn said, lightly grazing $aCh.ap hand on Tori's soft brown feathers. Tori cawed agreeably, swiftly flying towards the moving boulder.
 
 The golem raised its massive hand, it's body full of fresh created scribe and construction ring. Intent on blocking Tori, but Aidenn advanced confidently, knowing Tori's speed was unmatched. Tori easily outmaneuvered the golem, swiftly reaching the top of its head in flight.
 
-Aidenn quickly leaped towards the golem's golden eye, gripping $ap hammer with both hands raised high above $ap head, and brought it down with full force, pummeling the golem's eye with the entirety of $ap weight channeled into $ap hammer.
+Aidenn quickly leaped towards the golem's golden eye, gripping $aCh.ap hammer with both hands raised high above $aCh.ap head, and brought it down with full force, pummeling the golem's eye with the entirety of $aCh.ap weight channeled into $aCh.ap hammer.
 
-Realizing the danger it faced, the mighty golem attempted to crush Aidenn by bringing its hand down, but Aidenn easily anticipated its predictable movements and dodged the attack by leaping out of harm's way, in midair, Tori readily catching $ao.
+Realizing the danger it faced, the mighty golem attempted to crush Aidenn by bringing its hand down, but Aidenn easily anticipated its predictable movements and dodged the attack by leaping out of harm's way, in midair, Tori readily catching $aCh.ao.
 
-And so the circle began: Aidenn repeatedly sent $ap hammer down, and the golem received each strike, sounding like a nightmarish drum.
+And so the circle began: Aidenn repeatedly sent $aCh.ap hammer down, and the golem received each strike, sounding like a nightmarish drum.
 
 Strangely, each resounding beat from the hammer sent an invigorating feeling to everyone who heard it. Their attacks became quicker and stronger, dispelling fatigue and fueling their determinations.
 
-It became a battle of endurance, with every thundering clash of Aidenn's hammer, $as started to feel weaker and slower.
+It became a battle of endurance, with every thundering clash of Aidenn's hammer, $aCh.as started to feel weaker and slower.
 
 Far in the back, drenched in sweat and with a pale face, Sam didn't appear to be doing well either. 
 
-There was a visible crack in the golem's eye, and its body buckled under the constant damage it was receiving. Aidenn realized that $ap plan was actually working; it was just a matter of time. Time seemed to be the determining factor in deciding the victor of this encounter.
+There was a visible crack in the golem's eye, and its body buckled under the constant damage it was receiving. Aidenn realized that $aCh.p plan was actually working; it was just a matter of time. Time seemed to be the determining factor in deciding the victor of this encounter.
 
 <div class="choice"><<link "Continue" "PL-5">><</link>> 
 </div>
 <br>
 :: PL-5
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
-Aidenn realized that even a rock could listen and learn if struck enough times. This revelation came to $ao when the golem changed its course of action, moving one of its hands up high. The golem's golden eye blared sending a blinding light through the crack, followed by a sudden burst of its speed, catching them off guard. The golem successfully landed a clean swipe on Aidenn and Tori, propelling them both far into the wall.
+Aidenn realized that even a rock could listen and learn if struck enough times. This revelation came to $aCh.ao when the golem changed its course of action, moving one of its hands up high. The golem's golden eye blared sending a blinding light through the crack, followed by a sudden burst of its speed, catching them off guard. The golem successfully landed a clean swipe on Aidenn and Tori, propelling them both far into the wall.
 
 Sam, now coughing blood through their mouth and nose, lost all concentration. In an instant, the badly injured Tori vanished, and the battle took a turn for the worse. Fortunately, the rangers swiftly sprang into action in a desperate attempt to flee and abandon the mission. Using their agility to swing from one wall to another while opening fire, they created distractions for the golem. Despite a few mages' attempts to attack the golem's eye, they were unsuccessful as the golem actively protected its vulnerable area this time.
 

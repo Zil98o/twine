@@ -33,7 +33,7 @@ Test
 <<cacheaudio "battlestart" "./src/audio/battlestart.mp3">>
 
 /*RO PRONOUNS AND GENDER */
-<<set $agender = "">>
+/* <<set $agender = "">>
 <<set $as = "">>
 <<set $ao = "">>
 <<set $ap = "">>
@@ -43,8 +43,22 @@ Test
 <<set $Ap = "">>
 <<set $Ar = "">>
 <<set $Atobe = "">>
-<<set $atobe = "">>
-
+<<set $atobe = "">> */
+<<set $aCh = {
+agender : "",
+Agender : "",
+agender2 : "",
+Agender2 : "",
+as : "",
+ao : "",
+ap : "",
+ar : "",
+As : "",
+Ao : "",
+Ap : "",
+Ar : "",
+Atobe : "",
+atobe : ""}>>
 /* <<set $bgender = "">>
 <<set $bs = "">>
 <<set $bo = "">>

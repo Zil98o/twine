@@ -108,9 +108,9 @@ body {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   width: calc(75vw * 1.33);
-  height: 75vh;
-  min-width: 766px;
-  max-width: 766px;
+  height: 90vh;
+  min-width: 90vw;
+  max-width: 90vw;
   margin: auto;
   position: absolute;
   top: 0;
