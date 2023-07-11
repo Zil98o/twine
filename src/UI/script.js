@@ -129,7 +129,7 @@ Setting.addHeader("Other Settings");
   "use strict";
 
   $(document).on(":liveupdate", function () {
-    $(".macro-live").trigger(":liveupdateinternal");
+    $(".header-container").trigger(":liveupdateinternal");
   });
 
   Macro.add(["update", "upd"], {
@@ -557,5 +557,56 @@ toggleButton.addEventListener('change', function() {
       enableBackgroundImage();
   } else {
       disableBackgroundImage();
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function enableDarkMode() {
+  document.body.classList.add('dark-mode');
+  document.querySelector('.inside').style.backgroundColor = 'black';
+  document.querySelector('.inside').style.color = 'white';
+  document.querySelector('.inside').style.border = '1px solid white';
+  document.querySelector('.navig').style.backgroundColor = 'black';
+  document.querySelector('.navig').style.border = '1px solid white';
+}
+
+// Function to disable dark mode and revert styles
+function disableDarkMode() {
+  document.body.classList.remove('dark-mode');
+  document.querySelector('.inside').style.backgroundColor = 'var(--page)';
+  document.querySelector('.inside').style.color = 'var(--text)';
+  document.querySelector('.inside').style.border = 'none';
+  document.querySelector('.navig').style.border = 'none';
+  document.querySelector('.navig').style.backgroundColor = 'rgb(242, 221, 233)';
+}
+
+// Event listener for dark mode toggle button
+var toggleDarkMode = document.getElementById('toggleDarkMode');
+
+toggleDarkMode.addEventListener('change', function() {
+  if (toggleDarkMode.checked) {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
   }
 });

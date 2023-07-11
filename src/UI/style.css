@@ -129,7 +129,7 @@ body {
   color: rgb(218, 0, 0);
 }
 .gametitle a {
-  color: #000000;
+  color: #6a6779;
 }
 .navig {
   background-color: rgb(242, 221, 233);
@@ -142,7 +142,7 @@ body {
 }
 .navig a {
   margin-left: 1.5rem;
-  color: #000000;
+  color: #6a6779;
 }
 .macro-live {
   max-height: 100px;
@@ -171,7 +171,7 @@ body {
   display: flex;
   margin: auto;
   letter-spacing: 1em;
-  color: var(--navig);
+  color: #444;
 }
 .cover {
   grid-area: 3 / 3 / 12 / 21;
@@ -344,7 +344,7 @@ hr {
 /* Menu Links */
 .menu a,
 .navig a {
-  color: var(--title);
+  color: #6a6779;
 }
 .menu a:hover,
 .navig a:hover {
@@ -366,13 +366,10 @@ hr {
   width: 30%;
   text-align: center;
   padding: .3%;
-  border: 2px solid rgb(0, 0, 0);
   /* background: url(./src/images/cover.jpg); */
-  background-color: #000000;
+  background-color: #6a6779;
   background-size: cover;
   background-position: center;
-  border-top-left-radius: 40%;
-  border-bottom-right-radius: 40%;
 }
 /*--------------MACROS--------------*/
 /* Cycle */
@@ -703,6 +700,18 @@ button:disabled {
   font-family: cursive;
   position: fixed;
   bottom: 15px;
+  right: 20px;
+  background-color: red;
+  padding: 3px 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.dark-container {
+  font-size: 0.9rem;
+  font-family: cursive;
+  position: fixed;
+  bottom: 40px;
   right: 20px;
   background-color: red;
   padding: 3px 5px;

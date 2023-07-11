@@ -64,7 +64,7 @@ This game have audio tracks which you can adjust the volume at the settings.
 <<link "Load Game">><<run UI.saves()>><</link>> | <<link "Settings">><<run UI.settings()>><</link>></p>
 /*You can also add whatever you want*/
 :: ROptions
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">RO Setting</h2>
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">RO Setting</h2>
 You can configure the Romantic Options first thing first.
 
 <div class="choice"><<link "Set all to man" "Next">>
@@ -131,7 +131,7 @@ Atobe : "are"}>>
 		<</script>><</link>></div>
 
 :: Custom
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">RO Setting</h2>
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">RO Setting</h2>
 <center><strong>Asher Durand, The Knight.</strong></center>
 <center><<listbox "$aCh.agender">>
 	<<option "man">>
@@ -142,7 +142,7 @@ Atobe : "are"}>>
 <div class="choice"><<link "Confirm" "Next">> <</link>></div>
 <br>
 :: Next
-<<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
+<<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> 
 <<nobr>><<audio "frontpage" stop>><<audio "crypt" loop play>><<if $aCh.agender === "man">> 
     <<set $aCh.as = "he">>
     <<set $aCh.ao = "him">>
@@ -201,7 +201,7 @@ Multiple ravens have been unleashed, carrying messages securely tied to their fe
 </div>
 <</fadein>>
 :: PL-1
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<notify 10s>>You can hover over bold word for more additional info!<</notify>>The group keep going forward, further and further. They were many intersections along the way, but fortunately the group were bringing <div class="tooltip-container">Wolorb<span class="tooltip-text">A summon familiar resembled a big hound.</span></div> so they can just follow closely behind.
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> <<notify 10s>>You can hover over bold word for more additional info!<</notify>>The group keep going forward, further and further. They were many intersections along the way, but fortunately the group were bringing <div class="tooltip-container">Wolorb<span class="tooltip-text">A summon familiar resembled a big hound.</span></div> so they can just follow closely behind.
 
 The ruin is plain looking, with only a handful of architectural decorations you can count with your fingers. 
 Which is strange considering its massive size, it's decaying wall stripped from all of its detail. There weren't any signs of nature like bats or centipedes and the like that are commonly found in such an abandoned building. 
@@ -220,7 +220,7 @@ Suddenly, a deep rumble shook the entire ruin, accompanied by a dozen ear-pierci
 </div>
 <br>
 :: PL-2
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<audio "crypt" pause>> <<audio "transition1" play>> <<timed 2s>><<audio "battlestart" loop play>><</timed>>
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> <<audio "crypt" pause>> <<audio "transition1" play>> <<timed 2s>><<audio "battlestart" loop play>><</timed>>
 The fighting erupted, as rangers swiftly scaled the walls of the ruins, the mages levitated to gain advantageous positions. From there, they unleashed barrages of attacks, strategically aiming five feet in front of the ground troops to prevent friendly fire.
 
 Asher wielded $aCh.ap shield and hammer, pummeling and feigning attacks on the remaining monsters that escaped the onslaught of ranged missiles. $aCh.As shouted commands to those around $aCh.ao to hold the line.
@@ -238,7 +238,7 @@ The ground shook once again, the tremors repeating like a heartbeat growing clos
 </div>
 <br>
 :: PL-3
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> 
 In the face of the towering golem and the relentless onslaught of Void-Walkers, Asher and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy. His Highness doesn't joke around about wanting to be left alone, Ash." completely baffled as they assessed the situation.
 
 The golem, a massive 50-foot tall pristine giant with boulder-like legs and a single glowing gold eye, advanced steadily. Asher remained silent, $aCh.ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Asher and Sam to come up with a plan.
@@ -263,7 +263,7 @@ Asher launched into the air, caught by the majestic wings of Sam's familiar, whi
 </div>
 <br>
 :: PL-4
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2>
 "Sorry about this, but Sam and I would need your help again, Tori," Asher said, lightly grazing $aCh.ap hand on Tori's soft brown feathers. Tori cawed agreeably, swiftly flying towards the moving boulder.
 
 The golem raised its massive hand, it's body full of fresh created scribe and construction ring. Intent on blocking Tori, but Asher advanced confidently, knowing Tori's speed was unmatched. Tori easily outmaneuvered the golem, swiftly reaching the top of its head in flight.
@@ -285,7 +285,7 @@ There was a visible crack in the golem's eye, and its body buckled under the con
 </div>
 <br>
 :: PL-5
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2>
 Asher realized that even a rock could listen and learn if struck enough times. This revelation came to $aCh.ao when the golem changed its course of action, raising one of its hands to the side. 
 
 The golem's golden eye blared, sending a blinding light through the crack, followed by a sudden burst of speed that caught them off guard. The golem landed a clean swipe on Asher and Tori, propelling them both into the wall like flies.
@@ -300,7 +300,7 @@ Many close calls occurred when the rangers get to close to the golem, but with t
 </div>
 <br>
 :: PL-6
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<audio "battlestart" fadeoverto 5 0>> <<audio "crypt" loop play>>Their journey continues after they all take a long rest. Sam still feels a little lightheaded, so some knights offer to carry them. Asher's condition is critical after that moment of mishap. All the support mages and battle mages, with their limited knowledge of healing spells, combine their magic energy, which is drained just to heal her.
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> <<audio "battlestart" fadeoverto 5 0>> <<audio "crypt" loop play>>Their journey continues after they all take a long rest. Sam still feels a little lightheaded, so some knights offer to carry them. Asher's condition is critical after that moment of mishap. All the support mages and battle mages, with their limited knowledge of healing spells, combine their magic energy, which is drained just to heal her.
 
 $aCh.As is able to stand and walk, thanks to their efforts and Asher sheer will. The group walks slowly, not eager to encounter any other hostile entities. There are none, but each step they take forward fills them with dread.
 
@@ -310,7 +310,7 @@ Asher steels $aCh.ap mind and heart, duty-bound. $aCh.As reassures everyone to k
 
 A makeshift stone door bars the entry to a room they believe to be the source of the unsettling feeling they have, and somehow it is also where The Grand Duke is supposed to be, according to the Wolorb.
 
-Fearing for the worse Asher commands the knights to tear down the door immediately. They work reluctantly, knocking down the door by leaning their combine weight of heavy aromor and push the door inward to the room.
+Fearing for the worse Asher commands the knights to tear down the door immediately. They work reluctantly, knocking down the door by leaning their combine weight of heavy aromor and push the door inward to the room. At first the door seemed didn't budge, but more and more people push it forcing the door to open. 
 
 What they find inside the room are shocking them. 
 

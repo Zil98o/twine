@@ -23,6 +23,10 @@ Test
 	<label for="toggleButton">BgImage</label>
 	<input type="checkbox" id="toggleButton">
 </div>
+<div class="dark-container">
+	<label for="toggleDarkMode">DarkMode</label>
+<input type="checkbox" id="toggleDarkMode">
+</div>
 </div>
 
 :: StoryInit
@@ -58,7 +62,7 @@ atobe : ""}>>
 p title will show the hovertip (name when you hover)
 you should keep the p's otherwise formating will be weird*/
 <<nobr>>
-<<liveblock>><<if $menu is true>><p style="margin: 0;" title="Player Character"><<link '<i class="fa-solid fa-user"></i>' 'PlayerPage'>><</link>></p>
+<div class="macro-live"><<if $menu is true>><p style="margin: 0;" title="Player Character"><<link '<i class="fa-solid fa-user"></i>' 'PlayerPage'>><</link>></p>
 <p style="margin: 0;" title="Achievements"><<link '<i class="fa-solid fa-trophy"></i>' 'Achievements'>><</link>></p>
 <p style="margin: 0;" title="Codex"><<link '<i class="fa-solid fa-sticky-note"></i>' 'Codex'>><</link>></p>
 <p style="margin: 0;" title="Credits"><<link '<i class="fa-solid fa-share-nodes"></i>'>><<script>>
@@ -68,7 +72,7 @@ you should keep the p's otherwise formating will be weird*/
 	<</script>><</link>></p>
 <p style="margin: 0;" title="Saves"><<link '<i class="fa-solid fa-floppy-disk"></i>'>><<script>>UI.saves();<</script>><</link>></p>
 <p style="margin: 0;" title="Settings"><<link '<i class="fa-solid fa-gears"></i>'>><<script>>UI.settings();<</script>><</link>></p>
-<p style="margin: 0;" title="Restart"><<link '<i class="fa-solid fa-rotate-left"></i>'>><<script>>UI.restart();<</script>><</link>></p><</if>><</liveblock>> <</nobr>>
+<p style="margin: 0;" title="Restart"><<link '<i class="fa-solid fa-rotate-left"></i>'>><<script>>UI.restart();<</script>><</link>></p><</if>></div> <</nobr>>
 /*You can also add whatever you want, it can also be links to passages rather than dialog boxes*/
 
 /*This is where you should put your widgets (lines of code/text you don't to clutter your main passages
