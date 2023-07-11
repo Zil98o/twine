@@ -68,7 +68,7 @@ This game have audio tracks which you can adjust the volume at the settings.
 You can configure the Romantic Options first thing first.
 
 <div class="choice"><<link "Set all to man" "Next">>
-<<set $roall = "W">>
+<<set $roall = "M">>
 <<set $aCh = {
 agender : "man",
 Agender : "Man",
@@ -143,7 +143,7 @@ Atobe : "are"}>>
 <br>
 :: Next
 <<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
-<<nobr>><<audio "frontpage" stop>><<audio "crypt" loop play>><<notify 10s>>You can hover over bold word for more additional info!<</notify>><<if $aCh.agender === "man">> 
+<<nobr>><<audio "frontpage" stop>><<audio "crypt" loop play>><<if $aCh.agender === "man">> 
     <<set $aCh.as = "he">>
     <<set $aCh.ao = "him">>
     <<set $aCh.ap = "his">>
@@ -201,8 +201,7 @@ Multiple ravens have been unleashed, carrying messages securely tied to their fe
 </div>
 <</fadein>>
 :: PL-1
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
-The group keep going forward, further and further. They were many intersections along the way, but fortunately the group were bringing <div class="tooltip-container">Wolorb<span class="tooltip-text">A summon familiar resembled a big hound.</span></div> so they can just follow closely behind.
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<notify 10s>>You can hover over bold word for more additional info!<</notify>>The group keep going forward, further and further. They were many intersections along the way, but fortunately the group were bringing <div class="tooltip-container">Wolorb<span class="tooltip-text">A summon familiar resembled a big hound.</span></div> so they can just follow closely behind.
 
 The ruin is plain looking, with only a handful of architectural decorations you can count with your fingers. 
 Which is strange considering its massive size, it's decaying wall stripped from all of its detail. There weren't any signs of nature like bats or centipedes and the like that are commonly found in such an abandoned building. 
@@ -240,7 +239,7 @@ The ground shook once again, the tremors repeating like a heartbeat growing clos
 <br>
 :: PL-3
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> 
-In the face of the towering golem and the relentless onslaught of Void-Walkers, Asher and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy. His Highness doesn't joke around about wanting to be left alone, Asher." completely baffled as they assessed the situation.
+In the face of the towering golem and the relentless onslaught of Void-Walkers, Asher and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy. His Highness doesn't joke around about wanting to be left alone, Ash." completely baffled as they assessed the situation.
 
 The golem, a massive 50-foot tall pristine giant with boulder-like legs and a single glowing gold eye, advanced steadily. Asher remained silent, $aCh.ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Asher and Sam to come up with a plan.
 
@@ -291,55 +290,27 @@ Asher realized that even a rock could listen and learn if struck enough times. T
 
 The golem's golden eye blared, sending a blinding light through the crack, followed by a sudden burst of speed that caught them off guard. The golem landed a clean swipe on Asher and Tori, propelling them both into the wall like flies.
 
-Sam, now coughing blood from their mouth and nose, lost all concentration. The badly injured Tori vanished, and the battle took a turn for the worse.
+Sam, now coughing blood from their mouth and nose, lost all concentration they had. The badly injured Tori vanished, and the battle took a turn for the worse.
 
 The rangers swiftly sprang into action in a desperate attempt to regain control of the battle. With the last of the Void-Walkers fallen, they used their agility to swing from one wall to another, opening fire and creating distractions for the golem.
 
-Many close calls occurred, but with the last calculated attack from a few mages that still stand targeting the golem's cracked eye in combination, they were finally successful. The golem's body stopped and slowly crumbled as they watched it fall in proud silence.
+Many close calls occurred when the rangers get to close to the golem, but with the last calculated attack from a few mages that still stand targeting the golem's cracked eye in combination, they were finally successful. The golem's body stopped and slowly crumbled as they watched it fall in exhausted yet proud silence.
 
 <div class="choice"><<link "Continue" "PL-6">><</link>> 
 </div>
 <br>
 :: PL-6
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2> <<audio "battlestart" fadeoverto 5 0>> <<audio "crypt" loop play>>Their journey continues after they all take a long rest. Sam still feels a little lightheaded, so some knights offer to carry them. Asher's condition is critical after that moment of mishap. All the support mages and battle mages, with their limited knowledge of healing spells, combine their magic energy, which is drained just to heal her.
 
+$aCh.As is able to stand and walk, thanks to their efforts and Asher sheer will. The group walks slowly, not eager to encounter any other hostile entities. There are none, but each step they take forward fills them with dread.
 
-:: PL-4-b
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Prologue</h2>
-“This is definitely above our pay grade,” one of the guys chimed in, breaking the silence.
-A couple of the guys chuckled, hearing the sentiment.
-“Since when do we get pay anyway?” another quipped, inviting more laughter.
+A shiver runs down their spines, every pore on their skin screaming to run. The Wolorb makes a guttural sound that everyone can hear, somehow making the surrounding aura even worse and more foreboding.
 
-A woman with blindfolded eyes stepped closer to Asher, wanting to offer her counsel. Asher acknowledged her and allowed her to speak.
+Asher steels $aCh.ap mind and heart, duty-bound. $aCh.As reassures everyone to keep going because they have already come this far. Sooner or later, they will still need to confront The Grand Duke and bring him back, $aCh.as reasons.
 
-Lowering her white cloak, the woman spoke.
-“The man we seek is no longer here. The more prudent course of action would be to initiate a retreat, just as what he advised before his leave.”
+A makeshift stone door bars the entry to a room they believe to be the source of the unsettling feeling they have, and somehow it is also where The Grand Duke is supposed to be, according to the Wolorb.
 
-Asher bristled, trying hard to rein in his feelings. He doesn't want to believe it, but it's the more likely outcome that has happened. Asher looked back at his people, gauging their mood and intentions.
+Fearing for the worse Asher commands the knights to tear down the door immediately. They work reluctantly, knocking down the door by leaning their combine weight of heavy aromor and push the door inward to the room.
 
-He sighed and relented, "I will consider it only after I know how they all feel about it."
+What they find inside the room are shocking them. 
 
-The woman nodded gratefully before walking back to her group of people.
-
-Standing in front, Asher addressed the crowd. They all stood at the ready.
-
-"I'm aware of how you all feel about the disappearance of our foolish captain before we venture into this ruin," he started, staring at the people he called his brothers, sisters and siblings one by one.
-
-Asher continued, "Despite the reluctance some of you may harbor, in the end, all of you have agreed to lend your strength to me, for which I am grateful. Let us pause and remind ourselves that this is the reason we are all here now."
-
-They nodded in agreement, prompting Asher to proceed further.
-
-"We are here now, good men, women, and every person under the same banner of Saint Farhein," he declared, raising his voice.
-
-"I don't want to deceive you about what we may face, which could send us all to the same fate as our poor captain. So, in turn, I don't want you to deceive me either about how you feel regarding this arrangement. If you don't wish to venture further with me, speak now. There is no shame in expressing your honest opinion and making a decision!"
-
-The crowd descent to a murmur of silence barely audible, while Asher patiently crossed his hands waiting their answers.
-
-Standing proudly with a grin on their faces they washed away all of Asher doubt and concern. They seems ready to follow him to the hell and back.
-
-Raising her hand the woman from earlier send gesture to Asher wishing for her turn to talk publictly now, realizing of that fact the people promptly part out of the way for her.
-
-"It's an honor to meet such a loyal group of people." she said slowly, making some of them chuckled.
-
-She continued "Allowed me to introduce myself for the second time. My name is Narielle of Alk, I'm employed under the direct command of His Majesty Radwar IV. My duty and many others like me are to oversee the movements and activity of the gatespawn in the territory of our Empire." 
-
-<div class="choice"><<link "Some of them smile guiltily" "PL-4-b">><</link>> </div>

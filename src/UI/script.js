@@ -467,35 +467,35 @@ Macro.add("fadeout", {
 });
 
 /* Splash Screen by MadExile */
-(function () {
-  // Duration of the splash image's fade in.
-  var fadeIn = 2000; // in milliseconds
+// (function () {
+//   // Duration of the splash image's fade in.
+//   var fadeIn = 2000; // in milliseconds
 
-  // Delay before the splash screen begins to fade out.
-  var linger = 6000; // in milliseconds
+//   // Delay before the splash screen begins to fade out.
+//   var linger = 6000; // in milliseconds
 
-  // Duration of the splash screen's fade out.
-  var fadeOut = 1500; // in milliseconds
+//   // Duration of the splash screen's fade out.
+//   var fadeOut = 1500; // in milliseconds
 
-  // Splash image.
-  var $image = $('<img src="src/images/splashwarn.png">').hide();
+//   // Splash image.
+//   var $image = $('<img src="src/images/splashwarn.png">').hide();
 
-  // Display the splash screen.
-  $(document.body)
-    .append('<div id="splash-screen"></div>')
-    .find("#splash-screen")
-    .append($image)
-    .find("img")
-    .fadeIn(fadeIn)
-    .end()
-    .delay(linger)
-    .fadeOut(fadeOut);
+//   // Display the splash screen.
+//   $(document.body)
+//     .append('<div id="splash-screen"></div>')
+//     .find("#splash-screen")
+//     .append($image)
+//     .find("img")
+//     .fadeIn(fadeIn)
+//     .end()
+//     .delay(linger)
+//     .fadeOut(fadeOut);
 
-  // Removal of the splash screen.
-  setTimeout(function () {
-    $("#splash-screen").remove();
-  }, fadeIn + linger + fadeOut + 1000);
-})();
+//   // Removal of the splash screen.
+//   setTimeout(function () {
+//     $("#splash-screen").remove();
+//   }, fadeIn + linger + fadeOut + 1000);
+// })();
 
 predisplay["Menu Return"] = function (taskName) {
   if (!tags().contains("noreturn")) {
@@ -526,4 +526,36 @@ Setting.addToggle("fullscreen", {
   onInit: settingFullscreenHandler,
 
   onChange: settingFullscreenHandler,
+});
+
+
+// JavaScript code to toggle background image and modify other element styles
+
+// Function to enable background image and modify styles
+function enableBackgroundImage() {
+  document.body.style.backgroundImage = 'url(src/images/smoke.png)';
+  document.body.style.backgroundColor = 'transparent';
+  document.querySelector('.cover').style.backgroundColor = 'var(--cover)';
+  document.querySelector('.cover').style.backgroundImage = 'url("./src/images/cover.jpg")';
+  document.querySelector('.cover').style.boxShadow = '0 5px 10px 0 rgba(206, 4, 4, 0.5), 0 4px 20px 0 rgba(209, 9, 9, 0.5)';
+}
+
+// Function to disable background image and modify styles
+function disableBackgroundImage() {
+  document.body.style.backgroundImage = 'none';
+  document.body.style.backgroundColor = 'black';
+  document.querySelector('.cover').style.backgroundColor = 'black';
+  document.querySelector('.cover').style.backgroundImage = 'none';
+  document.querySelector('.cover').style.boxShadow = 'none';
+}
+
+// Event listener for toggle button
+var toggleButton = document.getElementById('toggleButton');
+
+toggleButton.addEventListener('change', function() {
+  if (toggleButton.checked) {
+      enableBackgroundImage();
+  } else {
+      disableBackgroundImage();
+  }
 });

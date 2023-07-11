@@ -19,6 +19,10 @@ Test
 <div class="footer-container">
 	<a href="https://pixabay.com/id/sound-effects/search/battle/" target=”_blank”>Patreon</a>
 </div>
+<div class="bg-container">
+	<label for="toggleButton">BgImage</label>
+	<input type="checkbox" id="toggleButton">
+</div>
 </div>
 
 :: StoryInit
@@ -47,7 +51,6 @@ Ap : "",
 Ar : "",
 Atobe : "",
 atobe : ""}>>
-
 
 
 :: sidemenu
