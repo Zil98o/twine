@@ -1,4 +1,6 @@
 //--------TABLE OF CONTENTS--------
+// A lot of the macro is from other people, 
+//i think i just made the check button thingy for toggling bg image and my version of 'dark mode' 
 //----UI BASE----
 //--Destroy UI Bar
 //--Reset Passage on top
@@ -25,8 +27,14 @@ $(document).on(":passagedisplay", function () {
 Setting.addHeader("Font Settings");
 //Note: the Header in the settings follow the <h2> HTML Class.
 //--FONT SIZE--
-var settingFontSize = ["100%", "130%", "150%"];
+var settingFontSize = ["80%","100%", "130%", "150%"];
 var resizeFont = function () {
+  var size = document.getElementById("passages");
+  switch (settings.fontSize) {
+    case "80%":
+      size.style.fontSize = "80%";
+      break;
+  }
   var size = document.getElementById("passages");
   switch (settings.fontSize) {
     case "100%":
@@ -590,3 +598,4 @@ toggleDarkMode.addEventListener('change', function() {
     disableDarkMode();
   }
 });
+

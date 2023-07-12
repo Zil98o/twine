@@ -1,4 +1,5 @@
 /*-------------- TABLE OF CONTENTS --------------
+This table of contents are no longer valid and have been decimated by me, the original dev who made this theme is so organized I feel bad. at first I just want the page to work on potrait mode and alter the bar beside it to move on top for mobile but then I realized somehow the damn @menu can't track the width of an element anymore. But yeah whatever, it's works for me! I just tested the page on my 5year old phone and my crappy laptop, anyone who have different resolution can just enjoy whatever served because, really there's nothing i can do about it.
     I-      Import Fonts
         a- Font Awesome
         b- Google Fonts
@@ -69,7 +70,7 @@
   font-style: normal;
   font-weight: 700;
 }
-/*--------------ROOT VARIABLES--------------*/
+/*--------------ROOT VARIABLES I don't use any of this I think, I just hardcoded the color value everywhere--------------*/
 :root {
   --body: #000;
   --page: #f2dde9;
@@ -363,7 +364,7 @@ hr {
 }
 .choice {
   margin: auto;
-  width: 30%;
+  width: 40%;
   text-align: center;
   padding: .3%;
   /* background: url(./src/images/cover.jpg); */

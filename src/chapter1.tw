@@ -1,2 +1,4 @@
-:: CH1-1
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Chapter 1</h2>
+:: CH1-1 
+<<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Chapter 1</h2>
+
+<</fadein>>
