@@ -17,29 +17,6 @@
 Since you prefer assigning romance options on a case-by-case basis, the selection for each romantic character will be presented just before you encounter them.<</fadein>>
 
 :: AuthorNote
-Suggestions for this IF game are encouraged because there's no predetermined story outline yet. Like you, the player, I venture into this adventure blindly.
-
-Planning the story in advance often leads to frustration for me. With this medium, I aim to listen to the audience's opinion. When I feel stuck, I hope you can help me and offering suggestions. <i style="color: red">My main goal is not just writing and making game but also being able to converse and engage with people who enjoy my work.</i> Let's just have fun together!
-
-Critiques and grammar corrections are, of course, still welcome.
+Welcome to this interactive adventure! As the author, I'm excited to embark on this journey with you. I value your opinions and suggestions, as they play a crucial role in shaping this game. Please feel free to offer feedback, share your ideas, and help me navigate through any creative hurdles. While I strive for polished writing, please bear with me if you come across any occasional slip-ups—I'm committed to continuous improvement. Together, let's just have a fantastic time!
 
 
-/* <<textbox "$hairColor" "">>
-
-<<button "Continue">>
-	<<set $hairColor to $hairColor.trim().toLowerCase()>>
-	<<set $HairColor to $hairColor.trim().toUpperCase()>>
-	<<set $CHairColor to $hairColor.trim().charAt(0).toUpperCase() + $hairColor.slice(1)>>
-	<<if $hairColor.length < 3 or $hairColor.length > 10 or /[^a-zA-Z]/.test($hairColor)>>
-		<<replace "#input-error">>Please enter a valid string with a minimum of 3 letters and a maximum of 10 letters.<</replace>>
-	<<elseif /[\u{1F300}-\u{1F6FF}]/u.test($hairColor)>>
-		<<replace "#input-error">>Please enter a valid string with a minimum of 3 letters and a maximum of 10 letters.<</replace>>
-	<<else>>
-		<<goto "3">>
-	<</if>>
-<</button>>
-
-@@#input-error;@@
-input field that only allowed valid strings that have the length of 3-10 letters
-:: 3
-$hairColor, $HairColor, $CHairColor */

@@ -560,34 +560,14 @@ toggleButton.addEventListener('change', function() {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**toogle dark mode */
 function enableDarkMode() {
   document.body.classList.add('dark-mode');
   document.querySelector('.inside').style.backgroundColor = 'black';
   document.querySelector('.inside').style.color = 'white';
   document.querySelector('.inside').style.border = '1px solid white';
-  document.querySelector('.navig').style.backgroundColor = 'black';
   document.querySelector('.navig').style.border = '1px solid white';
+  document.querySelector('.macro-live').style.border = '1px solid white';
 }
 
 // Function to disable dark mode and revert styles
@@ -597,7 +577,7 @@ function disableDarkMode() {
   document.querySelector('.inside').style.color = 'var(--text)';
   document.querySelector('.inside').style.border = 'none';
   document.querySelector('.navig').style.border = 'none';
-  document.querySelector('.navig').style.backgroundColor = 'rgb(242, 221, 233)';
+  document.querySelector('.macro-live').style.border = 'none';
 }
 
 // Event listener for dark mode toggle button

@@ -1,6 +1,6 @@
 :: Start [noreturn]
 <<nobr>><<timed 8s>><<script>>
-			Dialog.setup("AuthorNote: About This game");
+			Dialog.setup("AuthorNote: About This Game");
 			Dialog.wiki(Story.get("AuthorNote").processText());
 			Dialog.open();
 		<</script>><</timed>><</nobr>><style>
@@ -53,11 +53,7 @@
 	}
 	}
 </style><<nobr>>
-<<audio "frontpage" loop play>> <<timed 8s>><<notify 5s>>Welcome, dear players/readers! 
-This game have audio tracks which you can adjust the volume at the settings.
-<</notify>> <<timed 5s>>
-    <<notify>>Hope you enjoy the story!<</notify>>
-<</timed>><</timed>>
+<<audio "frontpage" loop play>> 
  <</nobr>>
 <h1>Racing Heart</h1>
 <p><<if Save.autosave.ok() and Save.autosave.has()>><<link "Resume Game">><<script>>Save.autosave.load()<</script>><</link>> | <</if>><<link "New Game" "ROptions">><</link>> <br>
@@ -65,7 +61,12 @@ This game have audio tracks which you can adjust the volume at the settings.
 /*You can also add whatever you want*/
 :: ROptions
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">RO Setting</h2>
-You can configure the Romantic Options first thing first.
+<center>You can configure the Romantic Options first thing first.</center>
+<<nobr>><<timed 1s>><<notify 4s>> 
+This game have audio tracks which you can adjust the volume at the settings.
+<</notify>> <<timed 3s>>
+    <<notify>>Hope you enjoy the story!<</notify>>
+<</timed>><</timed>><</nobr>>
 
 <div class="choice"><<link "Set all to man" "Next">>
 <<set $roall = "M">>
@@ -124,7 +125,7 @@ atobe : "are",
 Atobe : "are"}>>
 <</link>>
 </div>
-<div class="choice"> <<link "Choose One By One" "Custom">><<script>>
+<div class="choice"> <<link "Choose one by one" "Custom">><<script>>
 			Dialog.setup("AuthorNote: Romance Options");
 			Dialog.wiki(Story.get("AuthorNote1").processText());
 			Dialog.open();
@@ -144,6 +145,10 @@ Atobe : "are"}>>
 :: Next
 <<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> 
 <<nobr>><<audio "frontpage" stop>><<audio "crypt" loop play>><<if $aCh.agender === "man">> 
+    <<set $agender = "man">>
+    <<set $Agender = "Man">>
+    <<set $agender2 = "male">>
+    <<set $Agender2 = "Male">>    
     <<set $aCh.as = "he">>
     <<set $aCh.ao = "him">>
     <<set $aCh.ap = "his">>
@@ -155,6 +160,10 @@ Atobe : "are"}>>
     <<set $aCh.atobe = "is">>
     <<set $aCh.Atobe = "Is">>
 <<elseif $aCh.agender === "woman">>
+    <<set $agender = "woman">>
+    <<set $Agender = "Woman">>
+    <<set $agender2 = "female">>
+    <<set $Agender2 = "Female">>
     <<set $aCh.as = "she">>
     <<set $aCh.ao = "her">>
     <<set $aCh.ap = "her">>
@@ -186,16 +195,15 @@ Bubbles of light manifest in their hands, circling back and forth, spreading hea
 
 The room reverberates back in detail, capturing every sound it received by a million.
 
-The captain, a young man named Asher, walks upright with conviction and a blank expression.
+The captain, a young $aCh.agender named Asher, walks upright with conviction and a blank expression.
 
-His old charge had gone missing for close to half a year after his solo entrance into this very ruin. The Grand Duke of Volais, Henri de Montclair, is telling Asher not to follow him and to return to the capital if he doesn't send any words requesting Asher's team and his presence.
+$aCh.Ap old charge had gone missing for close to a year after his self-imposed exiled. The Grand Duke of Volais, Henri de Montclair, had told Asher not to follow him and to return to the capital if he doesn't send any words requesting Asher's team and his presence.
 
 Of course, such a command would go unheard by the lot of them. Asher knows the man is still grieving, all of them do. But Asher can't leave him alone any longer; perhaps in Asher's mind, $aCh.as thinks such an action of actively isolating oneself, no matter the reason, isn't a healthy coping mechanism.
 
-Besides, the man still has a lot of responsibility to his people. Monarch Phillipe IV will soon abdicate the throne, and their successor is still a subject of open debate and discussion.
-The Grand Duke Henri needs to be in the capital. There are massive changes in the air for Volais; everyone can feel it.
+Besides, the man still has a lot of responsibility to his people. Monarch Phillipe IV will soon abdicate the throne, and their successor is still a subject of open debate and discussion. The Grand Duke Henri needs to be in the capital. There are massive changes in the air for Volais; everyone can feel it.
 
-Multiple ravens have been unleashed, carrying messages securely tied to their feet, updating their current location and their next course of action. The only thing left to do is to drag the stubborn old man back, with or without his expressed permission.
+This is the place where he was seen last by anyone, receiving the updated news about his location Asher and $aCh.ao team promptly depart. Multiple ravens have been unleashed, carrying messages securely tied to their feet, updating the team's arrival and next course of action to people back home. The only thing left to do is to drag the stubborn old man back, with or without his expressed permission.
 
 <div class="choice"><<link "Continue" "PL-1">><</link>>
 </div>
@@ -227,7 +235,7 @@ Asher wielded $aCh.ap shield and hammer, pummeling and feigning attacks on the r
 
 Meanwhile, a couple of support mages activated their cloaks, making themselves invisible to the naked eye. They observed the battle in clustered groups, paying rapt attention and watching for any ground personnel receiving too much damage or needing better positioning. They would teleport those individuals to the back line for quick medical healing or regrouping.
 
-The Void-walkers seems to came in waves, relentless and greater in number than the scouts had estimated. It's the case because the nature of the Void-walkers itself, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull get properly disposed of.
+The Void-walkers seem to came in waves, relentless and greater in number than the scouts had estimated. It's the case because the nature of the Void-walkers itself, these cursed monsters would rise back from the dead in their hunt for all living beings unless the core in their skull get properly disposed of.
 
 Swinging $aCh.ap medium-sized hammer, Asher knocked down the Void-walkers one by one, targeting their heads eliciting a satisfying crack before moving on. Sam, $aCh.ap close companion, and others behind $aCh.ao swiftly stabbed the stunned monsters on the ground for good measure. The group moved with cohesive coordination and order, steadily gaining more ground and eliminating threats before them.
 
@@ -241,7 +249,7 @@ The ground shook once again, the tremors repeating like a heartbeat growing clos
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> 
 In the face of the towering golem and the relentless onslaught of Void-Walkers, Asher and Sam found themselves in a dire predicament. Sam whispered a desperate prayer, "Lord, have mercy. His Highness doesn't joke around about wanting to be left alone, Ash." completely baffled as they assessed the situation.
 
-The golem, a massive 50-foot tall pristine giant with boulder-like legs and a single glowing gold eye, advanced steadily. Asher remained silent, $aCh.ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Asher and Sam to come up with a plan.
+The golem, a massive 50-foot tall, pristine giant with boulder-like legs and a single glowing gold eye, advanced steadily. Asher remained silent, $aCh.ap mind racing to find a solution to this seemingly insurmountable threat. The surrounding people were preoccupied with fending off the relentless Void-Walker horde, leaving Asher and Sam to come up with a plan.
 
 Clicking $aCh.ap tongue in a moment of desperation, Asher exchanged a knowing look with Sam. Without uttering a word, they both knew what needed to be done. Upon their request, Sam is quickly teleported back to a safer position, while Asher barked out a command, "Mage! Open barrier! Enact protocol C!"
 
@@ -279,7 +287,7 @@ Strangely, each resounding beat from the hammer sent an invigorating feeling to 
 It became a battle of endurance, with every thundering clash of Asher's hammer, $aCh.as started to feel weaker and slower.
 Far in the back, drenched in sweat and with a pale face, Sam didn't appear to be doing well either. 
 
-There was a visible crack in the golem's eye, and its body buckled under the constant damage it was receiving. Asher realized that $aCh.ap plan was actually working; it was just a matter of time. Time seemed to be the determining factor in deciding the victor of this encounter.
+There was a visible crack in the golem's eye, and its body buckled under the constant damage it was receiving. Asher $aCh.ap plan was actually working; it was just a matter of time. Time seemed to be the determining factor in deciding the victor of this encounter.
 
 <div class="choice"><<link "Continue" "PL-5">><</link>> 
 </div>
@@ -288,7 +296,7 @@ There was a visible crack in the golem's eye, and its body buckled under the con
 <h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2>
 Asher realized that even a rock could listen and learn if struck enough times. This revelation came to $aCh.ao when the golem changed its course of action, raising one of its hands to the side. 
 
-The golem's golden eye blared, sending a blinding light through the crack, followed by a sudden burst of speed that caught them off guard. The golem landed a clean swipe on Asher and Tori, propelling them both into the wall like flies.
+The golem's golden eye blared, sending a blinding light through the crack, followed by a sudden burst of speed that caught Asher and Tori off guard. The golem landed a clean swipe on Asher and Tori, propelling them both into the wall like flies.
 
 Sam, now coughing blood from their mouth and nose, lost all concentration they had. The badly injured Tori vanished, and the battle took a turn for the worse.
 
@@ -300,17 +308,17 @@ Many close calls occurred when the rangers get to close to the golem, but with t
 </div>
 <br>
 :: PL-6
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> <<audio "battlestart" fadeoverto 5 0>> <<audio "crypt" loop play>>Their journey continues after they all take a long rest. Sam still feels a little lightheaded, so some knights offer to carry them. Asher's condition is critical after that moment of mishap. All the support mages and battle mages, with their limited knowledge of healing spells, combine their magic energy, which is drained just to heal her.
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> <<audio "battlestart" fadeoverto 5 0>> <<audio "crypt" loop play>>Their journey continues after they all take a long rest. Sam still feels a little lightheaded, so some knights offer to carry them. Asher's condition is critical after that moment of mishap. All the support mages and battle mages, with their limited knowledge of healing spells, combine their magic energy, leaving all of them drained just to heal her.
 
-$aCh.As is able to stand and walk, thanks to their efforts and Asher sheer will. The group walks slowly, not eager to encounter any other hostile entities. There are none, but each step they take forward fills them with dread.
-
-A shiver runs down their spines, every pore on their skin screaming to run. The Wolorb makes a guttural sound that everyone can hear, somehow making the surrounding aura even worse and more foreboding.
+$aCh.As is able to stand and walk, thanks to their efforts and Asher sheer will. The group walks slowly, not eager to encounter any other hostile entities. There are none, but each step they take forward fills them with dread. A shiver runs down their spines, every pore on their skin screaming to run. The Wolorb makes a guttural sound that everyone can hear, somehow making the surrounding aura even worse and more foreboding.
 
 Asher steels $aCh.ap mind and heart, duty-bound. $aCh.As reassures everyone to keep going because they have already come this far. Sooner or later, they will still need to confront The Grand Duke and bring him back, $aCh.as reasons.
 
-A makeshift stone door bars the entry to a room they believe to be the source of the unsettling feeling they have, and somehow it is also where The Grand Duke is supposed to be, according to the Wolorb.
+A makeshift wooden door bars the entry to a room they believe to be the source of the unsettling feeling they have, somehow it is also where The Grand Duke is supposed to be, according to the Wolorb.
 
-Fearing for the worse Asher commands the knights to tear down the door immediately. They work reluctantly, knocking down the door by leaning their combine weight of heavy aromor and push the door inward to the room. At first the door seemed didn't budge, but more and more people push it forcing the door to open. 
-
-What they find inside the room are shocking them. 
+Fearing for the worse Asher commands the knights to tear down the door immediately. They work reluctantly, knocking down the door by leaning their combine weight of heavy aromor and push the door inward to the room. At first the door seemed didn't budge, but more and more people push it together forcing the door to open. 
+<<timed 5s>><<audio "battlestart" stop>><</timed>>
+<div class="choice"><<link "End of Prologue" "CH1-1">><</link>> 
+</div>
+<br>
 
