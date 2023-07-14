@@ -84,7 +84,9 @@ Ao : "Him",
 Ap : "His",
 Ar : "Himself",
 Atobe : "is",
-atobe : "is"}>>
+atobe : "is",
+hon : "sir",
+Hon : "Sir"}>>
 <</link>>
 </div>
 <div class="choice"><<link "Set all to woman" "Next">>
@@ -103,7 +105,9 @@ Ao : "Her",
 Ap : "Her",
 Ar : "Herself",
 atobe : "is",
-Atobe : "Is"}>>
+Atobe : "Is",
+hon : "ma'am",
+hon : "Ma'am"}>>
 <</link>>
 </div>
 <div class="choice"><<link "Set all to non-binary" "Next">>
@@ -122,7 +126,9 @@ Ao : "Them",
 Ap : "Their",
 Ar : "Themself",
 atobe : "are",
-Atobe : "are"}>>
+Atobe : "are",
+hon : "ser",
+Hon : "Ser",}>>
 <</link>>
 </div>
 <div class="choice"> <<link "Choose one by one" "Custom">><<script>>
@@ -145,10 +151,10 @@ Atobe : "are"}>>
 :: Next
 <<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> 
 <<nobr>><<audio "frontpage" stop>><<audio "crypt" loop play>><<if $aCh.agender === "man">> 
-    <<set $agender = "man">>
-    <<set $Agender = "Man">>
-    <<set $agender2 = "male">>
-    <<set $Agender2 = "Male">>    
+    <<set $aCh.agender = "man">>
+    <<set $aCh.Agender = "Man">>
+    <<set $aCh.agender2 = "male">>
+    <<set $aCh.Agender2 = "Male">>    
     <<set $aCh.as = "he">>
     <<set $aCh.ao = "him">>
     <<set $aCh.ap = "his">>
@@ -159,11 +165,13 @@ Atobe : "are"}>>
     <<set $aCh.Ar = "Himself">>
     <<set $aCh.atobe = "is">>
     <<set $aCh.Atobe = "Is">>
+    <<set $aCh.hon = "sir">>
+    <<set $aCh.Hon = "Sir">>
 <<elseif $aCh.agender === "woman">>
-    <<set $agender = "woman">>
-    <<set $Agender = "Woman">>
-    <<set $agender2 = "female">>
-    <<set $Agender2 = "Female">>
+    <<set $aCh.agender = "woman">>
+    <<set $aCh.Agender = "Woman">>
+    <<set $aCh.agender2 = "female">>
+    <<set $aCh.Agender2 = "Female">>
     <<set $aCh.as = "she">>
     <<set $aCh.ao = "her">>
     <<set $aCh.ap = "her">>
@@ -174,7 +182,13 @@ Atobe : "are"}>>
     <<set $aCh.Ar = "Herself">>
     <<set $aCh.atobe = "is">>
     <<set $aCh.Atobe = "Is">>
+    <<set $aCh.hon = "ma'am">>
+    <<set $aCh.Hon = "Ma'am">>
 <<elseif $aCh.agender === "person">>
+    <<set $aCh.agender = "person">>
+    <<set $aCh.Agender = "Person">>
+    <<set $aCh.agender2 = "non-binary">>
+    <<set $aCh.Agender2 = "Non-binary">>
     <<set $aCh.as = "they">>
     <<set $aCh.ao = "them">>
     <<set $aCh.ap = "their">>
@@ -185,6 +199,8 @@ Atobe : "are"}>>
     <<set $aCh.Ar = "Themself">>
     <<set $aCh.atobe = "are">>
     <<set $aCh.Atobe = "Are">>
+    <<set $aCh.hon = "ser">>
+    <<set $aCh.Hon = "Ser">>
 <</if>><</nobr>>Billowing wind makes its entrance into the old, run-down ruin. Its main inhabitants are the damned souls long past, their mortal coils buried deep underneath.
 
 A group of men, women, and a person adorned in shimmering steel armor bravely trot forward. The blistering cold makes every step they take feel like torture.
@@ -320,7 +336,7 @@ Many close calls occurred when the rangers get too close to the golem, but with 
 </div>
 <br>
 :: PL-6
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> <<audio "battlestart" fadeoverto 5 0>> <<audio "crypt" loop play>>Their journey continues after they all take a long rest. Sam still feels a little lightheaded, so some knights offer to carry them. Asher's condition is critical after that moment of mishap. 
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Prologue</h2> <<audio "battlestart" fadeoverto 5 0>> <<audio "crypt" fadeoverto 25 0>>Their journey continues after they all take a long rest. Sam still feels a little lightheaded, so some knights offer to carry them. Asher's condition is critical after that moment of mishap. 
 
 All the support mages and battle mages, with their limited knowledge of healing spells, combine their magic energy, leaving all of them drained just to heal $aCh.ao.
 
@@ -334,8 +350,8 @@ A makeshift wooden door bars the entry to a room they believe to be the source o
 
 Fearing the worst, Asher commands the knights to tear down the door immediately. They work reluctantly, using their combined weight and heavy armor to push the door inward into the room.
 
-At first, the door doesn't budge, but as more people join in and push together, it finally gives way, revealing its contents. Whatever the group had anticipated to find inside, it certainly wasn't what they actually discovered.
-<<timed 5s>><<audio "battlestart" stop>><</timed>>
+At first, the door doesn't budge, but as more people join in and push together, it finally gives way, revealing it all. Whatever the group had anticipated to find inside, it certainly wasn't what they actually discovered.
+<<timed 5s>><<audio "battlestart" stop>><</timed>><<timed 25s>><<audio "battlestart" stop>><</timed>>
 <div class="choice"><<link "End of Prologue" "CH1-1">><</link>> 
 </div>
 <br>

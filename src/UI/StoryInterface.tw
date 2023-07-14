@@ -30,6 +30,23 @@ Test
 </div>
 
 :: StoryInit
+<<set $pC = {
+fname: "",
+Fname: "",
+lname: "",
+Lname: "",
+hon: "",
+Hon: "",
+hon1: "",
+Hon1: "",
+emp: 50,
+sb: 50,
+pr: 50,
+cp: 50
+}>> 
+<<set $bold = 50, $shy = 50>>
+<<set $aggressive = 50, $passive = 50>>
+
 /*Enter your starting variables here */
 <<set $menu = true>> /*This is for the menu, you can remove if you want it toggled off when you start the game*/
 <<preload './src/images/cover.jpg' './src/images/front-page.jgp' './src/audio/front-page.mp3' './src/audio/sfx/hover.mp3' './src/audio/sfx/click.mp3' './src/audio/sfx/transition.mp3' './src/audio/sfx/transition.mp3' './src/audio/sfx/battlestart.mp3'>>
@@ -39,6 +56,7 @@ Test
 <<cacheaudio "transition1" "./src/audio/sfx/transition1.mp3">>
 <<cacheaudio "crypt" "./src/audio/crypt.mp3">>
 <<cacheaudio "battlestart" "./src/audio/battlestart.mp3">>
+<<cacheaudio "lightrain" "./src/audio/lightrain.mp3">>
 
 <<set $aCh = {
 agender : "",
@@ -54,7 +72,10 @@ Ao : "",
 Ap : "",
 Ar : "",
 Atobe : "",
-atobe : ""}>>
+atobe : "",
+hon: "",
+Hon: ""}>>
+
 
 
 :: sidemenu

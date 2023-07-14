@@ -109,7 +109,7 @@ body {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   width: calc(75vw * 1.33);
-  height: 100vh;
+  height: 95vh;
   min-width: 90vw;
   max-width: 90vw;
   margin: auto;
@@ -332,8 +332,7 @@ hr {
 /* Regular */
 .passage a,
 #ui-dialog-body a {
-  color: var(--link);
-  text-shadow: 1px 1px 2px white;
+  color: #800000;
   font-weight: bold;
 }
 .passage a:hover,
@@ -436,7 +435,6 @@ textarea {
 button {
   background-color: var(--front);
   border-color: var(--body);
-  border-radius: 50px;
   padding: 5px 7px;
   text-align: center;
 }
@@ -553,7 +551,7 @@ button:disabled {
 @media screen and (max-width: 700px) {
   .parent {
     min-width: 100%;
-    min-height: 90vh;
+    min-height: 85vh;
   }
   #ui-dialog-body {
     min-width: 100%;
@@ -718,4 +716,44 @@ button:disabled {
   padding: 3px 5px;
   border: 1px solid black;
   border-radius: 3px;
+}
+
+/**/
+.stat-bar-group {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.stat-bar-container {
+  background-color: #800000;
+  color: #ffffff;
+  position: relative;
+  font-size: 70%;
+  height: 3vh;
+  width: 100%;
+  padding: 1em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 13px;
+  margin-top: 10px;
+}
+.stat-bar {
+  background-color: #990000;
+  max-width: 100%;
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.stat-bar-overlay-right {
+  position: absolute;
+  right: .5em;
+  bottom: 20%;
+  z-index: 3;
+}
+.stat-bar-overlay-left {
+  position: absolute;
+  left: .5em;
+  bottom: 20%;
+  z-index: 3;
 }

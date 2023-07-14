@@ -27,8 +27,14 @@ $(document).on(":passagedisplay", function () {
 Setting.addHeader("Font Settings");
 //Note: the Header in the settings follow the <h2> HTML Class.
 //--FONT SIZE--
-var settingFontSize = ["80%","100%", "130%", "150%"];
+var settingFontSize = ["60%","80%","100%", "130%", "150%"];
 var resizeFont = function () {
+  var size = document.getElementById("passages");
+  switch (settings.fontSize) {
+    case "60%":
+      size.style.fontSize = "60%";
+      break;
+  }
   var size = document.getElementById("passages");
   switch (settings.fontSize) {
     case "80%":
@@ -345,67 +351,96 @@ Setting.addHeader("Other Settings");
 })();
 // end preload.min.js
 
-// volume slider, by chapel; for sugarcube 2 (mods by SjoerdHekking)
-!(function () {
-  function setVolume(val) {
-    "number" != typeof val && (val = Number(val)),
-      (Number.isNaN(val) || val < 0) && (val = 0.5),
-      val > 1 && (val = 1),
-      (settings.volume = 100 * val),
-      Setting.save(),
-      $("input[name='volume']").val() != settings.volume &&
-        $("input[name='volume']").val(settings.volume);
-    try {
-      if (SimpleAudio)
-        return (
-          "function" == typeof SimpleAudio.volume
-            ? SimpleAudio.volume(val)
-            : (SimpleAudio.volume = val),
-          val
-        );
-      throw new Error("Cannot access audio API.");
-    } catch (err) {
-      return (
-        console.error(err.message, err),
-        $.wiki("<<masteraudio volume " + val + ">>"),
-        val
-      );
-    }
-  }
-  function updateVolume() {
-    setVolume(settings.volume / 100);
-  }
-  Setting.addRange("volume", {
-    label: "Volume: ",
-    min: 0,
-    max: 100,
-    step: 1,
-    default: 50,
-    onInit: updateVolume,
-    onChange: updateVolume,
-  }),
-    $(document).on("input", "input[name='volume']", function () {
-      var change;
-      setVolume(parseInt($("input[name='volume']").val()) / 100);
-    }),
-    Macro.add("volume", {
-      handler: function () {
-        var wrapper = $(document.createElement("span")),
-          slider = $(document.createElement("input")),
-          className = "macro-" + this.name;
-        slider.attr({
-          id: "volume-control",
-          type: "range",
-          name: "volume",
-          min: 0,
-          max: 100,
-          step: 1,
-          value: settings.volume,
-        }),
-          wrapper.append(slider).addClass(className).appendTo(this.output);
-      },
-    });
-})();
+// ADD volume slider, still from HiEv (who I think modified Chapel's code)
+(function () { // set initial values
+	var options = {
+		current  : 50,  // default volume level
+		rangeMax : 100,
+		step	 : 1,
+		setting  : true
+	};
+	Setting.load();
+	if (options.setting && settings.volume) {
+		options.current = parseInt(settings.volume);
+	}
+	var vol = {
+		last: options.current,
+		start: (options.current / options.rangeMax).toFixed(2)
+	};
+	function setVolume (val) { // function to update the volume level
+		if (typeof val !== 'number') val = Number(val);
+		if (Number.isNaN(val) || val < 0) val = 0;
+		if (val > 1) val = 1;
+		options.current = Math.round(val * options.rangeMax);
+		if (options.setting) {
+			settings.volume = options.current;
+			Setting.save();
+		}
+		if ($('input[name=volume]').val() != options.current) {
+			$('input[name=volume]').val(options.current);
+		}
+		try {
+			if (SimpleAudio) {
+				if (typeof SimpleAudio.volume === 'function') {
+					SimpleAudio.volume(val);
+				} else {
+					SimpleAudio.volume = val;
+				}
+				return val;
+			} else {
+				throw new Error('Cannot access audio API.');
+			}
+		} catch (err) { // fall back to the wikifier if needed
+			console.error(err.message, err);
+			$.wiki('<<masteraudio volume ' + val + '>>');
+			return val;
+		}
+	}
+	postdisplay['volume-task'] = function (taskName) { // fix the initial volume level display
+		delete postdisplay[taskName];
+		setVolume(vol.start);
+	};
+	$(document).on('input', 'input[name=volume]', function() { // grab volume level changes
+		var change = parseInt($('input[name=volume]').val());
+		setVolume(change / options.rangeMax);
+		vol.last = change;
+	});
+	Macro.add('volume', { // create the <<volume>> macro
+		handler : function () {
+			var wrapper = $(document.createElement('span'));
+			var slider = $(document.createElement('input'));
+			var className = 'macro-' + this.name;
+			slider.attr({
+				id		: 'volume-control',
+				type	: 'range',
+				name	: 'volume',
+				min		: '0',
+				max		: options.rangeMax,
+				step	: options.step,
+				value	: options.current
+			}); // use '.macro-volume' and '#volume-control' to style slider
+			wrapper.append(slider).addClass(className).appendTo(this.output);
+		}
+	});
+	function updateVolume () { // add Setting API integratio
+		setVolume(settings.volume / options.rangeMax);
+	}
+	if (options.setting) {
+		if (Setting && Setting.addRange && typeof Setting.addRange === 'function') {
+			Setting.addRange('volume', {
+    		label : "Volume",
+				min : 0,
+				max : options.rangeMax,
+				step : options.step,
+				default : options.current,
+				onInit : updateVolume,
+				onChange : updateVolume
+			});
+		} else {
+			console.error('This version of SugarCube does not include the `Settings.addRange()` method; please try updating to the latest version of SugarCube.');
+		}
+	}
+}());
 // end volume slider
 
 /*Sound on Link Click*/
@@ -511,7 +546,7 @@ predisplay["Menu Return"] = function (taskName) {
   }
 };
 /*Limit story history*/
-Config.history.maxStates = 3;
+Config.history.maxStates = 5;
 
 /** Fullscreen */
 var settingFullscreenHandler = function () {
@@ -599,3 +634,29 @@ toggleDarkMode.addEventListener('change', function() {
   }
 });
 
+
+$(document).on(":passagedisplay", function() {
+	$("#story").scrollTop(0);
+	var stubStat = State.getVar("$pC.sb") + "%";
+	$("#stub-stat").attr("style", "width: " + stubStat);
+});
+$(document).on(":passagedisplay", function() {
+	$("#story").scrollTop(0);
+	var emphStat = State.getVar("$pC.em") + "%";
+	$("#emph-stat").attr("style", "width: " + emphStat);
+});
+
+// force fullscreen portrait mode on mobile
+function lock (orientation) {
+	if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) {
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) {
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) {
+    document.documentElement.msRequestFullscreen();
+  }
+	screen.orientation.lock(orientation);
+};
+// end force fullscreen

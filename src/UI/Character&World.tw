@@ -3,8 +3,23 @@
 [[Return|$return]] 
 
 :: PlayerPage[noreturn]
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: var(--body); font-size: 2rem;">Player Page</h2>
-
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Player Page</h2>
+<center><h3>Personality</h3></center>\
+\
+<<set $pC.emp = 100 - $pC.pr>>\
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Empathetic $pC.emp%</div>\
+<div class="stat-bar-overlay-right">Pragmatic $pC.pr%</div>\
+<div class="stat-bar" id="emph-stat"></div></div></div>\
+\
+<<set $pC.sb = 100 - $pC.cp>>\
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Stubborn $pC.sb%</div>\
+<div class="stat-bar-overlay-right">Compliant $pC.cp%</div>\
+<div class="stat-bar" id="stub-stat"></div></div></div>\
+\
 [[Return|$return]]
 
 

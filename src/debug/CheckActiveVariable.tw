@@ -9,3 +9,5 @@
 
 <<link "Check Variables">><<run _checkVariables()>><</link>>
 /* <<link "CheckVar" "CheckVariables">><</link>> use this in the passage*/ 
+/*stat tracker Emphatetic: $pC.emp, Stubborn: $pC.sb, Pragmatic: $pC.pr, Compliant: $pC.cp
+*/
