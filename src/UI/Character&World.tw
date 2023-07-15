@@ -20,6 +20,21 @@
 <div class="stat-bar-overlay-right">Compliant $pC.cp%</div>\
 <div class="stat-bar" id="stub-stat"></div></div></div>\
 \
+<<set $pC.tr = 100 - $pC.su>>\
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Trusting $pC.tr%</div>\
+<div class="stat-bar-overlay-right">Suspicious $pC.su%</div>\
+<div class="stat-bar" id="trust-stat"></div></div></div>\
+\
+\
+<<set $pC.mp = 100 - $pC.hn>>\
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Manipulative $pC.mp%</div>\
+<div class="stat-bar-overlay-right">Honest $pC.hn%</div>\
+<div class="stat-bar" id="honest-stat"></div></div></div>\
+\
 [[Return|$return]]
 
 

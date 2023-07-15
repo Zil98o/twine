@@ -1,40 +1,40 @@
 :: CH1-1 
 <<link '<div style="width: 100%; height:100%;"><h2 style="text-align: center; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 5rem;">Chapter 1</h2> <h2 style="text-align: center; text-decoration: underline; font-family: var(--cursive); color: #777; font-size: 3rem;">Reborn</h2></div>' 'CH1-2'>><</link>>
-
+<<audio "crypt" stop>>
 :: CH1-2 
-<<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Chapter 1</h2>
-You slowly regain your senses, the room you're in is softly lit, with bubbles of light dancing to and fro dispelling the shadows that cling to the stone walls. The air carries a damp autumn air from the wide-open windows across the room.  You're not alone in this room there is a man watching you from afar.
+<<fadein 3s>><h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: #444; font-size: 2rem;">Chapter 1</h2>
+You slowly regain your senses, the softly lit room revealing its stone walls. Bubbles of light dance to and fro, dispelling the clinging shadows. The autumn air seeps through the wide-open windows, carrying a damp scent. You are not alone in this room; a man watches you from afar.
 
 As you try to lift your head to get a better look at your surroundings, a sharp pang of pain shoots through your body, making you wince. It feels as though your muscles have atrophied, leaving you weak and feeble.
 
 The old man's gaze remains fixed upon you, his eyes filled with a mixture of desperation and hope. His weathered face bears the weight of years gone by, etched with lines of sorrow and fatigue. Adding to his disheveled appearance, his beard is unkempt and graying.
 
-Silence hangs heavy in the room, broken only by the faint crackling of the dwindling fire in the hearth. The old man seems entranced, lost in a world of his own thoughts and prayers. Occasionally, his lips move as if he's silently whispering an incantation or plea that the sound not reaching fully to your ears.
+Silence hangs heavy in the room, broken only by the faint downpour of the light rain outside. The old man seems entranced, lost in a world of his own thoughts and prayers. Occasionally, his lips move as if silently whispering an incantation or plea, though the sound does not fully reach your ears.
 
 Summoning all your willpower, you muster a weak voice and croak out the words,
 
 <<link 'Who are you?' 'CH1-3'>><<set $temp = 1>><</link>>
 <<link 'Where are we?' 'CH1-3'>><<set $temp = 2>><</link>>
 <<link 'Can you help, What happened to me?' 'CH1-3'>><<set $temp = 3>><</link>>
-<br><<audio "lightrain" fadein>>
+<br><<timed 1.5s>><<audio "lightrain" loop play>><</timed>>
 <</fadein>>
 
 :: CH1-3
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Chapter 1</h2><<nobr>>
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: #444; font-size: 2rem;">Chapter 1</h2><<nobr>>
     <<if $temp === 1>>
-    "Who are you?" you said, addressing the man.
+    "Who are you?" Your weak voice breaking the silence, addressing the man.
     <<elseif $temp === 2>>
-    "Where are we?" you inquired, addressing him.
+    "Where are we?" you inquired softly, addressing him.
     <<elseif $temp === 3>>
-    "Can you help, what happened to me?" you asked, confused and worried.
+    "Can you help, what happened to me?" you asked lowly, confused and worried.
     <</if>>
 <</nobr>>He blinked his eyes once, then twice, before tears finally streamed down his face. "I thought I was just hallucinating for a moment," he said, hastily wiping his tears away with his sleeve. Despite his efforts, the tears continued to flow.
 
-Realizing his attempts were quite futile, he disregarded them and quickly moved towards you, suddenly embracing you. He continued sobbing into your neck, his words muffled, but he repeated the same grateful prayer.
+Realizing his attempts were quite futile, he disregarded them and quickly moved towards you, suddenly his arms enveloping you in an embrace. He continued sobbing into your neck, his words muffled, but he repeated the same grateful prayer over and over.
 
-"You're back," he reaffirmed, hugging you tightly.
+"You're back," he reaffirmed,  clinging tightly to you.
 
-You didn't understand why he was reacting this way. Numerous questions buzzed in your head, seeking for answers. Yet you remained still, lying patiently, allowing the man to collect himself. Why?
+You didn't understand why he was reacting this way. Countless questions swirled in your mind, demanding answers. Yet you remained still, lying patiently, allowing the man to collect himself. Why?
 
 <<link 'He seems to have been through a lot, and you feel sympathy for him.' 'CH1-4'>><<set $pC.emp += 4; $pC.pr -= 4; $temp = 1>><</link>>
 <<link "You can wait for a bit; it doesn't bother you." 'CH1-4'>><<set $pC.pr += 4; $pC.emp -= 4; $temp = 2>><</link>>
@@ -42,7 +42,25 @@ You didn't understand why he was reacting this way. Numerous questions buzzed in
 <<link "You just let him, as you're still feeling weak." 'CH1-4'>><<set $pC.sb -= 4; $temp = 3; $pC.cp += 4>><</link>>
 <br>
 :: CH1-4
-<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: red; font-size: 2rem;">Chapter 1</h2>
-He help you stand, not long after that you were able to walk under their supporting hand, he guide the two of you to the roof of the building. The morning sun is hang on the horizon casting it's hue to the surrounding mountain that the massive building where the two of you stand located. There are many trees and abandoned village out front but no other human you see so far.
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: #444; font-size: 2rem;">Chapter 1</h2>
+With his support, you managed to stand on shaky legs, gradually regaining your strength. Slowly, you took steps under his guiding hand, making your way to the building's balcony. The morning sun was nowhere to be seen; instead, a blanket of gray rain veiled the surrounding mountains, casting a somber atmosphere all around. In the distance lay an abandoned village, accompanied by a serene forest, devoid of any other human presence.
 
-The man is preaparing something for you, he's back with a tray full of small kettle and two glasses in hand. Smiling from ear to ear despite the fact a seconds after bawling his hearth out.
+The man busied himself with preparations as you both reached the balcony. After a short while, he returned, a tray adorned with a collection of small kettles and two cups in hand. His face now beamed with a radiant smile, a stark contrast to the sorrowful state he was in earlier.
+
+"Drink it," he urged, extending one of the cups towards you. You accepted it, feeling the comforting warmth seep through your cold hand. As you observed its contents, a delightful aroma of herbal tea, cinnamon, and ginger wafted mildly from the cup.
+
+<<link "Pretend to drink it." "CH1-5">><<set $temp = 3; $pC.mp += 2; $pC.hn -= 2;$pC.tr -= 2; $pC.su += 2 >><</link>>
+<<link "Drink it." "CH1-5">><<set $temp = 1; $pC.tr += 2; $pC.su -= 2>><</link>>
+<<link "Don't." "CH1-5">> <<set $temp = 2; $pC.su += 2; $pC.tr -= 2>><</link>>
+<br>
+:: CH1-5
+<h2 style="text-align: right; text-decoration: underline; font-family: var(--cursive); color: #444; font-size: 2rem;">Chapter 1</h2>
+<<nobr>>
+<<if $temp === 1>>
+"Thanks," you said smiling politely, you drink the tea slowly, relishing the sweet taste of honey. 
+<<elseif $temp === 3>>
+"Thanks," You bring the cup to your mouth pretending to drink it.    
+<</if>>
+<</nobr>> He nodded amiably. 
+
+"How much do you remember, my dear?" The man stare at his cup with melancoly. He place his own cup on his hands without bringing it to his mouth.

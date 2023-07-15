@@ -20,7 +20,7 @@ Test
 	<a href="https://pixabay.com/id/sound-effects/search/battle/" target=”_blank”>Patreon</a>
 </div>
 <div class="bg-container">
-	<label for="toggleButton">BgImage</label>
+	<label for="toggleButton">NoBgImage</label>
 	<input type="checkbox" id="toggleButton">
 </div>
 <div class="dark-container">
@@ -30,6 +30,7 @@ Test
 </div>
 
 :: StoryInit
+<<set $bg = "src/images/smoke.png">>
 <<set $pC = {
 fname: "",
 Fname: "",
@@ -42,10 +43,13 @@ Hon1: "",
 emp: 50,
 sb: 50,
 pr: 50,
-cp: 50
+cp: 50,
+tr: 50,
+su: 50,
+mp: 50,
+hn: 50
 }>> 
-<<set $bold = 50, $shy = 50>>
-<<set $aggressive = 50, $passive = 50>>
+
 
 /*Enter your starting variables here */
 <<set $menu = true>> /*This is for the menu, you can remove if you want it toggled off when you start the game*/
@@ -75,7 +79,6 @@ Atobe : "",
 atobe : "",
 hon: "",
 Hon: ""}>>
-
 
 
 :: sidemenu

@@ -110,8 +110,8 @@ body {
   grid-row-gap: 5px;
   width: calc(75vw * 1.33);
   height: 95vh;
-  min-width: 90vw;
-  max-width: 90vw;
+  min-width: 100vw;
+  max-width: 100vw;
   margin: auto;
   position: absolute;
   top: 0;
@@ -143,7 +143,7 @@ body {
   color: rgb(218, 0, 0);
 }
 .navig a {
-  margin-left: 1.5rem;
+  padding-left: 1.5rem;
   color: #6a6779;
 }
 .macro-live {
@@ -353,8 +353,9 @@ hr {
 }
 /* Choice Div */
 .choice a {
-  color: rgb(255, 255, 255);
+  color: #444;
   text-shadow: none;
+  font-family: 'Germania';
 }
 .choice a:hover {
   color: rgb(105, 0, 0);
@@ -362,14 +363,15 @@ hr {
   letter-spacing: .1em;
 }
 .choice {
+  border-top: 1px solid #444;
   margin: auto;
-  width: 40%;
+  width: 80%;
   text-align: center;
   padding: .3%;
   /* background: url(./src/images/cover.jpg); */
-  background-color: #6a6779;
+  /* background-color: #6a6779;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 }
 /*--------------MACROS--------------*/
 /* Cycle */

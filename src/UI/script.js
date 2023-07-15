@@ -576,7 +576,9 @@ Setting.addToggle("fullscreen", {
 
 // Function to enable background image and modify styles
 function enableBackgroundImage() {
-  document.body.style.backgroundImage = 'url(src/images/smoke.png)';
+  const bg = State.getVar("$bg")
+  console.log(bg);
+  document.body.style.backgroundImage = `url(${bg})`;
   document.body.style.backgroundColor = 'transparent';
   document.querySelector('.cover').style.backgroundColor = 'var(--cover)';
   document.querySelector('.cover').style.backgroundImage = 'url("./src/images/cover.jpg")';
@@ -597,9 +599,9 @@ var toggleButton = document.getElementById('toggleButton');
 
 toggleButton.addEventListener('change', function() {
   if (toggleButton.checked) {
-      enableBackgroundImage();
+    disableBackgroundImage();
   } else {
-      disableBackgroundImage();
+      enableBackgroundImage();
   }
 });
 
@@ -645,18 +647,15 @@ $(document).on(":passagedisplay", function() {
 	var emphStat = State.getVar("$pC.em") + "%";
 	$("#emph-stat").attr("style", "width: " + emphStat);
 });
+$(document).on(":passagedisplay", function() {
+	$("#story").scrollTop(0);
+	var trustStat = State.getVar("$pC.tr") + "%";
+	$("#trust-stat").attr("style", "width: " + trustStat);
+});
+$(document).on(":passagedisplay", function() {
+	$("#story").scrollTop(0);
+	var honestStat = State.getVar("$pC.tr") + "%";
+	$("#-honeststat").attr("style", "width: " + honestStat);
+});
 
-// force fullscreen portrait mode on mobile
-function lock (orientation) {
-	if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.mozRequestFullScreen) {
-    document.documentElement.mozRequestFullScreen();
-  } else if (document.documentElement.webkitRequestFullscreen) {
-    document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) {
-    document.documentElement.msRequestFullscreen();
-  }
-	screen.orientation.lock(orientation);
-};
-// end force fullscreen
+console.log(State.getVar("$pC.tr"));
