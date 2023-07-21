@@ -1,0 +1,23 @@
+:: Player Page [noreturn]
+<style>#ui-dialog-body {
+  background: none;
+}</style>
+<div class="sysButton"><<button 'Stats'>>
+<<script>>
+Dialog.setup(`${State.getVar("$pC.FName")} Stats`);
+Dialog.wiki(Story.get("Player Stats").processText());
+Dialog.open();
+<</script>>
+<</button>></div> /* **************/
+
+:: Player Stats [noreturn]
+<style>#ui-dialog-body {
+  background: none;
+}</style>
+<<link 'Return to your Page'>>
+<<script>>
+Dialog.setup(`${State.getVar("$pC.FName")} Page`);
+Dialog.wiki(Story.get("Player Page").processText());
+Dialog.open();
+<</script>>
+<</link>> /* **************/

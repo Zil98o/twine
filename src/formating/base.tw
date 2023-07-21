@@ -1,0 +1,152 @@
+:: StoryTitle
+Template
+
+
+:: StoryData
+{
+ "ifid": "134FC30F-0989-466D-A3BE-29A21481B35D",
+	"format": "SugarCube",
+	"format-version": "2.31.1",
+	"start": "story start",
+	"tag-colors": {
+		"change": "yellow",
+		"maybe-don't-change": "red",
+		"no-touch": "red"
+	},
+	"zoom": 1
+}
+
+:: StoryInit
+<<cacheaudio "link_click" "./src/audio/sfx/click.mp3">>
+<<cacheaudio "link_hover" "./src/audio/sfx/hover.mp3">>
+<<cacheaudio "ui" "./src/audio/sfx/ui.mp3">>
+<<cacheaudio "breath" "./src/audio/sfx/breath.mp3">>
+<<set $skinColor = ["fair", "olive", "tan", "dark"]>>
+<<set $hairColor = ["black", "brown", "blonde", "red", "gray"]>>
+<<set $bg = "src/images/smoke.png">>
+<<set $pC = {
+fname: "",
+FNAME: "",
+FName: "",
+lname: "",
+Lname: "",
+sktone: "",
+hairc: "",
+hon: "",
+Hon: "",
+hon1: "",
+Hon1: "",
+emp: 50,
+sb: 50,
+pr: 50,
+cp: 50,
+tr: 50,
+su: 50,
+mp: 50,
+hn: 50
+}>> 
+
+:: StoryInterface [maybe-don't-change] 
+<!-- SIDEBAR -->
+
+<div id="sidebar">
+  <div class="sidebar-header">
+		<!-- EMPTY DIV -->
+	  <div></div>
+	  
+	  <!-- NAME OF YOUR GAME -->
+	  <h1 class="story-title" data-passage="gameTitle"></h1>
+	  
+	  <!-- MENU TOGGLE ICON -->
+	  <div class="sidebar-toggle">
+	 	 <span id="sidebar-toggle-icon" class="lnr lnr-eye"></span>
+	  </div>
+  	</div>
+	
+<!-- HISTORY BUTTONS THAT ALLOW USER TO GO BACKWARDS AND FORWARDS -->
+<!-- COMMENT THESE OUT IF YOU DON'T WANT THEM IN YOUR GAME 
+  <div class="sidebar-history-nav">
+	  <span id="backwards-button" class="lnr lnr-arrow-left"></span>
+	  <span id="forwards-button" class="lnr lnr-arrow-right"></span>
+  </div>-->
+
+	<div id="sidebar-body">
+	
+	  <!-- GAME LOGO IMAGE -->
+	  <div class="story-logo" data-passage="storyLogo"></div>
+	  
+	  <!-- AUTHOR NAME -->
+	  <h2 class="story-author" data-passage="storyAuthor"></h2>
+
+	<nav class="sidebar-nav">
+	  <ul class="story-tools">
+		<li class="story-tools-list">
+		<span id="restart-button" class="lnr lnr-redo"></span>
+		<span class="tooltiptext">Restart</span>
+		</li>
+		<li class="story-tools-list">
+		<span id="saves-button" class="lnr lnr-download"></span>
+		<span class="tooltiptext">Saves</span>
+		</li>
+		<li class="story-tools-list">
+		<span id="settings-button" class="lnr lnr-cog"></span>
+		<span class="tooltiptext">Settings</span>
+		</li>
+	  </ul>
+	</nav>
+
+	
+  </div> <!-- SIDEBAR-BODY END TAG -->
+</div> <!-- SIDEBAR END TAG -->
+  
+ <div id="story" role="main">
+  <div id="passages">
+  <div id="passage-start" data-passage="start" class="passage">
+
+  </div>
+  </div>
+</div>
+
+
+:: gameTitle [change] 
+Game Title
+
+
+:: storyLogo [change] 
+<a href="https://tumblr.com/yourblog" target="_blank">
+<img src="images/logo.png">
+</a>
+
+:: Credits
+This is hopefully would be populated by my supporters name, print{🗿 x1,043}
+🗿 <<link 'Example A'>>
+<<script>>
+Dialog.setup(`Thanks A`);
+Dialog.wiki(Story.get("Thanks A").processText());
+Dialog.open();
+<</script>>
+<</link>>
+
+Assets I am using:
+- <a style="color: var(--main);" href="https://vahnya.itch.io/twine-template" target="_blank">Vanya's Sugarcube Template</a> 
+- <a style="color: var(--main);" href="https://pixabay.com" target="_blank">Music & SFX effect</a>
+- <a style="color: var(--main);" href="https://logo.com" target="_blank">Logo</a>
+
+<b style="background-color: green; padding: 2px; font-family: 'Vollkorn, serif';">The arts are currently AI-generated, as it's just me working on the project, and you don't want to see my attempt of drawing,believe me! Let's just cross fingers I will replace them when I'm able to afford real artist commissions.</b>
+
+:: storyAuthor [change] 
+by <a href="https://tumblr.com/yourblog" target="_blank">Name</a> | <<link "Credits">><<script>>
+			Dialog.setup("Credits: About This Tale");
+			Dialog.wiki(Story.get("Credits").processText());
+			Dialog.open();
+		<</script>><</link>>
+
+:: PassageFooter [noreturn]
+<div class="systemButton"><<button '<span id="player-toggle-icon" class="lnr lnr-user"></span>'>>
+<<script>>
+Dialog.setup(`${State.getVar("$pC.FName")} Page`);
+Dialog.wiki(Story.get("Player Page").processText());
+Dialog.open();
+<</script>>
+<</button>></div> /* **************/
+

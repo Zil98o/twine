@@ -1,0 +1,14 @@
+:: Thanks A 
+<style>#ui-dialog-body {
+  background: none;
+}</style>
+<img style="max-width: 50%;   display: block;  margin-left: auto; margin-right: auto;" src="./images/patreona.png"/>
+Who's A? Why my very first Patron, that's who! In honor of A, any of you curious enough to look at the credits gets to know a little bit about this amazing person.  Everyone say, "THANK YOU, A!"
+
+<<link 'Go back to Credits'>>
+<<script>>
+Dialog.setup(`Credits`);
+Dialog.wiki(Story.get("Credits").processText());
+Dialog.open();
+<</script>>
+<</link>>

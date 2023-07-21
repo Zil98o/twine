@@ -1,0 +1,827 @@
+:root {
+    --light-main: #f8d8c9;
+    --light-contrast: #c3c0b4;
+    --contrast: #504848;
+    --dark-contrast: #646e55;
+    --main: #8b0000; /* Deep red */
+    --dark-main: #6b0000; /* Slightly darker shade of deep red */
+    --darker-main: #4c0000; /* Even darker shade of deep red */
+    --dark: #000000;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  *:hover {
+    transition: all 0.3s ease;
+  }
+  
+  @font-face {
+    font-family: "Social Media Circled";
+    src: url(fonts/Social-Media-Circled.otf);
+  }
+  @font-face {
+    font-family: "Neothic";
+    src: url(fonts/Neothic.ttf);
+  }
+  @font-face {
+    font-family: "Dyslexic";
+    src: url(fonts/OpenDyslexic-Regular.otf) format("opentype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Dyslexic";
+    src: url(fonts/OpenDyslexic-Italic.otf) format("opentype");
+    font-style: italic;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Dyslexic";
+    src: url(fonts/OpenDyslexic-BoldItalic.otf) format("oopentypet");
+    font-style: italic;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Dyslexic";
+    src: url(fonts/OpenDyslexic-Bold.otf) format("opentype");
+    font-style: normal;
+    font-weight: 700;
+  }
+  body {
+    margin: 0;
+    color: #111;
+    background-color: white;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  @font-face {
+    font-family: 'Vollkorn';
+    src: url('fonts/Vollkorn-Regular.eot');
+    src: url('fonts/Vollkorn-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vollkorn-Regular.woff2') format('woff2'),
+        url('fonts/Vollkorn-Regular.woff') format('woff'),
+        url('fonts/Vollkorn-Regular.svg#Vollkorn-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('fonts/Vollkorn-Italic.eot');
+    src: url('fonts/Vollkorn-Italic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vollkorn-Italic.woff2') format('woff2'),
+        url('fonts/Vollkorn-Italic.woff') format('woff'),
+        url('fonts/Vollkorn-Italic.svg#Vollkorn-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('fonts/Vollkorn-Bold.eot');
+    src: url('fonts/Vollkorn-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vollkorn-Bold.woff2') format('woff2'),
+        url('fonts/Vollkorn-Bold.woff') format('woff'),
+        url('fonts/Vollkorn-Bold.svg#Vollkorn-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('fonts/Vollkorn-BoldItalic.eot');
+    src: url('fonts/Vollkorn-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vollkorn-BoldItalic.woff2') format('woff2'),
+        url('fonts/Vollkorn-BoldItalic.woff') format('woff'),
+        url('fonts/Vollkorn-BoldItalic.svg#Vollkorn-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+  
+  a, a:hover, a:link, a:visited, a:active {
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  #story {
+    margin-top: 70px;
+    padding: 30px;
+    line-height: 1.5;
+    overflow: scroll;
+  }
+  #story h1 {
+    font-family: "Neothic", serif;
+    color: var(--main);
+    margin-bottom: 0;
+    font-size: smaller;
+  }
+  #story h2 {
+    font-family: "Neothic", serif;
+    color: var(--contrast);
+    margin-top: 0;
+  }
+  #story h3 {
+    color: var(--dark-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+  }
+  #story hr::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--light-main);
+    margin: 0 auto 15px;
+  }
+  #story hr {
+    border: 0;
+  }
+  #story ul {
+    list-style-type: none;
+    padding: 0 10px;
+  }
+  #story ul li {
+    border-left: 5px solid var(--contrast);
+    padding-left: 15px;
+    margin: 5px 0;
+  }
+  #story .link-internal, #story .link-internal:visited {
+    color: var(--main);
+    margin: 10px 0;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+  }
+  #story .link-internal.macro-button {
+    width: 100%;
+    padding: 12px 0 13px;
+    background-color: var(--dark-main);
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border: none;
+    transition: 0.3s ease-in-out;
+    margin: 20px 0;
+  }
+  #story .macro-cycle {
+    color: var(--contrast);
+    font-style: italic;
+  }
+  #story .macro-cycle:hover {
+    color: var(--main);
+  }
+  #story .macro-listbox {
+    background-color: var(--main);
+    color: white;
+    border-color: var(--light-main);
+    padding: 5px;
+  }
+  #story .macro-textarea {
+    border-color: var(--light-main);
+    background-color: var(--main);
+    color: white;
+    resize: none;
+    padding: 5px;
+  }
+  #story .macro-textbox {
+    background-color: var(--main);
+    border: 1px solid var(--light-main);
+    color: white;
+    padding: 5px;
+  }
+  
+  #passages {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: "Dyslexic";
+  }
+  #sidebar {
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    left: 0;
+    background-color: black !important; 
+    background: url('./images/ui.png');
+    background-size: 82%;
+    background-position-x: left;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity;
+    color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 70px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar-header div {
+    width: 15%;
+  }
+  .sidebar-header .story-title {
+    width: 70%;
+    font-size: 1rem;
+    color: var(--darker-main);
+    text-shadow: 1px 1px #e05a00;
+    text-align: center;
+    font-family: "Vollkorn", serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
+  .sidebar-header .sidebar-toggle {
+    width: 15%;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  #sidebar-body {
+    padding: 20px;
+    display: none;
+  }
+  #sidebar-body .story-logo {
+    text-align: center;
+  }
+  #sidebar-body .story-logo img {
+    filter: grayscale(100%);
+    max-width: 60%;
+  }
+  #sidebar-body .story-author {
+    margin: 2vh 0;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
+  }
+  #sidebar-body .story-author a {
+    color: whitesmoke;
+    border-bottom: 1px solid white;
+    padding-bottom: 4px;
+  }
+  #sidebar-body .story-author a:visited {
+    text-transform: none;
+  }
+  .sidebar-history-nav {
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar-history-nav span {
+    background-color: var(--darker-main);
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    padding: 0.75rem 0 0 0.75rem;
+    border-radius: 50%;
+  }
+  
+  .story-menu {
+    margin: 7vh 0;
+    list-style-type: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+  }
+  .story-menu li {
+    margin: 10px 0;
+    border-left: 5px solid var(--darker-main);
+    padding-left: 15px;
+  }
+  .story-menu li a, .story-menu li a:visited {
+    color: var(--main);
+    font-family: "Dyslexic";
+    text-shadow: 1px 2px #e05a00;;
+    font-style: italic;
+    font-weight: 900;
+  }
+  
+  .story-tools {
+    margin: 8vh 20px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 20px;
+  }
+  .story-tools-list span {
+    text-shadow: 2px 2px #e05a00;
+  }
+  .story-tools li {
+    cursor: pointer;
+    position: relative;
+    color: white;
+    margin: 0 7px;
+    background-color: var(--darker-main);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0.6rem 0 0 0.65rem;
+  }
+  .story-tools li .tooltiptext::before {
+    visibility: hidden;
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 42%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    transition: all 0;
+  }
+  .story-tools li .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    left: -1.3rem;
+    top: 125%;
+    background-color: white;
+    color: var(--dark);
+    text-align: center;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 5.1rem;
+    border-radius: 10px;
+    padding: 0.5rem 0.4rem 0.4rem;
+  }
+  
+  #social-media p {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  #social-media ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+    font-family: "Social Media Circled";
+    font-size: 30px;
+  }
+  #social-media ul li {
+    margin: 0 5px;
+  }
+  #social-media ul li a {
+    color: var(--darker-main);
+  }
+  
+  #sidebar.toggled {
+    height: 100vh;
+  }
+  
+  #sidebar.toggled #sidebar-body {
+    display: block;
+  }
+  
+  #ui-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: url("./images/tile.png");
+    background-size: contain;
+    background-position: center;
+    z-index: 3;
+    overflow: hidden;
+  }
+  #ui-dialog {
+    max-width: 900px;
+    overflow-y:auto;
+    z-index:9999;
+  }
+  #ui-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    z-index: 4;
+    background-color: white;
+    padding: 15px;
+    margin: -16px 0 0 -16px;
+    z-index:9999;
+  }
+  #ui-dialog select {
+    background-color: var(--main);
+    padding: 7px;
+    color: white;
+    border: var(--light-main);
+    font-size: 1rem;
+  }
+  
+  #ui-dialog-titlebar {
+    background-color: white;
+    position: relative;
+    padding: 30px 20px;
+  }
+  #ui-dialog-titlebar h1 {
+    font-family: "Neothic", serif;
+    text-transform: uppercase;
+    color: var(--main);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  #ui-dialog-close:hover {
+    background-color: var(--main) !important;
+    transform: scale(1.5);
+  }
+  #ui-dialog-close {
+    position: absolute;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    border: none;
+    color: var(--dark-main);
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+  }
+  
+  #ui-dialog-body {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: 20px 0;
+    border: none;
+    color: #111;
+    background: url("./images/body.png");
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 22%;
+    background-color: white;
+  }
+  #ui-dialog-body button {
+    background-color: var(--main);
+    border: none;
+    color: white;
+    padding: 12px 0;
+    width: 100%;
+  }
+  #ui-dialog-body button:hover {
+    background-color: var(--dark-contrast);
+  }
+  #ui-dialog-body ul.buttons {
+    list-style-type: none;
+    padding: 0;
+    margin: 3vh 0 2vh;
+  }
+  #ui-dialog-body ul.buttons li {
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+  }
+  #ui-dialog-body ul.buttons button {
+    background-color: var(--main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+  }
+  #ui-dialog-body ul.buttons button:hover {
+    background-color: var(--dark-contrast);
+  }
+  #ui-dialog-body ul.buttons > li + li > button {
+    margin-left: 0;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #passages {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  
+    #sidebar-body .story-logo img {
+      max-width: 450px;
+    }
+  
+    #sidebar.toggled #sidebar-body {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    #ui-dialog {
+      max-width: 900px;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    #sidebar {
+      width: 400px;
+      height: 100vh;
+      transition: margin-left 0.3s;
+    }
+  
+    .sidebar-header .sidebar-toggle span {
+      transition: 0.3s ease-in-out;
+    }
+  
+    .sidebar-header .sidebar-toggle span:hover {
+      cursor: pointer;
+      color: var(--dark-contrast) !important;
+      text-shadow: 2px 2px #6b0000;
+      font-size: 31px;
+    }
+  
+    .sidebar-history-nav span:hover {
+      background-color: var(--dark);
+    }
+  
+    #sidebar-body {
+      display: block;
+      padding: 0 50px 0;
+    }
+  
+    #sidebar-body .story-logo {
+      cursor: pointer;
+    }
+  
+    #sidebar-body .story-logo img:hover {
+      transform: scale(1.1);
+    }
+  
+    #sidebar-body .story-logo img {
+      max-width: 75%;
+      transition: 0.3s ease-in-out;
+    }
+  
+    #sidebar-body .story-author a:hover {
+      color: var(--main);
+      letter-spacing: 3px;
+    }
+  
+    .story-tools li {
+      transition: none;
+    }
+  
+    .story-tools li:hover {
+      background-color: var(--dark);
+      color: white;
+    }
+  
+    .story-tools li:hover .tooltiptext, .story-tools li:hover .tooltiptext::before {
+      visibility: visible;
+    }
+  
+    .story-menu li:hover {
+      border-color: var(--darker-main);
+    }
+  
+    .story-menu li:hover a {
+      color: var(--darker-main);
+    }
+  
+    #social-media ul li a:hover {
+      color: var(--dark);
+    }
+  
+    #sidebar.toggled {
+      margin-left: -343px;
+    }
+  
+    #sidebar.toggled ~ #story {
+      padding-left: 30px;
+    }
+  
+    #story {
+      padding: 4vh 4vw 4vh 440px;
+      margin: 0;
+    }
+  
+    #story .link-internal:hover {
+      color: var(--contrast);
+    }
+  
+    #story .link-internal.macro-button:hover {
+      background-color: var(--contrast);
+      letter-spacing: 3px;
+      color: white;
+    }
+  
+    #passages {
+      max-width: 900px;
+    }
+  
+    #ui-dialog-close:hover {
+      color: var(--contrast);
+      background-color: transparent;
+      border: none;
+    }
+  }
+  html.dark body {
+    background-color: var(--dark);
+    color: white;
+  }
+  html.dark #sidebar {
+    background-color: var(--dark-main);
+  }
+  html.dark #sidebar-body .story-author a {
+    border-color: var(--dark);
+  }
+  html.dark .story-tools li {
+    background-color: var(--main);
+    color: white;
+  }
+  html.dark #social-media li a {
+    color: var(--dark);
+  }
+  html.dark #story h3 {
+    color: var(--light-main);
+  }
+  html.dark #story hr::before {
+    background-color: var(--contrast);
+  }
+  html.dark #story ul li {
+    border-left-color: var(--main);
+  }
+  html.dark #story .link-internal, html.dark #story .link-internal:visited {
+    color: var(--dark-main);
+  }
+  html.dark #story .link-internal.macro-button {
+    color: white;
+  }
+  html.dark #ui-overlay {
+    background-color: var(--dark);
+  }
+  html.dark #ui-dialog {
+    background-color: black;
+  }
+  html.dark #ui-dialog-titlebar {
+    background-color: var(--dark);
+  }
+  html.dark #ui-dialog-titlebar h1 {
+    color: var(--light-main);
+  }
+  html.dark #ui-dialog-close {
+    color: var(--light-main);
+  }
+  html.dark #ui-dialog-body {
+    background-color: var(--dark);
+    color: var(--light-main);
+  }
+  html.dark #ui-dialog-body button {
+    background-color: var(--main);
+    color: var(--light-main);
+  }
+  
+  @media only screen and (min-width: 1000px) {
+    html.dark .sidebar-header .sidebar-toggle span:hover {
+      color: var(--dark);
+    }
+    html.dark #sidebar-body .story-author a:hover {
+      color: var(--main);
+      border-color: var(--light-main);
+    }
+    html.dark .story-tools li:hover {
+      background-color: var(--darker-main);
+    }
+    html.dark .story-tools .tooltiptext {
+      color: var(--dark);
+    }
+    html.dark .story-menu li:hover {
+      border-color: var(--darker-main);
+    }
+    html.dark .story-menu li:hover a {
+      color: var(--darker-main);
+    }
+    html.dark #social-media li a:hover {
+      color: white;
+    }
+    html.dark #story .link-internal:hover {
+      color: var(--main);
+    }
+    html.dark #story .link-internal.macro-button:hover {
+      background-color: var(--dark-contrast);
+      color: white;
+    }
+    html.dark #story .macro-cycle {
+      color: var(--main);
+      font-style: italic;
+    }
+    html.dark #story .macro-cycle:hover {
+      color: var(--contrast);
+    }
+    html.dark #ui-dialog-close:hover {
+      color: var(--contrast);
+    }
+    html.dark #ui-dialog-body button:hover {
+      background-color: var(--darker-main);
+    }
+  }
+  
+
+
+
+
+#ui-dialog-body.settings button[id|=setting-control] {
+  background-color: var(--main);
+}
+.clmain {
+  color: var(--main);
+  }
+html::-webkit-scrollbar{
+  display: none;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+html {
+  -ms-overflow-style: none;
+}
+html {
+  scrollbar-width: none;
+}
+
+
+.choice a {
+  color: #800000;
+  text-shadow: none;
+  font-family: 'Germania';
+}
+.choice a:hover {
+  color: rgb(105, 0, 0);
+  font-style: normal;
+  letter-spacing: .1em;
+}
+.choice {
+  border-top: 1px solid #800000;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  padding: .3%;
+  /* background: url(./src/images/cover.jpg); */
+  /* background-color: #6a6779;
+  background-size: cover;
+  background-position: center; */
+}
+input[type="text"] {
+  min-width: 10em;
+  max-width: 10em;
+}
+
+.systemButton {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+}
+
+.systemButton button:hover{
+  border-radius: 10px;
+  text-shadow: 2px 2px #e05a00;
+  background-color: var(--darker-main);
+}
+.header-container {
+  display: flex;
+  background-color: rgb(102, 53, 53);
+  justify-content: space-around;
+}
+.header-container a {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(255, 0, 0);
+}
+.header-container a:hover {
+  color: red;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255);
+}
+#player-toggle-icon {
+  font-size: 21px;
+}
+
+#ui-dialog::-webkit-scrollbar {
+display: none;
+}
+#ui-dialog {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-left: 5px solid var(--main);
+  border-top: 15px double var(--main);
+  border-right: 5px solid var(--main);
+  border-bottom: 15px double var(--main);
+  margin-top: 12px;
+  padding: 0;
+}
+a {
+  color: var(--main);
+}
+a:hover {
+  color: var(--dark-main);
+}

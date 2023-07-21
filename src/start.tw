@@ -1,0 +1,158 @@
+:: story start
+There's not a whole lot I can remember, but at least I remember my name.
+
+<<textbox "$pC.fname" "">>
+
+<<button "Continue">>
+	<<set $pC.inputFirstName = $pC.fname.trim().split(' ')[0]>> // Extract the first part before any space
+	<<set $pC.fname = $pC.inputFirstName.toLowerCase()>> // Convert the first name to lowercase
+	<<set $pC.FNAME = $pC.fname.toUpperCase()>>
+	<<set $pC.FName = $pC.fname.charAt(0).toUpperCase() + $pC.fname.slice(1)>>
+	
+	<<if $pC.fname === ''>> // Check for empty first name
+		<<replace "#input-error">>Please enter a valid first name. The input cannot be empty or contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<elseif $pC.inputFirstName.length < 3 or $pC.inputFirstName.length > 10 or /[^\p{L}'\s]/u.test($pC.inputFirstName)>>
+		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<elseif /[\u{1F300}-\u{1F6FF}]/u.test($pC.inputFirstName)>>
+		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<else>>
+		<<goto "Prologue">>
+	<</if>>
+<</button>>
+
+@@#input-error;@@
+:: Prologue
+<<fadein 3s>>
+!Prologue
+!!Labor Camp
+The creaking sound of the wheel and the loud footstep boots jolt me awake. Disoriented and half-asleep, I scramble to my feet, my gaze fixed downward. <i class="clmain">’Don't look, eyes down‘</i> I repeat in my head like a mantra of ritual. Suddenly, a rough hands slowly grab my shoulder, ushering me from the front to the back of the line.
+
+A small smile escapes my lips as the person gently pat my head, offering me a silent comfort. Though I can't see much from the back of the line with my small height, I can sense what's happening up front. The guards, with their dark eyes and hardened faces, carefully observe every interaction and movement we have.
+
+The guards were distinguished by their uniform, consisting of a simple knee-length tunic made of vibrant red linen. Adorning their chest was a distinctive pale cuirass, meticulously crafted from laminated linen glued together and reinforced with gleaming metal plates that supposed to symbolize their honor position.
+
+“Form a single line, it's feeding time,” the guards command. We hurry into position, and when it's my turn, I collect my bowl with a portion of food and immediately scurry away. One particular guard's stare always sends a shiver down my spine. His quick smile sets him apart from the rest, but there's something twisted behind his eyes that I'd rather not encounter firsthand.
+
+I retreat to a quiet corner to eat the soup, finding solace in my solitude. The taste isn't remarkable, but it's not terrible either. Just a simple blend of lentils with green vegetables and herbs, at least it adequately fills my growling stomach.
+
+A man with an embarrassed smile approaches me, making an open gesture with his hand. I'm not quite sure of what he wants.
+
+<<link "Open your hand." "Prologue-1">> <<set $temp = 1>> <</link>>
+<<link "Just watch him silently." "Prologue-1">> <<set $temp = 2>> <</link>>
+<</fadein>>
+
+:: Prologue-1 
+<<if $temp === 1>>
+I open my hand curiously, and the man slowly brings his other hand toward mine. He places something on my palm, and as I look closer, I realize it's a sweet. It seems that in my hurry, I had forgotten to take it earlier.
+<<elseif $temp === 2>>
+I watch the man silently, unsure of what he wants. Realizing my confusion, he scratches the back of his head and smiles. Slowly, he raises my right hand, before stopping and gauging my reaction. I remain expressionless. He opens my palm and places something on it—a sweet. It appears that in my haste, I had forgotten to take it earlier.
+<</if>>
+I smiled gratefully at him before he took his leave. In this labor camp, we were mostly not allowed to communicate with each other outside of work. The guards made sure we all understood that rule when they made an example of some poor people in our group who showed even the tiniest defiance in the early days of our captivity.
+
+That's one of the memory I want to forget despite I'm already forgetting so much. Their sound of agony and abrupt silence soon after still haunt my dream some night when I lie in the hard and cold surface of the floor. I'm almost certain and swear I can see their lingering shadows after that event, my head and soul throbbed painfully from that peculiar experience. 
+
+I don't remember much of who I am and what happens before all of this. How do I feel about that?
+
+<<link "Sad, I'm awake and suddenly place in hell." "Prologue-2">> <<set $temp = 1>> <</link>>
+<<link "I don't know how I feel about that, it just numb me inside" "Prologue-2">> <<set $temp = 2>> <</link>>
+<<link "It's for the best, I can easily move forward without dwelling in the past" "Prologue-2">> <<set $temp = 3>> <</link>>
+
+:: Prologue-2 
+<<if $temp === 1>>
+I feel a deep sadness about my current situation, as well as the loss of my memories. The thought of losing something I can't even remember makes me want to curl up and hide, but I know that the world wouldn't even allow me that.
+<<elseif $temp === 2>>
+I'm unsure of how to feel about it. Should I be saddened by the vague memories that linger, or should I be grateful for being able to cast them aside? What I know for certain, it always leaves me feeling drained, both physically and emotionally, whenever I contemplate it in my thought.
+<<elseif $temp === 3 >>
+I believe it's a small mercy for me. Having a beautiful memory would only torment me, as I would constantly long for something I can't have while neglecting to move forward. Besides, who's to say that the memories I've lost were even beautiful? What if all my memories were always filled with pain and suffering? I would accept any fragment of my past, even if it leaves me with questions, that the answer I can't have.
+<</if>>
+After our meal, the labor promptly began. The senior miners gathered in hushed clusters, discussing the strategies and plans for today's excavation. These conversations were informal in nature, conducted under the ever-watchful guards stationed in the background.
+
+The tunnel within the cave strecth wide in 33 feet in width and 20 feet in height, it's not arguably above average-sized mining site. Our primary focus was on extracting Etherstone, although occasionally we stumbled upon valuable red Crystalithium that the Empire always love. The size of this particular tunnel meant that trapped doors were less necessary for ventilation systems.
+
+To combat the dark and damp environment that enveloped us, caged canaries adorned the tunnel. Their beautiful melodies provided a small solace amidst the gloom atmosphere of the tunnel, but their significance went beyond their enchanting voices. These feathered creatures possessed a heightened sense of smell, far more sensitive than that of a human.
+
+I like to imagine the canaries as our guardians, they keep track of the silent killers lurking within the shadows: poisonous gases. Devoid of sound and scent, gases on the mine possess the terrifying ability to extinguish the life of healthy men within a matter of minutes or even seconds. The canaries' assistance in detecting the gasses then becomes invaluable and crucial.
+
+<div class="choice"><<link "Go to your post." "Prologue-3">><</link>> </div>
+
+:: Prologue-3
+I make my way to my post, readying myself for the day ahead. There, I find a small basin of water that I've been saving from the nearby river, I pour the cold water over my face, feeling its refreshing touch against my skin. Taking a gulp, I savor the relief it brings, quenching my parched throat. The long hours of mining have taken a toll on my once-<<nobr>><<cycle "$pC.sktone">>
+<<optionsfrom $skinColor>><</cycle>><</nobr>> complexion, now hidden beneath layers of dust and grime. Even my <<nobr>><<cycle "$pC.hairc">>
+<<optionsfrom $hairColor>><</cycle>><</nobr>> hair seems lackluster as I catch a glimpse of my reflection in the water. Hastily, I secure a worn-out cloth over my face for protection against the dusty environment.  
+
+A teasing voice interrupts my thoughts, coming from behind. I turn to see Ariel, one of the few children who, like me, has been thrown into this labor camp. And where there's Ariel, Mikael is never far behind.
+
+“Admiring yourself, $pC.FName?” Ariel jests, his voice filled with mischievousness. He saunters over to me, hooking his left arm around my neck in a playful gesture. His hands are adorned with a bracelet made by the now worn out rope, he admitted it was a gift from his little sister back home.
+
+“Let's see if I'm still as gorgeous as I remember,” he grins wide, purposefully revealing his missing teeth.
+
+“Gorgeous? More like a gorgeoyle,” Mikael interjects, crossing their arms in a scornful manner. Despite being the same age as Ariel and me, Mikael is noticeably taller, I don't remember my age when they ask me personally, but they both agree based on my appearance that most probably I'm just 13 or 14 years old. Same as them when we first meet here.
+
+“Don't get too smart when you can barely pronounce the word, Mikael,” Ariel retorts, sticking out his tongue playfully.
+
+<<link "Explain to Ariel that Mikael purposely misled the word as the joke." "Prologue-4">> <<set $temp = 1>> <</link>>
+<<link "Just smile and wave." "Prologue-4">> <<set $temp = 2>> <</link>>
+<<link "Remind them both not to get too loud." "Prologue-4">> <<set $temp = 3>> <</link>>
+
+:: Prologue-4
+<<if $temp === 1>>
+“You do realize Mikael intentionally twisted the word as a joke, right, Ariel?” I teased back, raising my hand and motioning towards Mikael.
+
+“Eh, really? There's no way,” Ariel replied in disbelief, finally connecting the dots.
+
+Mikael harrumphed, clearly uninterested in further educating or teasing Ariel.
+
+“Whatever, who care about that fool opinion anyway.” Ariel said shrugging off his covered bracelet hand from my neck.
+<<elseif $temp === 2>>
+I couldn't help but smile silently at both of them, my gaze shifting to Mikael who stood across from me and Ariel. I waved to Mikael, appreciating their presence and feeling content just from observing them in their usual banter. Ariel grip my neck close with his covered bracelet hand, smiling wide without a care.
+<<elseif $temp === 3 >>
+“Mind your voices, guys. Remember the guards,” I reminded both of them, cautioning against going too far with their chatter and banter.
+
+Ariel rolled his eyes slightly, his covered bracelet hand then move patting his dusty clothes not so carefully, a gesture I understood all too well. Mikael quickly glanced around, ensuring that no guards were personally paying attention to our conversation.
+<</if>>
+After our brief chat, we set off to begin our work. My assigned task is to haul up small pebbles and push them outside using a trolley—a simple yet monotonous job. I keep maintaining a steady pace, it's important because once the work starts, there will be no respite until come midday. Given the demanding nature of mining labor, one might be tempted to take it easy, but that would prove to be a grave mistake. The guards would not hesitate to unleash their whips upon anyone they deem as slackers under their watch.
+
+It doesn't stop there either. The guards have devised an absurd scheme: if more than one miner is labeled as slacking during working hours, the entire miners in camp will be punished by having their rations withheld for the remaining day. The names of these so-called slackers would then be shamefully announced. It's a pathetic manipulative ploy, but in the weary and famished state, it then becomes easier to lay blame on our fellow miners for their perceived laziness. 
+
+Accusing others feels safer than confronting the guards' oppressive presence. The guards have orchestrated an environment of mistrust, pitting us against one another.
+
+Amidst the monotonous work at hand, my mind often drifts far away. I find myself daydreaming, imagining another life and pondering questions for which I have no answers. Anything seems more acceptable than focusing on this draining and unrewarding work. Dust now covers my entire body as I heave another pebble onto the trolley and push it, causing the wheels to turn perpetually. Sweat glistens on my skin, yet I don't bother to wipe it off, knowing it will soon be soaked again.
+
+<<link "Humms some melody." "Prologue-5">><</link>>
+<<link "Humms some melody." "Prologue-5">><</link>>
+<<link "Humms some melody." "Prologue-5">><</link>>
+
+:: Prologue-5
+As I work, a sad melody escaped my lips accompanied by the chirping noise of the canaries, the sound echoed in the stale air of the cave, it was a tune that buried deep within the recesses of my memory. Though I couldn't recall its origin or the significance it held for me, its haunting notes provided a brief escape from the toil that surrounded me.
+
+Engrossed in the melody, my attention waned, and I neglected to observe closely to the trolley trudging along the rugged terrain. The air filled with swirling dust, hindering my sight, while the subtle misalignment of the wheel slipped under my lacked of notice.
+
+Suddenly, it happened—the trolley's wheel jolted, its wooden rim catching on a sharp, uneven rock. Panic surged within me as the trolley abruptly came to a halt, refusing to move an inch. The labor camp was a place where attracting the guards' attention was the last thing anyone wanted, and a stuck trolley or any other action falling into the category of 'incompetence' was a surefire way to do just that.
+
+Frantically, I pushed, my muscles straining with the effort I put myself into. But no matter how hard I pushed, the wheel remained stubbornly wedged, unwilling to move. Desperation welled up within me. I glanced around, my heart pounding, searching for a solution, for any way to free the trolley quickly.
+
+I almost lost it when Ariel suddenly appeared by my side. His eyes met mine, amusement filled his eyes. With a faint smile, he positioned himself next to me, his agile frame bracing against the weight of the trolley. Together, we leaned into it, our combined strength propelling the trolley forward.
+
+“The wheel, huh? Why it can't just roll itself up,” Ariel said, breaking the silence.
+
+“I don't know, because it doesn't want to tire itself down?” I questions back, smiling a little bit.
+
+Ariel snickered, “Wait, that's fair. Here,” he said, while sneakily put something in my pouch.
+
+“It has been too long, I personally glad I was done with it, although I do learn so much from Mr.Mendelson. Take it to your dorm captain as soon as possible,” Ariel whispered softly.  “Mr. Mendelson predict that our dorm will soon be under close watch, we won't be able to help further. Must maintain a low profile for now.”
+
+I nodded eagerly, fully grasping the significance of the task at hand. “I will ensure it reaches Mx. Haywood safely.”
+
+The camp was divided into several dormitories, strategically designed to prevent the formation of close bonds and unity among the miners. Each dormitory housed a specific group of individuals, carefully selected by the guards to minimize communication and discourage any form of collective action.
+
+The guards understood that our strength lay in our ability to organize and resist together. By separating us into small, isolated groups, the guards hoped to keep maintain and weaken our spirits, keeping us submissive. Adult miners interaction especially with others from another dorm would raise too much suspicion among the watchful eyes of the guards.
+
+That's why the few children that are inside the camp like me, Ariel and Mikael needed to act as messengers between the different dormitories. The guards paid less attention to the children, assuming we were harmless and posed no threat to them.
+
+What do I think about that?
+
+<<link "They can keep thinking like that, soon we will show them." "Prologue-6">><</link>>
+<<link "It's true we can't do much all alone, but all that live always have a role to play." "Prologue-6">><</link>>
+<<link "I just know we can't just keep walking to our ruin and not do something about it." "Prologue-6">><</link>>
+
+:: Prologue-6
