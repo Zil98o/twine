@@ -721,3 +721,9 @@ function lock(orientation) {
   
   screen.orientation.lock(orientation);
 }
+
+$document.ready(function(){
+  $('input').each(function(){
+    $this.focus()
+  })
+})
