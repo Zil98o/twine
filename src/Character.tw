@@ -27,7 +27,7 @@ What is the gender the baby is gifted upon their birth?<center>
 <style>#ui-dialog-body {background: none}</style>
 What name do they call the $pC.ygender?
 <div style="display:flex; align-items: center; gap:5px;">
-<<textbox "$pC.fname" "">> <<link '<div style="display:inline;" class="co"><img style="width:50px;" src="./images/logo.png"/></div>'>> 
+<<textbox "$pC.fname" "" autofocus>> <<link '<div style="display:inline;" class="co"><img style="width:50px;" src="./images/logo.png"/></div>'>> 
 	<<set $pC.inputFirstName = $pC.fname.trim().split(' ')[0]>> // Extract the first part before any space
 	<<set $pC.fname = $pC.inputFirstName.toLowerCase()>> // Convert the first name to lowercase
 	<<set $pC.FNAME = $pC.fname.toUpperCase()>>
