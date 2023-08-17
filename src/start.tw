@@ -102,7 +102,7 @@ Her words bring a small smile to my face, appreciating her comment. However, Bre
 
 Lady Rohanne chuckles, “Of course! How can I forget about you, Mx. Bree? Thank you for keeping an eye on Tomas. I'm sure we can offer you delicacies that are worthy of your service,” and claps readily.
 
-Breezeclaw flies over enthusiastically, eagerly following the servant guiding him to the kitchen. With all the conversations between , making the room quite lively.
+Breezeclaw flies over enthusiastically, eagerly following the servant guiding him to the kitchen. With all the conversations between and around us the room turn quite lively now.
 <<elseif $temp.choice === 3 >>
 Not wanting to intrude on the intimate family moment, I decide to stay back and observe from a distance. Lady Rohanne and my half-brothers seem genuinely happy to see each other, and it warms my heart to witness their affectionate reunion.
 
@@ -351,7 +351,7 @@ Tomas looks down, dejected and guilty in his eyes.
 
 I don't know what they want from me, but I hesitantly nod.
 
-He shake his head disappointed, “I'm giving you one last chance to take back your words,” they suddenly proclaims.
+They shake their head disappointed, “I'm giving you one last chance to take back your words,” they suddenly proclaims.
 
 What? what is going on all of a sudden. Wait.
 <center>
@@ -364,7 +364,7 @@ What? what is going on all of a sudden. Wait.
 <<if $temp.choice === 1>>
 I understand and feel ashamed. As I reflect on the situation, I realize that I almost put my younger half-brother in a difficult position without even trying to help lessen his burden. It wasn't entirely his fault, and I should have been more supportive and understanding. My stubbornness to avoid punishment blinded me to the fact that I could have stood up for him and explained the situation better.
 
-“Ser Klaus, I apologize for my words,” I say, looking at Tomas with sincerity. “I was wrong to put all the blame on him. It's true that we both got carried away discussing something, but I should have been more responsible and made sure we kept track of time together more carefully.”
+“Ser Klaus, I apologize for my words,” I say, looking at Tomas with sincerity and guilty feeling. “I was wrong to put all the blame on him. It's true that we both got carried away discussing something, but I should have been more responsible and made sure we kept track of time together more carefully.”
 
 Tomas looks at me with a mix of surprise and gratitude, and I smile back at him reassuringly.
 
