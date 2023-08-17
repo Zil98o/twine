@@ -723,16 +723,4 @@ function lock(orientation) {
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  const inputField = document.getElementById("textbox-pcfname");
 
-  inputField.addEventListener("click", function() {
-    this.focus();
-    const scrollHeight = this.scrollHeight;
-    this.style.height = scrollHeight + "px";
-  });
-
-  inputField.addEventListener("blur", function() {
-    this.style.height = ""; // Reset the height
-  });
-});
