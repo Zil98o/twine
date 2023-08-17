@@ -1,2 +1,79 @@
 “”
 ’‘
+Nicolás De Flores
+
+Tomas De Alçaga
+There's not a whole lot I can remember, but at least I remember my name.
+<<print $temp.details === 5 || $temp.details === 6 ? "“You want to fall asleep already, don't you?” she teases." :"“You always are a good listener, my dear,” she says.>>
+
+<<textbox "$pC.fname" "">>
+
+<<link "Continue">>
+	<<set $pC.inputFirstName = $pC.fname.trim().split(' ')[0]>> // Extract the first part before any space
+	<<set $pC.fname = $pC.inputFirstName.toLowerCase()>> // Convert the first name to lowercase
+	<<set $pC.FNAME = $pC.fname.toUpperCase()>>
+	<<set $pC.FName = $pC.fname.charAt(0).toUpperCase() + $pC.fname.slice(1)>>
+	
+	<<if $pC.fname === ''>> // Check for empty first name
+		<<replace "#input-error">>Please enter a valid first name. The input cannot be empty or contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<elseif $pC.inputFirstName.length < 3 or $pC.inputFirstName.length > 10 or /[^\p{L}'\s]/u.test($pC.inputFirstName)>>
+		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<elseif /[\u{1F300}-\u{1F6FF}]/u.test($pC.inputFirstName)>>
+		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<else>>
+		<<goto "Prologue">>
+	<</if>>
+<</link>>
+
+@@#input-error;@@
+
+:: CheckVariables
+<<set _checkVariables = function() {
+  var variables = State.variables;
+  for (var variable in variables) {
+    var value = variables[variable];
+    console.log(variable + ": " + value);
+    console.log(State.getVar("$temp.details"))
+  }
+}>>
+
+<<link "Check Variables">><<run _checkVariables()>><</link>>
+/* <<link "CheckVar" "CheckVariables">><</link>> use this in the passage*/ 
+/*stat tracker Emphatetic: $pC.emp, Stubborn: $pC.sb, Pragmatic: $pC.pr, Compliant: $pC.cp
+*/
+
+The archery lesson finally comes to an end as the late afternoon sun casts long shadows across the training field. As if on cue, snowflakes start to fall from the gray sky, a common occurrence in the northern regions. The air feels crisp and invigorating, and I take a moment to savor the tranquility that comes after physical exertion.
+
+As the rest of the group disperses, I make my way over to Nicolás, who is carefully inspecting his bow and arrows. I clear my throat, catching his attention.
+
+“Hey, Nicolás,” I begin, choosing my words carefully, “I wanted to talk to you about something.”
+
+He looks up, his expression curious. “Sure, what's on your mind?”
+
+I take a deep breath, not entirely sure how to approach the subject. “It's about Tomas and his missing whistle.”
+
+Nicolás's eyebrows furrow as he sets down his equipment. “What about it?”
+
+“Well, he's really upset about it,” I explain. “He's been searching for it all morning, and he was pretty distressed when I found him in his room. He couldn't find it anywhere.”
+
+Nicolás's gaze narrows, and I can tell he's processing the information. “Ehem? That's important to him.”
+
+I nod. “Exactly. He's worried and frustrated, and I thought maybe you could help.”
+
+Nicolás's expression shifts from curiosity to concern. “Why do you think I can help?”
+
+“I don't know,” I admit, “but you have a way of figuring things out. Maybe you've seen it somewhere or heard something about it.”
+
+He sighs, running a hand through his hair. “I haven't seen anything unusual, but I'll keep an eye out. I know how much that whistle means to him.”
+
+“Thanks, Nicolás. I appreciate it,” I say sincerely.
+
+He gives me a small smile. “No problem. Family looks out for each other, right?”
+
+I smile back, grateful for his willingness to help. “Right.”
+
+We stand there for a moment, the snow falling around us, before Nicolás picks up his bow again. “Well, I should probably head back. See you later, okay?”
+
+“Sure thing,” I reply, watching as he walks away.
+
+With a sense of relief, I turn and make my way back to the castle, feeling hopeful that Nicolás might be able to shed some light on Tomas's missing whistle. The snowfall continues, adding a touch of magic to the surroundings, and I can't help but feel a renewed sense of determination to help my younger brother find what's important to him.

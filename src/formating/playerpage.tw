@@ -2,10 +2,22 @@
 <style>#ui-dialog-body {
   background: none;
 }</style>
+Name: $pC.FName <<print $pC.ygender === "boy" ? "Fils": "Fille">> de Jean
+Age: $age years old
+
+{little bit detail about player} **UNDER CONSTRUCTION**
+
 <div class="sysButton"><<button 'Stats'>>
 <<script>>
 Dialog.setup(`${State.getVar("$pC.FName")} Stats`);
 Dialog.wiki(Story.get("Player Stats").processText());
+Dialog.open();
+<</script>>
+<</button>></div> /* **************/
+<div class="sysButton"><<button 'Relationship'>>
+<<script>>
+Dialog.setup(`${State.getVar("$pC.FName")} Relationship`);
+Dialog.wiki(Story.get("Player Relationship").processText());
 Dialog.open();
 <</script>>
 <</button>></div> /* **************/
@@ -14,7 +26,29 @@ Dialog.open();
 <style>#ui-dialog-body {
   background: none;
 }</style>
-<<link 'Return to your Page'>>
+
+
+<big>#Under Construction#</big>
+
+
+<<link '«Return to your Page'>>
+<<script>>
+Dialog.setup(`${State.getVar("$pC.FName")} Page`);
+Dialog.wiki(Story.get("Player Page").processText());
+Dialog.open();
+<</script>>
+<</link>> /* **************/
+
+:: Player Relationship [noreturn]
+<style>#ui-dialog-body {
+  background: none;
+}</style>
+
+
+<big>#Under Construction#</big>
+
+
+<<link '«Return to your Page'>>
 <<script>>
 Dialog.setup(`${State.getVar("$pC.FName")} Page`);
 Dialog.wiki(Story.get("Player Page").processText());

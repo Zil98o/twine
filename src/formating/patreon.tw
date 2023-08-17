@@ -1,11 +1,12 @@
-:: Thanks A 
+:: Thanks Mom 
 <style>#ui-dialog-body {
   background: none;
 }</style>
-<img style="max-width: 50%;   display: block;  margin-left: auto; margin-right: auto;" src="./images/patreona.png"/>
-Who's A? Why my very first Patron, that's who! In honor of A, any of you curious enough to look at the credits gets to know a little bit about this amazing person.  Everyone say, "THANK YOU, A!"
+Who's Mom? Why, my very first supporter, that's who! In honor of my Mom, any of you curious enough to look at the credits gets to know a little bit about this amazing lady, she likes to cook and worry. Everyone says, “THANK YOU, K'S MOM!”
 
-<<link 'Go back to Credits'>>
+P.S There were supposed to be an art doodle at this page that I have created for you mom, but I feel embarrassed so I decided not to include it.
+
+<<link '«Go back to Credits'>>
 <<script>>
 Dialog.setup(`Credits`);
 Dialog.wiki(Story.get("Credits").processText());

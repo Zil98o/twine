@@ -1,158 +1,663 @@
-:: story start
-There's not a whole lot I can remember, but at least I remember my name.
+:: story start [game-start no-history] 
+<p style="margin-left:10%; color: var(--contrast); margin-right:10%;"><em>In the realm of Verlaine, life as a bastard noble is a tumultuous journey where fortunes teeter on a razor's edge, fortunately, the realm is slowly changing, and you can witness it first with your own two eyes.
 
-<<textbox "$pC.fname" "">>
+Our tale follows the life of a young child bereft of material inheritance, all of what happened would depend on the choices they make and the hearts they touch.
 
-<<button "Continue">>
-	<<set $pC.inputFirstName = $pC.fname.trim().split(' ')[0]>> // Extract the first part before any space
-	<<set $pC.fname = $pC.inputFirstName.toLowerCase()>> // Convert the first name to lowercase
-	<<set $pC.FNAME = $pC.fname.toUpperCase()>>
-	<<set $pC.FName = $pC.fname.charAt(0).toUpperCase() + $pC.fname.slice(1)>>
-	
-	<<if $pC.fname === ''>> // Check for empty first name
-		<<replace "#input-error">>Please enter a valid first name. The input cannot be empty or contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
-	<<elseif $pC.inputFirstName.length < 3 or $pC.inputFirstName.length > 10 or /[^\p{L}'\s]/u.test($pC.inputFirstName)>>
-		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
-	<<elseif /[\u{1F300}-\u{1F6FF}]/u.test($pC.inputFirstName)>>
-		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
-	<<else>>
-		<<goto "Prologue">>
-	<</if>>
-<</button>>
+The realm is in recovery after the destructive civil war that wreaks havoc and divided it, witness the changes in the Verlaine Empire at the front seat and maybe help participate to influence on how the changes is made?
+</em></p>
+<b>’Bastard's Tale‘</b> is a high fantasy story set in a world reminiscent of Classical and Early Medieval Eras of Earth, where fantasy and reality would converge in to creating a world full of mesmerizing tapestry.
 
-@@#input-error;@@
-:: Prologue
-<<fadein 3s>>
-!Prologue
-!!Labor Camp
-The creaking sound of the wheel and the loud footstep boots jolt me awake. Disoriented and half-asleep, I scramble to my feet, my gaze fixed downward. <i class="clmain">’Don't look, eyes down‘</i> I repeat in my head like a mantra of ritual. Suddenly, a rough hands slowly grab my shoulder, ushering me from the front to the back of the line.
+The game has several features, including:
+<ul>
+<li>Customizable appearance and personality for your character.</li>
+<li>A fantasy setting influenced by various cultures.</li>
+<li>Attend The Empire Academy.</li>
+<li>Love interests and casual flings whose genders will adjust to match your character's sexuality.</li>
+<li>Multiple cast of characters.</li>
+<li>Different choices of responses, leading to various interactions and endings of the story.</li></ul>
 
-A small smile escapes my lips as the person gently pat my head, offering me a silent comfort. Though I can't see much from the back of the line with my small height, I can sense what's happening up front. The guards, with their dark eyes and hardened faces, carefully observe every interaction and movement we have.
+<b>This story is a work in progress and will periodically update with new chapters.</b>
 
-The guards were distinguished by their uniform, consisting of a simple knee-length tunic made of vibrant red linen. Adorning their chest was a distinctive pale cuirass, meticulously crafted from laminated linen glued together and reinforced with gleaming metal plates that supposed to symbolize their honor position.
+<b>CONTENT WARNINGS</b>: Will be provided with each new chapter, specifically addressing potentially sensitive content. Although I do expect, the story to be <b>rated M</b> due to mature themes.
 
-“Form a single line, it's feeding time,” the guards command. We hurry into position, and when it's my turn, I collect my bowl with a portion of food and immediately scurry away. One particular guard's stare always sends a shiver down my spine. His quick smile sets him apart from the rest, but there's something twisted behind his eyes that I'd rather not encounter firsthand.
+For easier navigation on desktop, these quick key shortcuts can be quite helpful:
+<ul>
+<li>Ctrl+M or Command+M: Toggle the sidebar.</li>
+<li>Ctrl+V or Command+V: Open saves.</li>
+<li>Left arrow: Go back to the previous passage.</li>
+<li>Right arrow: Go forward to the last opened passage.</li>
+<li>F11: Enter fullscreen mode. If you're on mobile and want to toggle fullscreen, you can access the settings in the sidebar and find the fullscreen toggle button.</li>
+</ul>
+<<link '<div class="co"><img style="width:70px;" src="./images/logo.png"/></div>' "Prologue">> <</link>>
+:: 01 [game-start]
+<<nobr>><<set $chapter = "Prologue">>
+ <<script>>
+        Dialog.setup(`Name Confirmation`);
+        Dialog.wiki(Story.get("Name Confirmation").processText());
+        Dialog.close();
+<</script>><</nobr>> <<fadein 1s>>!Chapter 1
+!!Tale of Winter
+The persistent creaking sound of the weathered rocking chairs slowly but surely grates on my nerves, threatening to unravel my patience. Each slow and deliberate movement seems to echo through the dimly lit room, swaying under the weight of Old Nan, who occupies the ancient thing. Her frail figure leans back and forth with a rhythmic cadence, seemingly in harmony with the haunting tale she is about to share.
 
-I retreat to a quiet corner to eat the soup, finding solace in my solitude. The taste isn't remarkable, but it's not terrible either. Just a simple blend of lentils with green vegetables and herbs, at least it adequately fills my growling stomach.
+Nicolás, my half-brother, always the rascal, draws the lot for today's pick of the story, and it's no surprise that he chooses the chilling saga of the Wraiths of Winter just to mess around with the rest of us. The room grows still as anticipation fills the air, and even the flickering candle flames seem to shiver as if sensing the impending terror.
 
-A man with an embarrassed smile approaches me, making an open gesture with his hand. I'm not quite sure of what he wants.
+Old Nan's voice, flowing like a whispering wind, begins to weave the haunting tale. She speaks of a time long ago when the land was swallowed by an eternal winter, and darkness draped the world in an icy embrace. In those desolate times, the Wraiths of Winter emerge from the depths of the snow-covered plains.
 
-<<link "Open your hand." "Prologue-1">> <<set $temp = 1>> <</link>>
-<<link "Just watch him silently." "Prologue-1">> <<set $temp = 2>> <</link>>
+These spectral beings are said to be the remaining souls of cursed mages who paid the price for their failed dark rituals. Lost between the veils of life and death, they roam with vengeance and bitterness toward the living. Their wailing cries reverberate through the howling winds, sending shivers down the spines of all those fortunate enough to only hear, and madness to those unfortunate to see.
+
+Sealing his ear shut, my other half-brother Tomas, and two or three other children huddle close together, scared and not really eager to hear anything Old Nan tells right now. As they shiver with fear, Tomas' loyal familiar, Breezeclaw, nuzzles close against him. Breezeclaw's large, round eyes possess an otherworldly quality, a shimmering blend of stars surrounded by the depths of the night sky. Many kinds of familiars from the Shade often resemble animals from our world with a slight twist to them. In Breezeclaw's case, the tufts of feathers atop its head resemble the distinctive ear of an owl, full of wisdom and sometimes childlike fascination. Breezeclaw's front paws, lithe and agile, are reminiscent of a cat's with normal wings and birdlike hinds for the back legs.
+
+Tomas' small hand reaches up to scratch behind Breezeclaw's ear tufts, and a soft, melodic hoot emanates from the creature. It nuzzles even closer, sensing its master's need for comfort and reassurance. Meanwhile, I...<center>
+<<link "Am not scared and paying rapt attention." "02">> <<set $temp.choice = 1, $temp.details = 1>> <</link>>
+<<link "Am not scared but pretend to be scared." "02">> <<set $temp.choice = 2, $temp.details = 2>> <</link>>
+<<link "Am scared and huddle up along with others." "02">> <<set $temp.choice = 3, $temp.details = 3>> <</link>>
+<<link "Am scared but pretend to be not scared." "02">> <<set $temp.choice = 4, $temp.details = 4>> <</link>>
+ </center>
 <</fadein>>
 
-:: Prologue-1 
-<<if $temp === 1>>
-I open my hand curiously, and the man slowly brings his other hand toward mine. He places something on my palm, and as I look closer, I realize it's a sweet. It seems that in my hurry, I had forgotten to take it earlier.
-<<elseif $temp === 2>>
-I watch the man silently, unsure of what he wants. Realizing my confusion, he scratches the back of his head and smiles. Slowly, he raises my right hand, before stopping and gauging my reaction. I remain expressionless. He opens my palm and places something on it—a sweet. It appears that in my haste, I had forgotten to take it earlier.
+:: 02 [game-start]
+<<if $temp.choice === 1>>
+As I listen to Old Nan's tale of the Wraiths of Winter, I can't help but be intrigued. Despite the attempts of Nicolás and his friends to scare us, I am captivated by every word she speaks. The descriptions of these spectral beings send shivers down my spine, yet I find myself curious about their lore and legend. After all, they were once a mage, and who among us hasn't secretly wished to wield such power?
+<<elseif $temp.choice === 2>>
+Although I'm feeling pretty calm, I decide to join in with the spooky atmosphere that's taken over the room. I let out the occasional gasp or nervous laugh at just the right moment, pretending to be scared to entertain everyone and enhance the eerie vibe. Nicolás and his friends take the bait and become even more amused, feeling victorious in their efforts to spook us all. I secretly find it hilarious too, but I'm careful not to break character and keep up the act of being scared.
+<<elseif $temp.choice === 3>>
+The description of the pale ghosts sends shivers down my spine, making me feel uneasy and anxious. The room becomes tense and fear starts to creep in, causing me to cling onto my half-brother Tomas and the other children for comfort and safety. Their presence brings me warmth and reassurance in this scary situation.
+<<elseif $temp.choice === 4>>
+Despite my inner apprehensions, I am determined not to let fear show on my face. I maintain a stoic expression, avoiding eye contact with Nicolás and his friends, who seem to be enjoying the eerie atmosphere they have created. I suppress the urge to huddle up with others and instead lean back in my seat, crossing my arms casually. It is not easy to hide my unease, but I am determined not to give anyone satisfaction of seeing me frightened.
 <</if>>
-I smiled gratefully at him before he took his leave. In this labor camp, we were mostly not allowed to communicate with each other outside of work. The guards made sure we all understood that rule when they made an example of some poor people in our group who showed even the tiniest defiance in the early days of our captivity.
+The tale suddenly stops when the door of the room is open, Lady Rohanne, my stepmother, and her handmaidens walk up inside with an amused expression.
 
-That's one of the memory I want to forget despite I'm already forgetting so much. Their sound of agony and abrupt silence soon after still haunt my dream some night when I lie in the hard and cold surface of the floor. I'm almost certain and swear I can see their lingering shadows after that event, my head and soul throbbed painfully from that peculiar experience. 
+It's easy to see where Nicolás and Tomas inherited their dark brown hair, flowing like a wave. Her hair is long, parting in front of her gentle face and easy smile. That's one of the physical characteristics that set me apart from them, while they all have a variation of brownish hair, I have <<nobr>><<cycle "$pC.hairc">>
+<<optionsfrom $hairColor>><</cycle>><</nobr>> hair.
 
-I don't remember much of who I am and what happens before all of this. How do I feel about that?
+“What are my darlings doing here?” she interrupts.
 
-<<link "Sad, I'm awake and suddenly place in hell." "Prologue-2">> <<set $temp = 1>> <</link>>
-<<link "I don't know how I feel about that, it just numb me inside" "Prologue-2">> <<set $temp = 2>> <</link>>
-<<link "It's for the best, I can easily move forward without dwelling in the past" "Prologue-2">> <<set $temp = 3>> <</link>>
+Hearing her mother's voice, Tomas hastily bolts out and hugs her, Breezeclaw silent clapping wings rotating around them, while Lady Rohanne softly laughs and hugs him back. The other children in the room also slowly rise from their seats to greet their mothers who come with Lady Rohanne. From the corner of my eye, Old Nan's hand raises, grabbing tightly onto her cane, intending to stand.
+<center>
+<<link "Help Old Nan stand and say goodbye." "03">> <<set $temp.choice = 1>> <</link>>
+<<link "Get close to my step-mother and half-brothers." "03">> <<set $temp.choice = 2>> <</link>>
+<<link "Hang around in the background" "03">> <<set $temp.choice = 3>> <</link>>
+</center>
+:: 03 [game-start]
+<<if $temp.choice === 1>>
+I notice Old Nan struggling to stand up from the chair. Without hesitation, I rush over to her side and offer a supportive hand. With a grateful smile, she clasps my hand, and together, I help her to her feet to stand.
 
-:: Prologue-2 
-<<if $temp === 1>>
-I feel a deep sadness about my current situation, as well as the loss of my memories. The thought of losing something I can't even remember makes me want to curl up and hide, but I know that the world wouldn't even allow me that.
-<<elseif $temp === 2>>
-I'm unsure of how to feel about it. Should I be saddened by the vague memories that linger, or should I be grateful for being able to cast them aside? What I know for certain, it always leaves me feeling drained, both physically and emotionally, whenever I contemplate it in my thought.
-<<elseif $temp === 3 >>
-I believe it's a small mercy for me. Having a beautiful memory would only torment me, as I would constantly long for something I can't have while neglecting to move forward. Besides, who's to say that the memories I've lost were even beautiful? What if all my memories were always filled with pain and suffering? I would accept any fragment of my past, even if it leaves me with questions, that the answer I can't have.
+“Thank you, <<print $pC.ygender === "girl" ? "girlie" : "boyo">>,” she whispers. “It's getting late, and I must retire for the night.”
+
+I nod understandingly, happy to assist the elderly woman. “Goodnight, Old Nan,” I say softly. “Your story is truly captivating for me, as always. I wish to hear more of your stories at our next opportunity.” <<print $temp.details === 3 || $temp.details === 4 ? "She smiles, while I continue, “But maybe we can choose a story that's not as scary next time?” I request, keeping my voice small and steady." :"">>
+
+With a faint chuckle, Old Nan pats my cheek gently. <<print $temp.details === 5 || $temp.details === 6 ? "“You want to fall asleep already, don't you?” she teases." :"“You always are a good listener, my dear,” she says.">> “There are more stories to come, but I want you to remember that unfortunately not all stories have happy themes and even more so, happy endings.” she stares sadly at my <<nobr>><<cycle "$pC.eyec">>
+<<optionsfrom $eyeColors>><</cycle>><</nobr>> eyes.
+
+Taking a moment to absorb her words, I nod again. I've always appreciated the wisdom in her tales<<print $temp.details === 3 || $temp.details === 4 ? ", even if they do sometimes make me see a nightmare at night." :".">>
+<<elseif $temp.choice === 2>>
+I decide to slowly approach Lady Rohanne and my half-brothers to join in the warm reunion. As I step forward, Lady Rohanne notices me and smiles warmly. Her golden eyes meet my <<nobr>><<cycle "$pC.eyec">>
+<<optionsfrom $eyeColors>><</cycle>><</nobr>> eyes.
+
+“Dear, don't you miss me?” she asks, beckoning me to join the family hug. With nervous excitement, I move closer and feel the warmth of their bodies enveloping me. Tomas and Lady Rohanne greet me with genuine affection while Nicolás smirks stupidly, making me feel welcomed and loved.
+
+Lady Rohanne kindly says, “I hope the three of you have been keeping well,” as she continues to hold our shoulders tightly. “You guys are growing up so quickly.”
+
+Her words bring a small smile to my face, appreciating her comment. However, Breezeclaw's maniacal hooting shows he doesn't take being ignored kindly.
+
+Lady Rohanne chuckles, “Of course! How can I forget about you, Mx. Bree? Thank you for keeping an eye on Tomas. I'm sure we can offer you delicacies that are worthy of your service,” and claps readily.
+
+Breezeclaw flies over enthusiastically, eagerly following the servant guiding him to the kitchen. With all the conversations between , making the room quite lively.
+<<elseif $temp.choice === 3 >>
+Not wanting to intrude on the intimate family moment, I decide to stay back and observe from a distance. Lady Rohanne and my half-brothers seem genuinely happy to see each other, and it warms my heart to witness their affectionate reunion.
+
+I quietly step up to the window, where I can see my reflection. My <<nobr>><<cycle "$pC.eyec">>
+<<optionsfrom $eyeColors>><</cycle>><</nobr>> eyes scan the outside world where it's already dark and full of snow.
 <</if>>
-After our meal, the labor promptly began. The senior miners gathered in hushed clusters, discussing the strategies and plans for today's excavation. These conversations were informal in nature, conducted under the ever-watchful guards stationed in the background.
+Shortly after, Lady Rohanne gently instructs me and my half-brothers to retire for the night. She explains that it's already quite late, and we need to be well-prepared for tomorrow's early morning lesson.
 
-The tunnel within the cave strecth wide in 33 feet in width and 20 feet in height, it's not arguably above average-sized mining site. Our primary focus was on extracting Etherstone, although occasionally we stumbled upon valuable red Crystalithium that the Empire always love. The size of this particular tunnel meant that trapped doors were less necessary for ventilation systems.
+I understand Lady Rohanne's perspective. The Kol'osus days are approaching, a grand festival held in the city of Osaxon once every two years during mid-summer. This event celebrates and honors The Sun God, Osus. The festivities encompass a range of activities, including physical competitions like combat and jousting, as well as other captivating events such as public art displays, theatrical performances, and poetry recitals.
 
-To combat the dark and damp environment that enveloped us, caged canaries adorned the tunnel. Their beautiful melodies provided a small solace amidst the gloom atmosphere of the tunnel, but their significance went beyond their enchanting voices. These feathered creatures possessed a heightened sense of smell, far more sensitive than that of a human.
+Kol'osus draws people from various regions of Verlaine who come to enjoy the festivities together. For the younger generation, it offers a splendid opportunity to showcase their talents and compete with peers from different areas and backgrounds, potentially gaining fame and recognition if they are lucky and successful. I've eagerly awaited this remarkable event, and it's almost here.
 
-I like to imagine the canaries as our guardians, they keep track of the silent killers lurking within the shadows: poisonous gases. Devoid of sound and scent, gases on the mine possess the terrifying ability to extinguish the life of healthy men within a matter of minutes or even seconds. The canaries' assistance in detecting the gasses then becomes invaluable and crucial.
+Tomas expresses his reluctance to fall asleep, voicing, “But Mother, I don't feel like sleeping just yet, especially after that…”
 
-<div class="choice"><<link "Go to your post." "Prologue-3">><</link>> </div>
+Nicolás chimes in confidently, “I don't want to sleep yet either, but not because I'm scared.”
 
-:: Prologue-3
-I make my way to my post, readying myself for the day ahead. There, I find a small basin of water that I've been saving from the nearby river, I pour the cold water over my face, feeling its refreshing touch against my skin. Taking a gulp, I savor the relief it brings, quenching my parched throat. The long hours of mining have taken a toll on my once-<<nobr>><<cycle "$pC.sktone">>
-<<optionsfrom $skinColor>><</cycle>><</nobr>> complexion, now hidden beneath layers of dust and grime. Even my <<nobr>><<cycle "$pC.hairc">>
-<<optionsfrom $hairColor>><</cycle>><</nobr>> hair seems lackluster as I catch a glimpse of my reflection in the water. Hastily, I secure a worn-out cloth over my face for protection against the dusty environment.  
+Lady Rohanne playfully bops the noses of her sons and then jestingly inquires, “And what about you, my dear? Do you also have no intention of sleeping yet?” She shares a conspiratorial wink with me.
 
-A teasing voice interrupts my thoughts, coming from behind. I turn to see Ariel, one of the few children who, like me, has been thrown into this labor camp. And where there's Ariel, Mikael is never far behind.
+I blinked, momentarily taken aback. <<print $temp.details === 5 || $temp.details === 6 ? "“Heh... $pC.FName $pC.atobe quite ready to doze off earlier,” Nicolás informs, not forgetting about my reaction earlier." : "">>
+<center>
+<<link "Suggest staying up for a little bit, I never sleep as scheduled anyway." "05">><<set $temp.choice = 1>><</link>>
+<<link "Agree to stay up a little bit, despite always sleeping and waking up early." "05">><<set $temp.choice = 2>><</link>>
+<<link "Persuade Tomas and Nicolás to sleep as scheduled." "05">><<set $temp.choice = 3>><</link>>
+<<link "Don't agree to stay up late because I need to wake up early tomorrow" "05">><<set $temp.choice = 4>><</link>>
+</center>
+:: 05 
+<<if $temp.choice === 1>>
+I decide to suggest staying up for a little while longer. “You know, Mo-My Lady, I never really sleep as scheduled anyway,” I say with a grin, trying to make light of the situation. “A few more minutes won't hurt, and besides, I enjoy spending time with all of you.”
 
-“Admiring yourself, $pC.FName?” Ariel jests, his voice filled with mischievousness. He saunters over to me, hooking his left arm around my neck in a playful gesture. His hands are adorned with a bracelet made by the now worn out rope, he admitted it was a gift from his little sister back home.
+Lady Rohanne chuckles at my response. “Very well, but only a few more minutes,” she agrees. “Do remember, tomorrow is a new day, and you three will need your rest.”
+<<elseif $temp.choice === 2>>
+“I agree to stay up for a little while longer, Mo-My Lady,” I say, despite knowing that I always sleep and wake up early. “Just a few more minutes won't hurt, right?”
 
-“Let's see if I'm still as gorgeous as I remember,” he grins wide, purposefully revealing his missing teeth.
+“Of course, my dear,” Lady Rohanne replies with a smile. “Let's enjoy our time then darlings, I will make sure you three don't stay up to late and forget to get enough rest for tomorrow's lessons.”
+<<elseif $temp.choice === 3>>
+As much as I'd like to stay up, somehow I feel responsible for my younger half-brothers' well-being. “I think it's best if we stick to our usual sleeping schedule,” I say gently. "Tomas and Nicolás, we have lessons early tomorrow, and we need to be well-rested.”
 
-“Gorgeous? More like a gorgeoyle,” Mikael interjects, crossing their arms in a scornful manner. Despite being the same age as Ariel and me, Mikael is noticeably taller, I don't remember my age when they ask me personally, but they both agree based on my appearance that most probably I'm just 13 or 14 years old. Same as them when we first meet here.
+Lady Rohanne smiles approvingly at my responsible answer. Tomas pouts a bit, but Nicolás just shrugs nonchalantly, maybe because he sees the value of my argument, whatever the case, thankfully they both agree.
+<<elseif $temp.choice === 4>>
+“I don't think it's a good idea to stay up late,” I respond, remembering the weight of the upcoming day's responsibilities. “We have to wake up early tomorrow for our lessons, and we need to be well-prepared.”
 
-“Don't get too smart when you can barely pronounce the word, Mikael,” Ariel retorts, sticking out his tongue playfully.
+Lady Rohanne smiles approvingly at my responsible answer. “You're right, dear,” she says. “Getting enough rest is important. Sleep well, and tomorrow will be a better day.”
 
-<<link "Explain to Ariel that Mikael purposely misled the word as the joke." "Prologue-4">> <<set $temp = 1>> <</link>>
-<<link "Just smile and wave." "Prologue-4">> <<set $temp = 2>> <</link>>
-<<link "Remind them both not to get too loud." "Prologue-4">> <<set $temp = 3>> <</link>>
-
-:: Prologue-4
-<<if $temp === 1>>
-“You do realize Mikael intentionally twisted the word as a joke, right, Ariel?” I teased back, raising my hand and motioning towards Mikael.
-
-“Eh, really? There's no way,” Ariel replied in disbelief, finally connecting the dots.
-
-Mikael harrumphed, clearly uninterested in further educating or teasing Ariel.
-
-“Whatever, who care about that fool opinion anyway.” Ariel said shrugging off his covered bracelet hand from my neck.
-<<elseif $temp === 2>>
-I couldn't help but smile silently at both of them, my gaze shifting to Mikael who stood across from me and Ariel. I waved to Mikael, appreciating their presence and feeling content just from observing them in their usual banter. Ariel grip my neck close with his covered bracelet hand, smiling wide without a care.
-<<elseif $temp === 3 >>
-“Mind your voices, guys. Remember the guards,” I reminded both of them, cautioning against going too far with their chatter and banter.
-
-Ariel rolled his eyes slightly, his covered bracelet hand then move patting his dusty clothes not so carefully, a gesture I understood all too well. Mikael quickly glanced around, ensuring that no guards were personally paying attention to our conversation.
+Nicolás and Tomas seems don't quite ageree but eventually relent after me and Lady Rohanne combine agreement and power pushed them back to their rooms.
+<</if>><<if $temp.choice === 1 || $temp.choice === 2>>
+Before retiring to bed, we spend some time together. Lady Rohanne regales us with her story of youthful adventures when she sailed across the Marisora Sea, visiting different regions and places. We enjoy the delightful time we have before we go to bed shortly after.
+<<elseif $temp.choice === 3>>
+After that brief conversation, Lady Rohanne dismisses us to our separate rooms. Before parting ways, she gives each of us a loving hug and a goodnight kiss on the forehead.
 <</if>>
-After our brief chat, we set off to begin our work. My assigned task is to haul up small pebbles and push them outside using a trolley—a simple yet monotonous job. I keep maintaining a steady pace, it's important because once the work starts, there will be no respite until come midday. Given the demanding nature of mining labor, one might be tempted to take it easy, but that would prove to be a grave mistake. The guards would not hesitate to unleash their whips upon anyone they deem as slackers under their watch.
+In my room, I lie on my bed, staring at the ceiling for a while, reflecting on the day's events. <<print $temp.details === 3 || $temp.details === 4 ? "The chilling tale of the Wraiths of Winter still lingers in my mind, but I push aside any lingering unease, assuring myself that it's just a story and instead focusing on other exciting things." : "">>
 
-It doesn't stop there either. The guards have devised an absurd scheme: if more than one miner is labeled as slacking during working hours, the entire miners in camp will be punished by having their rations withheld for the remaining day. The names of these so-called slackers would then be shamefully announced. It's a pathetic manipulative ploy, but in the weary and famished state, it then becomes easier to lay blame on our fellow miners for their perceived laziness. 
+Kol'osus days is near, I can't wait to travel and attending the festivals. At least I know one person that get exited and have been waiting for it too. My childhood friend, maybe that's when and where we can meet again? 
 
-Accusing others feels safer than confronting the guards' oppressive presence. The guards have orchestrated an environment of mistrust, pitting us against one another.
+As I drift off to sleep, I wonder yet again what kind of adventures await me in the future. <<print $temp.choice === 3 || $temp.choice === 4 ? "" : "Will I get the chance to set sail acrosss the Marisora sea, like Lady Rohanne once did? I really hope so.">>
 
-Amidst the monotonous work at hand, my mind often drifts far away. I find myself daydreaming, imagining another life and pondering questions for which I have no answers. Anything seems more acceptable than focusing on this draining and unrewarding work. Dust now covers my entire body as I heave another pebble onto the trolley and push it, causing the wheels to turn perpetually. Sweat glistens on my skin, yet I don't bother to wipe it off, knowing it will soon be soaked again.
+<<link "Continue" "06">><</link>>
 
-<<link "Humms some melody." "Prologue-5">><</link>>
-<<link "Humms some melody." "Prologue-5">><</link>>
-<<link "Humms some melody." "Prologue-5">><</link>>
+:: 06 
+!In the master chamber 
 
-:: Prologue-5
-As I work, a sad melody escaped my lips accompanied by the chirping noise of the canaries, the sound echoed in the stale air of the cave, it was a tune that buried deep within the recesses of my memory. Though I couldn't recall its origin or the significance it held for me, its haunting notes provided a brief escape from the toil that surrounded me.
+The master chamber is adorned with opulent furnishings, reflecting the status and elegance of their owners, Lady Rohanne sits at a grand wooden desk, surrounded by a sea of parchment and quill. Dim candlelight bathes the room, casting elongated shadows on the intricately woven rugs that cover the marble floor. A large, ornate mirror hangs on the wall, capturing the room's muted glow and reflecting the silhouette of a skilled handmaiden attending to her duties.
 
-Engrossed in the melody, my attention waned, and I neglected to observe closely to the trolley trudging along the rugged terrain. The air filled with swirling dust, hindering my sight, while the subtle misalignment of the wheel slipped under my lacked of notice.
+Lady Rohanne's hair cascades down her shoulders, a contrast against the rich crimson and gold of her attire. With an air of focused discipline, she writes and signs documents with a practiced hand.
 
-Suddenly, it happened—the trolley's wheel jolted, its wooden rim catching on a sharp, uneven rock. Panic surged within me as the trolley abruptly came to a halt, refusing to move an inch. The labor camp was a place where attracting the guards' attention was the last thing anyone wanted, and a stuck trolley or any other action falling into the category of 'incompetence' was a surefire way to do just that.
+Ariel, her trusted handmaiden, moves gracefully around the chamber. She approaches Lady Rohanne's desk, her steps silent on the plush rugs, and stands behind her mistress. Ariel's attentiveness is proven as she delicately massages Lady Rohanne's scalp with gentle motions, her touch soothing amidst the responsibilities that weigh heavily on her lady's shoulders.
 
-Frantically, I pushed, my muscles straining with the effort I put myself into. But no matter how hard I pushed, the wheel remained stubbornly wedged, unwilling to move. Desperation welled up within me. I glanced around, my heart pounding, searching for a solution, for any way to free the trolley quickly.
+Pausing her writing, Lady Rohanne releases an audible sigh, her gaze momentarily fixed on the documents before her. She speaks, the words carrying anticipation and longing.
 
-I almost lost it when Ariel suddenly appeared by my side. His eyes met mine, amusement filled his eyes. With a faint smile, he positioned himself next to me, his agile frame bracing against the weight of the trolley. Together, we leaned into it, our combined strength propelling the trolley forward.
+“When is my Lord husband going to be back, Ariel? Did I receive another message yet?”
 
-“The wheel, huh? Why it can't just roll itself up,” Ariel said, breaking the silence.
+Ariel, always poised and composed, responds with her characteristic calmness, “They are already on the way back, Madam. The last message received was last night.”
 
-“I don't know, because it doesn't want to tire itself down?” I questions back, smiling a little bit.
+Lady Rohanne sets her quill aside, her fingers idly tracing the edge of a parchment. She sighs again, her voice tinged with resignation, “Right, my Mother would come and join for her unplanned family 'visit.'”
 
-Ariel snickered, “Wait, that's fair. Here,” he said, while sneakily put something in my pouch.
+Seeking to alleviate the concern in her lady's voice, Ariel offers her reassurance, “I'm sure it wouldn't be a long visit, My Lady, looking at the climate right now. Lady Fiocarda presence in the capital is sorely needed.”
 
-“It has been too long, I personally glad I was done with it, although I do learn so much from Mr.Mendelson. Take it to your dorm captain as soon as possible,” Ariel whispered softly.  “Mr. Mendelson predict that our dorm will soon be under close watch, we won't be able to help further. Must maintain a low profile for now.”
+A brief pause follows, during which Lady Rohanne contemplates the situation at hand. “Let's just pray so. It's supposed to be Jean's long-deserved break. I don't want the children to spend too much time with her either, you know how it is.”
 
-I nodded eagerly, fully grasping the significance of the task at hand. “I will ensure it reaches Mx. Haywood safely.”
+As her fingers gently knead her lady's scalp. Ariel raises a practical suggestion, her voice gentle, “Would you like to alter their lessons' schedule?”
 
-The camp was divided into several dormitories, strategically designed to prevent the formation of close bonds and unity among the miners. Each dormitory housed a specific group of individuals, carefully selected by the guards to minimize communication and discourage any form of collective action.
+Lady Rohanne's eyes light up with the notion, and a faint smile graces her lips. “That's quite a good idea indeed. Mother won't complain about how I raise my children if they see how long her grandchild's daily lessons lasted. They won't be spending as much time together because of that very reason.”
 
-The guards understood that our strength lay in our ability to organize and resist together. By separating us into small, isolated groups, the guards hoped to keep maintain and weaken our spirits, keeping us submissive. Adult miners interaction especially with others from another dorm would raise too much suspicion among the watchful eyes of the guards.
+A playful twinkle enters Lady Rohanne's eyes as her thoughts turn bright. “My... I wonder who your mentor is, Lady Ariel Montclair?”
 
-That's why the few children that are inside the camp like me, Ariel and Mikael needed to act as messengers between the different dormitories. The guards paid less attention to the children, assuming we were harmless and posed no threat to them.
+Ariel's soft chuckle fills the chamber as her hands continue their soothing motions. “It's Rohanne De Vorlais.”
 
-What do I think about that?
+<<link "Continue" "07">><</link>>
 
-<<link "They can keep thinking like that, soon we will show them." "Prologue-6">><</link>>
-<<link "It's true we can't do much all alone, but all that live always have a role to play." "Prologue-6">><</link>>
-<<link "I just know we can't just keep walking to our ruin and not do something about it." "Prologue-6">><</link>>
+:: 07
+Today at Vierluçon, the ancestral home of House De Vorlais, the sun was slowly dipping towards the horizon, casting a warm golden hue over the grand courtyard. The palace, with its towering spires and sturdy walls, held centuries of history within its stones. It stood as a testament to the legacy of the De Vorlais House, a prominent northern noble family known for its strength and valor. 
 
-:: Prologue-6
+Meanwhile, I wait for Tomas in front of his room so we can go to the field together. Tomas' chamber is located on the upper side near the training field, you can see the field if you lean your body to one of the windows to watch the knights and squires practicing their drills dutifully. However, despite this, Tomas is always the last to show up and the first to leave for training.
+
+Vierluçon is filled with hundreds of active royal retinues installed just to guard the entire palace and its residents. The palace is nestled within the heart of the vast and unforgiving northern region, a landscape characterized by its stark beauty and harsh winters.
+
+The castle's imposing silhouette is framed against a backdrop of snow-capped mountains and sprawling forests, it is fairly modest, My lord father, Jean De Vorlais, once admitted. When compared to other Houses in the southern region or the Verlaine Empire capital city of Klison, the northern with their harsh winter historically always have lower number of population and valuable resources despite its massive region.
+
+"It doesn't matter," Ser Klaus responds when Nicolás asked about the subject during one of our lessons. They are our instructor, a towering person who seldom smiles. They claims that one of the Vorlais knights or warriors would always be equal to five or more of their southern counterparts.
+
+My thoughts are broken when I hear some rustling come from Tomas' room, indiscernible murmurs escape from it because the door is slightly open.
+
+<center>
+<<link "Call his name one more time." "08">><<set $temp.choice = 1>><</link>>
+<<link "Just wait." "08">><<set $temp.choice = 2>><</link>>
+<<link "Check to see what's wrong." "08">><<set $temp.choice = 3>><</link>>
+</center>
+:: 08 
+<<if $temp.choice === 1>>
+I call out Tomas name again, impatience creeping into my voice. “Tomy, are you ready? We'll be late for archery practice.”
+
+“Just one second!” he shouts.
+
+I heed his answer for a minute or two, but there are no signs of him coming out. In fact, I'm aware that the rustling and mumbling have actually grown slightly louder.
+<<elseif $temp.choice === 2>>
+I decide to wait a little longer. Maybe he's just taking his time getting ready. I lean against the wall and gaze at the training field, observing the knights and guards in their practice.
+
+I waited and waited, yet there's no sign of Tomas coming out. The only thing I can hear is more rustling and mumbling from his room.
+<<elseif $temp.choice === 3>>
+Curiosity and impatience get the better of me, and I gently push open the slightly ajar door to peek inside. “Tomy, is everything alright in there?”
+<</if>>
+<<print $temp.choice === 3 ? "" : "I can no longer wait and decide to enter his room just to see what is going on.">> Tomas' room is usually not described as tidy, but he also understands how to keep certain things in their place after using them. Having a personal servant to clean his room also helps, but that's beside the point.
+
+The room is a mess, with books and toys scattered on the floor, while the young boy himself is busy rummaging through his things in the corner.
+
+“Where is it?” he mumbles, wearing his linen shirt and knee-length breeches, at least. The only thing missing is his hooded cap and quiver.
+
+“Tomas, what's going on?” I ask.
+
+“$pC.Sibling, I can't find it. My whistle,” Tomas says, holding back tears in his eyes.
+
+The whistle he mentions is the summoner whistle that help binds a familiar from the Shade realm to a human. Tomas received it not long ago, making him one of the youngest Weavers the Verlaine Empire has, at least in our generation. For now, he can only summon one familiar, Breezeclaw, but everyone expects him to have more as he grows in age and experience.
+
+I question him about when and where he last saw or brought it, asking if he might have forgotten it somewhere.
+
+“No, I told you! It was supposed to be on my desk, but now I can't find it,” he lashes out.
+<center>
+<<link "Calm him and promise to help him find it." "09">><<set $temp.choice = 1, $temp.details = 1>><</link>>
+<<link "Ask if he's already asked Nicolás about it." "09">><<set $temp.choice = 2, $temp.details = 2>><</link >>
+<<link "Tell him to mind it later and just get ready for now." "09">><<set $temp.choice = 3, $temp.details = 3>><</link>>
+</center>
+:: 09
+<<if $temp.choice === 1>>
+I guide him to sit on the bed by gently grabbing his hand.
+
+“Don't worry, we will find it, and we can even ask Nicolás for help. I promise,” I say. I bring up Nicolás because I suspect something, but I don't think Tomas needs to know more about it. Moreover, I could be wrong, so it's better to strengthen their bonds than let potential discord sown.
+
+“Really? You promise?” Tomas asks, pleading with his cute snotty face. This is the reason why everyone, including me, kind of spoils him sometimes. His obliviousness to how cute he is, it's too strong, even for me.
+
+“Really, really. Now wipe those tears, why don't you? Your face looks weird there for a sec. I don't think Sister Mora would be happy to see that,” I say, trying to change the topic.
+
+Tomas appears slightly embarrassed and quickly grabs a towel to dry his tears with his hand. He stops abruptly and turns to face me, but I'm unsure of his thoughts. He discards the towel and instead wipes his tears away with his hands. After, we tidy up the room a bit before departing.
+<<elseif $temp.choice === 2>>
+“Have you asked Nicolás about it?” I directly inquire.
+
+Tomas looks up, seeming to consider my question for a moment. “Not yet... Why?”
+
+I shake my head, trying to calm him down a little bit. "I don't think Nicolás would take your whistle as a prank, but it won't hurt to ask him. He might have seen it or know where you left it."
+
+“Nico, take my whistle as a prank? But...” Tomas looks in disbelief before his face suddenly morphs into rage. He almost storms off before I calm him down a bit and remind him that we need to straighten up his room before leaving.
+<<elseif $temp.choice === 3>>
+“Tomas, we can deal with the missing whistle later. Let's focus on getting ready for archery practice right now,” I suggest, hoping to divert his attention from the distressing situation.
+
+He looks really dejected and disappointed, but eventually nods in agreement. “Okay, you're right. I'll look for it later. Let's get ready,” Tomas says, trying to put on a brave face.
+
+We quickly gather his archery equipment, and I help him straighten up his room before we head out to the training field together.
+<</if>>
+We walk to the courtyard through the hustle and bustle of the people. With each stare that bore my face, my mind began to wander.
+
+I learned this knowledge quite early when I was just four years old. The people inside Vierluçon usually consist of two types: those who hate my entire existence and openly admit their distaste towards me, and those who feel more ambivalent about it.
+
+The reasons some of them feel hate towards me are because I was a slight in their eyes. The common folk greatly respect what my father did. He was a hero who brought peace and maintained it during and after the long civil war of Verlaine. He was a true Northfolk through and through, as Ser Klaus often says about him – honorable and humble said Master Luwin. My father was betrothed to the golden rose of House Fiocarda, Lady Rohanne Fiocarda, who is also widely loved by the common folk and nobles alike because of her charm and genuine care for her people.
+
+Their relationship is that of a romantic tale that the people and bards fawned over, long before their actual union in marriage. They were considered the most handsome bachelor and beautiful bachelorette, with equal passion and respect between them. It was a perfect picture until one day, a $pC.hairc-haired baby was found in the hands of their hero. He proclaimed the child as his own and strangely decided to raise it himself at his ancestral home with his beloved wife, who would later angelically bear him more children.
+
+The people were in uproar with gossip soon after. Some wondered what kind of beauty could rival the beloved Lady Rohanne and steal the heart of the honorable Lord Jean. Others suspected that it must be the work of a wicked woman who got in the way of the perfect couple, and some of them believed Lord Jean must have been under a spell when he fathered the child. However, true to his honorable trait, he still bore his duty fully as a father.
+
+That's what they feel about me but what I feel about them?
+<center>
+<<link "I feel anger towards those who hate me just for reason beyond my control." "10">><<set $temp.choice = 1>><</link>>
+<<link "I feel anger and pain but mask it with relatively easy smile, I can't fix it but I can further worsen it." "10">><<set $temp.choice = 2>><</link>>
+<<link "I don't particularly mind or care about it, as long as they don't endanger my life, they can continue to talk all they like." "10">><<set $temp.choice = 3>><</link>>
+</center>
+
+:: 10
+<<if $temp.choice === 1>>
+I feel anger towards those who hate me just for reasons beyond my control. It's unfair to be judged solely based on circumstances I had no say in. Their prejudice and ignorance infuriate me, but father once reminded me to try my best not to let this hatred consume me. I didn't fully understand what he meant at first, but over time, I've come to grasp its meaning. For now, I use their negativity as fuel to push myself and show that I am worthy of respect and love, just like anyone else.
+<<elseif $temp.choice === 2>>
+I feel anger and pain, but I mask it with a relatively easy smile. It hurts to know that some people dislike me simply because of who I am. I try not to show my ugly emotions too much because I don't want to give them the satisfaction of seeing me affected. So, I put on a brave face, pretending that their opinions don't bother me, even though deep down, it does hurt. Lady Rohanne often sees beyond my mask and tries to comfort me. She employs subtle actions and encouraging words, agreeing to play games where the rules are implicitly dictated by me.
+<<elseif $temp.choice === 3>>
+I don't particularly mind or care about it. As long as they don't intend to endanger my life, they can continue to talk all they like. I've grown used to the gossip and judgment over the years. I know who I am and what my family means to me, and that's all that matters. Their opinions don't define me, and I refuse to let their negativity affect my self-worth. Instead, I focus on the people who truly care about me and appreciate the person I am.
+<</if>>
+“$pC.Sibling, are you alright?” Tomas asks <<print $temp.details === 2 ? "“We must confront Nico about my missing wistle!” he continues.": "">>
+
+“Yeah, I'm alright.” I shake my head to keep my attention up, trying to ignoring the ugly stares people directed into me. <<print $temp.details === 2 ? "“We will but please take it easy, okay?”": "">>
+
+We had just arrived at the training field, and the resounding clash of wooden swords dominate the soundscape of the entire field despite the distance from our corner. Ser Klaus stood before the group, passionately explaining the nuances of increasing precision and how to effectively use a bow.
+
+“And look, the only time you're truly ready to release the arrow is when your stance is already in this full draw position,” they demonstrate the movement with their longbow. “Mastering this technique will prove invaluable and easily transferable once you become proficient with a long-”
+
+Ser Klaus's speech was abruptly cut short when they noticed me and Tomas attempting to sneak in and pretend we had been there all along. The moment he caught sight of us, his gaze turns piercing, burning into us instead of the target.
+
+“Explain yourselves,” they demand.
+
+I couldn't help but gulp nervously; no matter how many times we found ourselves in such situations, I couldn't shake off the feeling of anxiety. Tomas was visibly trembling and shaking, overwhelmed by the intensity directed at both of us. Even Nicolás, usually one to find amusement in such circumstances, also seems quiet in the background instead of his typical snickering. I softly sighs to calm myself, how to deal with this...
+<center>
+<<link "Just ask forgiveness and receives all the punishment quitely." "11">><<set $temp.choice = 1>><</link>>
+<<link "Share the blame with Tomas since its not entirely my fault." "11">><<set $temp.choice = 2>><</link>>
+<<link "Explain the truth of what happened and how it's not my fault." "11">><<set $temp.choice = 3>><</link>>
+</center>
+
+:: 11
+<<if $temp.choice === 1>>
+I decide to take full responsibility for the situation and quietly ask for forgiveness. I step forward and address Ser Klaus with a respectful tone.
+
+“Ser Klaus, I apologize for our tardiness,” I say, my voice steady despite the nervousness inside. “It's entirely my fault for not managing our time well, and I take full responsibility for it. We lost track of time while discussing something important, and I promise it won't happen again.”
+
+Tomas looks surprised by my admission, but I give him a reassuring nod to let him know it's alright.
+
+“Is that so? Then you don't mind to bear all the punishment all alone?” they ask once again.
+
+I nod and steeling my composure “Yes, Ser,”
+
+“Then you know what to do, full marathon. 6 laps, I want you to complete it before I explain all today's lesson from the beginning to your peers once again, is that clear?” he commands.
+
+I bowed before quietly start running.
+
+<<include "12">>
+<<elseif $temp.choice === 2>>
+We can just take half the blame, right? After all it's not really my fault but I don't want to completely abandon Tomas to take the blame either.
+
+“Ser Klaus, we both got carried away discussing something and lost track of time,” I explain, trying to sound convincing. “It's entirely ours' fault. We should have been more mindful of our schedule, I promise it would be last time this is happen.”
+
+Tomas looks at me with gratitude in his eyes, I give him a small smile.
+
+“I don't need promises you can't or won't keep, but good job to owned your mess fairly easy, you'll need to run 4 laps of marathon while His Highness runs 2 laps before both of you can join today's lesson. Understood?” Ser Klaus ask both of us, to which we answer with a nod.
+
+<<include "12">>
+<<elseif $temp.choice === 3>>
+Honestly, its not really my fault. So why I should get punished? Lets just try to explain the truth of what happened.
+
+“Ser Klaus, we are late because Tomas needed a little bit of time, he was searching something important for him this morning,” I explain. “Please forgive him, I know he would understand and promise it would be last time this is happen.”
+
+Tomas looks down, dejected and guilty in his eyes.
+
+“Oh, so you're saying this is all His Highness fault. Is that what you're trying to say?” they spat the words, somehow I know he's not happy, but why? I'm just telling the truth.
+
+I don't know what they want from me, but I hesitantly nod.
+
+He shake his head disappointed, “I'm giving you one last chance to take back your words,” they suddenly proclaims.
+
+What? what is going on all of a sudden. Wait.
+<center>
+<<link "I understand and feel ashamed, I almost put my younger half-brother in difficult position without even trying to help lessen his burden." "11-a">><<set $temp.choice = 1>><</link>>
+<<link "I still don't understand, its not MY fault." "11-a">><<set $temp.choice = 2>><</link>>
+</center>
+<</if>>
+
+:: 11-a
+<<if $temp.choice === 1>>
+I understand and feel ashamed. As I reflect on the situation, I realize that I almost put my younger half-brother in a difficult position without even trying to help lessen his burden. It wasn't entirely his fault, and I should have been more supportive and understanding. My stubbornness to avoid punishment blinded me to the fact that I could have stood up for him and explained the situation better.
+
+“Ser Klaus, I apologize for my words,” I say, looking at Tomas with sincerity. “I was wrong to put all the blame on him. It's true that we both got carried away discussing something, but I should have been more responsible and made sure we kept track of time together more carefully.”
+
+Tomas looks at me with a mix of surprise and gratitude, and I smile back at him reassuringly.
+
+Ser Klaus nods, seemingly satisfied with my response. “Very well. The punishment will still stand, but at least you admitted your mistake. Each of you would need to run for 3 laps as punishment, now go and complete your laps.”
+
+Both Tomas and I start running the marathon, side by side. I take the opportunity to apologize to him while we run and promise to be better $pC.sibling in the future.
+<<elseif $temp.choice === 2>>
+I still don't understand why they're making such a big deal out of this. It's not my fault that Tomas couldn't find his stuff in time, and I don't see why I should bear the consequences for his actions.
+
+“I stand by what I said, Ser Klaus,” I reply defiantly. “It's not my fault. I shouldn't be punished for something that was entirely on him.”
+
+Ser Klaus's expression hardens, and it's clear that they are not pleased with my response. “Very well, if that's your stance, then so be it. You will run 6 laps while His Highness runs 2 laps. Now get out of my sight.”
+
+I try to argue further, but Ser Klaus doesn't seem interested in hearing any more excuses. Reluctantly, I start running the marathon, feeling frustrated and angry about the unfairness of the situation.
+<</if>>
+<<include "12">>
+:: 12
+After all that running I finally join the remaining archery lesson for today, they were a lot of corrections of stances, but I do feel like I'm learning a lot. Ser Klaus agile figure is making it looks easy and elegant, but to maintain consistency of how to draw the arrow in itself was quite difficult, more so to maintain the precision in each round of the shots.
+
+My hand and fingers start to feel sore and aching after more than a couple shots, I glance to my right where I see Nicolás completely focus and in his own world. He's always serious and interested in martial training more than anything, he draws and loosing arrows one after another to the target with elegance and confidence, I need to talk about Tomas' missing whistle with him after this lesson.
+
+To my left Tomas is struggling to make a shot, he is visibly distracted while Ser Klaus are trying their best to guide Tomas and bring up his attention. Tomas never like to do physical training in general, he enjoys reading books and scrolls at the library since he was three years old.
+
+Meanwhile, I...
+<center>
+<<link "Also enjoy martial and physical training and openly show it." "13">><<set $temp.choice = 1, $pC.skill = "1">><</link>>
+<<link "Also enjoy martial and physical training but not openly show it." "13">><<set $temp.choice = 2, $pC.skill = "1">><</link>>
+<<link "Also enjoy pursuing knowledge more than training and openly show it." "13">><<set $temp.choice = 3, $pC.skill = "2">><</link>>
+<<link "Also enjoy pursuing knowledge more than training but not openly show it." "13">><<set $temp.choice = 4, $pC.skill = "2">><</link>>
+<<link "Not liking either in particular and just trying my best at both of them." "13">><<set $temp.choice = 5, $pC.skill = "3">><</link>>
+</center>
+
+:: 13
+<<if $temp.choice === 1>>
+I also enjoy martial and physical training, and I openly show my enthusiasm for it. There's a certain thrill in honing my skills, whether it's with a sword, bow, or in hand-to-hand combat. I feel a sense of accomplishment each time I improve my techniques and see the results in my performance. However, this come at a cost of the constant comparisons between me and my half-brother, Nicolás. Our instructors, Ser Klaus included, often places more pressure on Nicolás to excel, which sometimes makes me feeling bad a little bit. Nicolás constantly tries to catch up or even trying his best to bested me, in part because of the expectation surrounding him.
+<<elseif $temp.choice === 2>>
+I also enjoy martial and physical training, there's a certain thrill in honing my skills, whether it's with a sword, bow, or in hand-to-hand combat. I feel a sense of accomplishment each time I improve my techniques and see the results in my performance. But I don't always openly display my enthusiasm. At first, I do show my passion openly towards this discipline, but then I realized there were these constant comparisons between me and my half-brother, Nicolás. I don't want to overshadow my brother, so often times I was deliberately holding back a little. 
+<<elseif $temp.choice === 3>>
+I prioritize pursuing knowledge over intensive physical training, and I openly express my preference for intellectual pursuits. I find joy in delving into books, scrolls, and discussions about various subjects. There were comparison between me and Tomas that make our teachers like Sister Mora or Master Luwin included, to have tendency of pushing Tomas to excel more. I feel a little bad because Tomas have to adhere to this expectation a lot harder because of me sharing similar interest with him.
+<<elseif $temp.choice === 4>>
+I prioritize knowledge over intense physical training, I find joy in delving into books, scrolls, and discussions about various subjects. The constant comparisons between me and Tomas have led me to keep my true interests somewhat hidden. At the early days I openly show my passion to this discipline but overtime I started to realized I might make my half-brother life harder because simply sharing the same interest and passion with him, I don't want to burden Tomas with more expectation, so I was content to make this passion of mine hidden.
+<<elseif $temp.choice === 5>>
+I don't particularly favor one over the other, and simply try my best at both physical training and pursuing knowledge. I recognize the importance of both physical and intellectual growth. I engage in training sessions and also dedicate time to expanding my understanding of various subjects. My approach is to maintain a well-rounded skill set and continue developing myself in different aspects of life. It leaves me somewhat fallen shorter than my half-brothers who focus more on one discipline, but I don't mind about that at all.
+<</if>>
+Ser Klaus is finished giving Tomas direction and now approaching me in turn. They give me silent gesture to continue while they watch to see if they were some suggestion needed to be address accordingly.
+<<if $pC.skill === "1">>
+I take a deep breath. The weight of the bow in my hand feels familiar, and I focus on the task at hand. I position my body perpendicular to the target, my feet shoulder-width apart for stability. I raise the bow, extending my arm fully, and then I begin to draw the string back with a smooth, controlled motion.
+
+I can feel the tension in the bowstring as I pull it back, my fingers gripping the string with precision. Stance is steady, and I try to maintain the correct alignment as I bring the bowstring close to my cheek. With a deep breath, I release the arrow, watching it soar through the air before hitting the target dead in the eye with a satisfying thud.
+
+Ser Klaus nods approvingly, a small smile tugging at the corner of their lips. “Very well done,” they comments. “Your form is excellent, keep your shots consistent from now on and continue to improve.”
+
+I feel a sense of pride swell within me as I receive their praise. It's moments like these that make all the effort I put into my training worthwhile.
+<<elseif $pC.skill === "2">>
+As Ser Klaus approaches me, I can't help but feel a twinge of nervousness. The bow in my hand suddenly feeling unfamiliar and awkward. I try to mimic the steps I've seen others do and Ser Klaus demonstrate earlier, but it's clear that my form is far from correct.
+
+I position my body, but my stance feels off-balance. I struggle to draw the bowstring, my fingers fumbling slightly. I manage to release the arrow, but it veers off course and lands wide of the target.
+
+Ser Klaus steps in, their movements fluid and precise as they demonstrates the proper technique. They explains the importance of alignment, balance, and the smooth draw of the bowstring. I watch closely, absorbing their instructions.
+
+“Remember, it's all about finding the right rhythm and flow,” they advises. “Take your time and focus on each step because your shot will only count when it hits your enemy.”
+
+I nod, grateful for their guidance. I try again, this time paying closer attention to their advice. With a steadier hand and more deliberate motions, I draw the bowstring and release the arrow. It misses, and misses again but then it finally hits the target with better accuracy this time.
+
+Ser Klaus offers simple nod. “You're improving,” they says. “Keep practicing, and you'll get the hang of it.”
+<<elseif $pC.skill === "3">>
+Ser Klaus's attentive gaze is on me, I hold the bow in my hand, feeling a mix of determination and self-awareness. My form might not be as perfect as Nicolás have, but I'm ready to give it my best shot.
+
+I position my body, remembering the basic stance that Ser Klaus had demonstrated earlier. I draw the bowstring with measured concentration, my fingers finding the grip steadyly. With a deep breath, I release the arrow, watching it fly toward the target.
+
+My shot isn't as precise as some of the others', but I hit the target in first try when Ser Klaus start watching me. I catch Ser Klaus's gaze, and they nods in acknowledgement, recognizing my effort.
+<</if>>
+<<link "Continue" "14">><</link>>
+
+:: 14
+The archery lesson finally comes to an end as the late afternoon sun casts long shadows across the training field. As if on cue, snowflakes start to fall from the gray sky, a common occurrence in the northern regions. The air feels crisp and invigorating, and I take a moment to savor the tranquility that comes after physical exertion. Ser Klaus were calling Tomas for a conversation, probably to talk about his lack of attention lately.
+<<if $temp.details === 1>>
+As the rest of the group disperses, I make my way over to Nicolás, who is carefully inspecting his bow and arrows. I clear my throat, catching his attention.
+
+“Hey, Nicolás,” I begin, choosing my words carefully, “I wanted to talk to you about something.”
+
+He looks up, his expression curious. “Well? Just talk, I didn't know what are you waiting for,” he remarks playfully.
+
+I take a deep breath, not entirely sure how to approach the subject. “It's about Tomas and his summoner whistle.”
+
+Nicolás's eyebrows furrow as he sets down his equipment. “What about it?”
+
+“Well, the truth is its missing recently,” I explain. “He's been searching for it all morning, and he was pretty distressed when I found him in his room. He couldn't find it anywhere.”
+
+Nicolás's gaze narrows, and I can tell he's processing the information. “You sure he isn't forgetting it somewhere?”
+
+I nod, Nicolás reaction seems genuine enough, I think. I'm glad I open up the topic carefully. “We're pretty sure he isn't. He's worried and frustrated, and I thought maybe you could help.”
+
+Nicolás's expression shifts. “Why do you think I can help?”
+
+“I don't know,” I admit, “Why do you think you can't help?” I ask the question back.
+
+He sighs, running a hand through his hair. “<<print $pC.skill === "1" ? "You're the one that he usually come asking for help, not me." : "You're the one that he usually come asking for help, not me. Besides, you guys are the brain. You don't need my help,">>” he jokingly deflects.
+<<elseif $temp.details === 2 || $temp.details === 3>>
+As the rest of the group disperses, I make my way over to Nicolás, a serious look on my face. “Nicolás, we need to talk,” I state firmly.
+
+He looks at me, his expression guarded. “Hey... Calm down, what's going on?”
+
+“I'm talking about Tomas's summoner whistle,” I reply, my voice unwavering.
+
+Nicolás's eyes narrow, and a spark of irritation flares. “What about it?”
+
+I'm not convince, meeting his gaze squarely. “This isn't the first time something like this has happened, Nicolás. Remember the incident with his journal last month?”
+
+He shifts uncomfortably. “What does that have to do with anything?”
+
+I press on, my tone steady and hard. “It's about patterns, Nicolás. The whistle is nowhere to be found, I'm not jumping to conclusions, but it's hard to ignore the coincidence. Did you take his whistle?”
+
+He hesitates. “Fine, maybe I did take the journal last month. But it's not me this time, I swear.”
+
+I maintain my firm stance, giving him a meaningful look. “Tomas is really upset, and he needs your help right now.”
+
+He sighs, running a hand through his hair. “I don't know how if I can help, why you don't help him? <<print $pC.skill === "1" ? "You're the one that he usually come asking for help, not me." : "You're the one that he usually come asking for help, not me. Besides, you guys are the brain. You don't need my help,">>” he jokingly deflects.
+<</if>>
+I was slightly taken aback by his admission. Nicolás had never been so open with me before. I could see a hint of vulnerability in his eyes, a side of him that he rarely showed to anyone.
+
+How to respond with this one.
+<center>
+<<link "Persuade him to help sincerely." "15">> <<set $temp.choice = 1>><</link>>
+<<link "Persuade him to help good-humorly." "15">> <<set $temp.choice = 2>><</link>>
+<<link "Leave it open to him" "15">> <<set $temp.choice = 3>><</link>>
+</center>
+
+:: 15
+<<if $temp.choice === 1>>
+I shake my head profusely, “You're wrong, Nicolás. Tomas would be grateful if you lend your help, so do I,” I say sincerely, trying to emphasize the importance of Nicolás's assistance.
+
+Nicolás hesitates for a moment before finally relenting. “Alright, alright. I'll talk to him after this. I guess I can help look for it or something.”
+
+I give him a grateful smile. “Thank you, Nicolás. I know he'll appreciate it.”
+<<nobr>>
+<<print $temp.details === 1 ? "": "“Next time around you can calm down a bit, you're so sudden and intense I anticipated for a punch flying out,” he jests, I throw him a playful shove to make him stop.">>
+
+<<print $temp.details === 1 ? "I'm glad I was wrong, and I manage to convince Nicolás to help, it would be a good oppurtunity for the two of them to reconcile their difference and strenghten their bonds.": "Well I guess I was wrong, color me surprised, but I think this also a good development">><</nobr>>
+<<elseif $temp.choice === 2>>
+“That's really sweet of you,” I say with a teasing smile. “I never thought you had it in you. I will take you agree to help this time then, we'll forever be in debt for your service. You just have to name your price.” I can't help but tease him back a bit; I think he'd also be happier if I don't respond too seriously.
+
+Nicolás rolls his eyes, but there's a subtle mix of amusement and gratitude in his expression. “Don't get used to it. I'm only doing it because you accidentally asked in a good day. And don't worry, just for this time, it's free of charge.”
+
+I laugh. “Well, lucky us, then.”
+<<nobr>>
+<<print $temp.details === 1 ? "": "“Next time around you can calm down a bit, you're so sudden and intense I anticipated for a punch flying out,” he jests, I throw him a playful shove to make him stop.">>
+
+<<print $temp.details === 1 ? "I'm glad I was wrong, and I manage to convince Nicolás to help, it would be a good opportunity for the two of them to reconcile their difference and strenghten their bonds.": "Well I guess I was wrong, color me surprised, but I think this is also not a bad  development.">> <</nobr>>
+<<elseif $temp.choice === 3>>
+I nod understandingly. “Alright, just keep it in mind. If you're willing to help, I know Tomas would appreciate it.”
+
+Nicolás shrugs in response. “Yeah, yeah. I'll think about it.”
+
+At least we can rule out Nicolás, his reaction seems genuine enough. 
+<</if>>
+We say goodbye afterward, I quickly go back to my room to put my stuff. Unlike the two of my half-brother's room that located at the Main hall, my room is slightly at the back near the common residential area. It was just a small room but at least it was mine, it's up to me how I maintain it and I try to make it as comfortable as possible.
+
+Tomas missing whistle still floating around in my mind, it's not Nicolás but it leaves another question, if not him then who? New Weavers in training that don't have full controlled over their magic can't summon their familiar without the help of the summoner whistle. Master Luwin is responsible for Tomas training, if I talk to him about the matter, perhaps he can provide a new summoner whistle as a replacement? <<print $temp.details === 1 ? "I know I was already promising Tomas to help find it before, but perhaps it's better and easier this way?": "">> I have to focus with my lesson for the upcoming Kol'osus days too.
+
+“$pC.FName, What's on your mind?” someone asks behind, my body jolt up in panic. Eyes wide, hearth-beat rise uncontrollably as I embarrassingly let out a yelp from my mouth.
+
+“Oh... I got you good, didn't I? Your heart flutters like a delicate butterfly, dancing around on a summer sky,”
+
+Now I know that voice, of course, its...
+<center>
+<<link "Aiden" "16">><<set $aRo.Name = "Aiden",$aRo.gender = "man", $aRo.Gender = "Man", $aRo.gender2 = "male", $aRo.Gender2 = "Male">> <<set $aRo.as = "he", $aRo.ao = "him", $aRo.ap = "his", $aRo.ar = "himself", $aRo.As = "He", $aRo.Ao = "Him", $aRo.Ap = "His", $aRo.Ar = "Himself", $aRo.Atobe = "is", $aRo.atobe = "is">><</link>>
+<<link "Adeline" "16">><<set $aRo.Name = "Adeline",$aRo.gender = "woman", $aRo.Gender = "Woman", $aRo.gender2 = "female", $aRo.Gender2 = "Female">> <<set $aRo.as = "she", $aRo.ao = "her", $aRo.ap = "her", $aRo.ar = "herself", $aRo.As = "She", $aRo.Ao = "Her", $aRo.Ap = "Her", $aRo.Ar = "Herself", $aRo.Atobe = "is", $aRo.atobe = "is">><</link>>
+</center>
+
+:: 16
+As my heart rate gradually returns to its normal rhythm, I turn around to face the source of the voice. There, standing before me with an impish grin, is none other than $aRo.Name, my childhood friend and the current squire of my father. 
+
+Long raven hair, curly and wild, $aRo.as has a broad shoulder with a long lashes eye. $aRo.Ap stance $aRo.atobe straight and ready, standing beside my window like nobody, with a single dimple appears on $aRo.ap cheek, widens grin unbothered with the stare. Last time I was seeing $aRo.ao was three years ago before father leave for duty, as his newest squire, of course $aRo.Name was required to follow him.
+<center>
+<<link "“What are you doing here?” I say flabbergasted." "17">><<set $temp.choice = 1 >><</link>>
+<<link "Quietly hug $aRo.ao, I miss $aRo.ao ❤️" "17">><<set $temp.choice = 2 >><</link>>
+<<link "“Are you trying to kill me?!” I say in disbelief." "17">><<set $temp.choice = 3 >><</link>>
+</center>
+
+:: 17 
+<<if $temp.choice === 1>>
+I take a step forward, still feeling a mix of shock and joy at seeing $aRo.Name unexpectedly. My heart races as a thousand memories flood my mind, reminding me of the time and adventures we shared together. “What are you doing here?” I manage to say, flabbergasted, my voice a mixture of disbelief and excitement.
+
+$aRo.As chuckles, “Well, I heard there was an archery lesson happening, I'm hiding you see, from this legendary marksman I've been hearing.”
+
+I can't help but grin, a rush of nostalgia washing over me. “You and your silliness, just like old times. It's been too long, $aRo.Name.”
+
+$aRo.As steps closer, $aRo.ap gray eyes still bright as ever. “Indeed, it has. And I must say, you're looking even more radiant than the last time.”
+
+I playfully roll my eyes, his words don't have any effect on me. “Just stop it. But seriously, it's wonderful to see you again.”
+
+<<include "18">>
+<<elseif $temp.choice === 2>>
+I don't know what happened, but my body moves on its own, drawing me closer to $aRo.ao. There are no words that can explain the surge of emotions within me as I wrap $aRo.ao in a tight, almost desperate hug. I know I would meet with $aRo.ao again, I've had no doubt, I just don't expect it now.
+
+$aRo.As seems taken aback for a moment before a warm and gentle realization sets in. Strong arms envelop me.
+<center>
+<<link "Break the hug, self-conciously." "17a">><<set $temp.choice = 1 >><</link>>
+<<link "Keep silent, embracing every moment." "17a">><<set $temp.choice = 2 >><</link>>
+<<link "Punch $aRo.ap hand for pulling a prank on me." "17a">><<set $temp.choice = 3 >><</link>>
+</center>
+<<elseif $temp.choice === 3>>
+“Are you trying to kill me?!” I hiss at $aRo.ao, my slight anger resonating in the air.
+
+$aRo.As laugh, earnest and genuine, unbothered by anything. “Well, If that's my goal I guess I've failed miserably. I'm sorry, let me try again next time.”
+
+I shake my head, feeling a renewed sense of lightness within. “Well, next time, you should bring a healer or a mortician, but certainly not for me.”
+
+We share a knowing grin, giving our secret handshake while smiling stupidly.
+
+<<include "18">>
+<</if>>
+
+:: 17a
+<<if $temp.choice === 1>>
+I quickly loosen my grip, feeling hot embarrassment creeping in. Pulling away, I manage a nervous chuckle. “What am I doing? Sorry, I got a little carried away there. It's just... I've really missed you, $aRo.Name.”
+
+$aRo.As waves $aRo.ap hand. “You won't see me complaining, I missed you too, $pC.FName. You don't need to hide your feeling, or you can, either way it's cute.”
+
+“Please just... shut up, you're so stupid,” I plea to $aRo.ao.
+
+$aRo.As chuckle, clearly amused.
+
+<<include "18">>
+<<elseif $temp.choice === 2>>
+I cling to the embrace, savoring the warmth and familiarity. Words seem unnecessary at this moment, and the silence speaks volumes. We stand there for what feels like an eternity.
+
+$aRo.As breaks the silence first, $aRo.ap voice barely above a whisper. “You know I'm enjoying this as much as you do, but you should know I get charged by an hour.”
+
+I start giggling confused of what $aRo.as's saying, “What? no, you don't.” I release the hug.
+
+“Which is a shame, I might already get rich right now if I do, you won't believe how many times I have spend just standing around in the capital,” $aRo.as laments.
+
+“Shut up, you're so stupid,” I say.
+
+$aRo.As chuckle, clearly amused. 
+
+<<include "18">>
+<<elseif $temp.choice === 3>>
+I pull away from the hug, a mischievous glint in my eyes. Without hesitation, I give $aRo.ao a half punch on the arm. “You really got me there, you sneaky devil.”
+
+$aRo.As lets out a mock grunt. “Ah, $pC.FName, you and your fists. You don't need to keep throwing punches just because you feel a little embarrassed.”
+
+“No, I don't!” I say with my half conviction.
+
+“Well, nobody believe it. Not even you,” $aRo.as challenges.
+
+“Just shut up, you're so stupid,” I hiss.
+
+$aRo.As chuckle, clearly amused.
+
+<<include "18">>
+<</if>>
+
+:: 18
+I proceed to ask $aRo.ao a couple more questions, why $aRo.as was here, and what happen. $aRo.As explains to me that Father is already on his way back home, Aiden is directed by Father to go ride ahead of the convoy, so $aRo.as can inform us about their arrival.
+
+“So, you said Lady Fiocarda are on the way here too right now?” I ask, confirming what $aRo.as's saying earlier.
+
+“Mmhm...” $aRo.as shrugs. “Nobody is happy about it from what I observe, but let's keep it shut between ourselves, shall we?” $aRo.as continued to joke half-heartedly.
+
+I feel uneasy and sigh, if I'm saying Lady Fiocarda isn't fond of me that would be putting it mildly. Unlike her daughter who's kind and understanding, she's more... stern? I can't describe the woman beyond the surface level because I don't know much about her. When she was visiting, Father usually instructs me to avoid her as best as I can, somehow apart from the fact that I have no reason to interact with her, deep in my gut I also don't want to interact with her.
+
+Her husband, unfortunately, perished in battle, they have five children but two of them also met tragic ends, the remaining that's left already married away to other houses and living with their partners, making the Fiocarda line seat of power empty at the moment. Lady Fiocarda held this rank and acted as regent until the distant relatives suitable appear and were able to replace her.
+
+In truth, this situation is not exclusive to House Fiocarda. The civil war that broke out right around when I was born is taking so many lives, noble and common folk alike, that succession crises are happening left and right. Father's family was also one of them, first his parents died, then his oldest brother, after that his sibling and lastly his sister, he was the only one left, all alone.
+
+<div style="border-top: 1px solid var(--contrast)">
+<center><big>Alright, I think that's it for now. I would split this in two parts for chapter 1? Let's see what's the word count! its ~10k including the code for the passage logic. I'm still pretty new to coding and writing in general, it's been overall fun so far, so I want to continue. 
+
+Your saves file probably don't work in the future because I don't even implement the stats system yet in this version. But it still short read anyway right? I hope you don't mind, I would research how can I make sure old saves are compatible with newer version next time.
+
+So... Thanks for reading it this far, hope you are excited for more. Enjoy your day, and please take care of yourself. I would see you next when I bring you more of my works!</big></center>
+<img src="./images/rigby.gif"/>
+
+<<link "What's Next">>
+<<script>>
+Dialog.setup(`What's Next`);
+Dialog.wiki(Story.get("What's Next").processText());
+Dialog.open();
+<</script>>
+<</link>>
+</div>
+
+:: What's Next
+- Meet Father.
+- More adventures.
+- Encounter with Grandmother.
+- The later part of the story would be to attending to the academy. Maybe think of it like Highschool or University, I think it's a nice concept that can be quite easy to implement and interesting plot progression especially in interactive fiction. For now I want to establish relationship between the player and their close friends and family first. 
+
+Anyway... Have you open the Credits page yet? If not open it: <<link "Credits">><<script>>
+			Dialog.setup("Credits: About This Tale");
+			Dialog.wiki(Story.get("Credits").processText());
+			Dialog.open();
+		<</script>><</link>>

@@ -1,5 +1,5 @@
 :: StoryTitle
-Template
+Bastard's Tale
 
 
 :: StoryData
@@ -17,25 +17,55 @@ Template
 }
 
 :: StoryInit
+<<set $temp = {choice: 0, details: 0}>>
+<<set $version = 0.1>>
+<<set $chapter = "">>
+<<preload './images/logo.png' './images/tile.png' './images/ui.png'  './images/twine-logo.jpg' './images/k&m.png'>>
+
+<<preload './src/audio/front-page.mp3' './src/audio/sfx/hover.mp3' './src/audio/sfx/click.mp3' './src/audio/sfx/transition1.mp3' './src/audio/battlestart.mp3' './src/audio/sfx/breath.mp3' './src/audio/sfx/ui.mp3'>>
+
 <<cacheaudio "link_click" "./src/audio/sfx/click.mp3">>
 <<cacheaudio "link_hover" "./src/audio/sfx/hover.mp3">>
 <<cacheaudio "ui" "./src/audio/sfx/ui.mp3">>
 <<cacheaudio "breath" "./src/audio/sfx/breath.mp3">>
+
+<<set $age = 14>>
 <<set $skinColor = ["fair", "olive", "tan", "dark"]>>
-<<set $hairColor = ["black", "brown", "blonde", "red", "gray"]>>
-<<set $bg = "src/images/smoke.png">>
+<<set $hairColor = ["black", "blonde", "red", "gray"]>>
+<<set $eyeColors = ["blue", "green", "brown", "hazel", "gray"]>>
 <<set $pC = {
 fname: "",
 FNAME: "",
 FName: "",
 lname: "",
 Lname: "",
+ygender: "",
+Ygender: "",
+gender: "",
+Gender: "",
+gender2: "",
+Gender2: "",
+as : "", 
+ao : "",
+ap : "",
+ar : "",
+As : "",
+Ao : "",
+Ap : "",
+Ar : "",
+sibling: "",
+Sibling: "",
+Atobe : "",
+atobe : "", 
+genderchange: false,  
 sktone: "",
 hairc: "",
+eyec: "",
 hon: "",
 Hon: "",
 hon1: "",
 Hon1: "",
+skill: "",
 emp: 50,
 sb: 50,
 pr: 50,
@@ -46,6 +76,29 @@ mp: 50,
 hn: 50
 }>> 
 
+<<set $aRo = {
+fname: "",
+FNAME: "",
+FName: "",
+lname: "",
+Lname: "",
+as : "", 
+ao : "",
+ap : "",
+ar : "",
+As : "",
+Ao : "",
+Ap : "",
+Ar : "",
+sibling: "",
+Sibling: "",
+Atobe : "",
+atobe : "",
+hon: "",
+Hon: "",
+hon1: "",
+Hon1: "",   
+}>> 
 :: StoryInterface [maybe-don't-change] 
 <!-- SIDEBAR -->
 
@@ -64,11 +117,7 @@ hn: 50
   	</div>
 	
 <!-- HISTORY BUTTONS THAT ALLOW USER TO GO BACKWARDS AND FORWARDS -->
-<!-- COMMENT THESE OUT IF YOU DON'T WANT THEM IN YOUR GAME 
-  <div class="sidebar-history-nav">
-	  <span id="backwards-button" class="lnr lnr-arrow-left"></span>
-	  <span id="forwards-button" class="lnr lnr-arrow-right"></span>
-  </div>-->
+<!-- COMMENT THESE OUT IF YOU DON'T WANT THEM IN YOUR GAME -->
 
 	<div id="sidebar-body">
 	
@@ -80,21 +129,23 @@ hn: 50
 
 	<nav class="sidebar-nav">
 	  <ul class="story-tools">
-		<li class="story-tools-list">
-		<span id="restart-button" class="lnr lnr-redo"></span>
+		<li class="story-tools-list" id="restart-list">
+		<span id="restart-button" class="lnr lnr-sync"></span>
 		<span class="tooltiptext">Restart</span>
 		</li>
-		<li class="story-tools-list">
+		<li class="story-tools-list" id="saves-list">
 		<span id="saves-button" class="lnr lnr-download"></span>
 		<span class="tooltiptext">Saves</span>
 		</li>
-		<li class="story-tools-list">
+		<li class="story-tools-list" id="settings-list">
 		<span id="settings-button" class="lnr lnr-cog"></span>
 		<span class="tooltiptext">Settings</span>
 		</li>
 	  </ul>
 	</nav>
-
+	  <div class="sidebar-social-nav">
+	  <a id="hero-button" href="https://ko-fi.com/keiworks" target="_blank">bemyHero</a>
+  </div>
 	
   </div> <!-- SIDEBAR-BODY END TAG -->
 </div> <!-- SIDEBAR END TAG -->
@@ -109,20 +160,21 @@ hn: 50
 
 
 :: gameTitle [change] 
-Game Title
+<<print $pC.FNAME != "" ? "$pC.FNAME's":"Bastard's">> Tale
 
 
 :: storyLogo [change] 
-<a href="https://tumblr.com/yourblog" target="_blank">
+<a href="https://kei-works.tumblr.com/" target="_blank">
 <img src="images/logo.png">
 </a>
 
 :: Credits
-This is hopefully would be populated by my supporters name, print{🗿 x1,043}
-🗿 <<link 'Example A'>>
+<style>#ui-dialog-body {background: none;}</style>
+My Supporters that make this endeavor possible 🌟:
+🌟 <<link 'Mom'>>
 <<script>>
-Dialog.setup(`Thanks A`);
-Dialog.wiki(Story.get("Thanks A").processText());
+Dialog.setup(`Thanks Mom`);
+Dialog.wiki(Story.get("Thanks Mom").processText());
 Dialog.open();
 <</script>>
 <</link>>
@@ -130,18 +182,22 @@ Dialog.open();
 Assets I am using:
 - <a style="color: var(--main);" href="https://vahnya.itch.io/twine-template" target="_blank">Vanya's Sugarcube Template</a> 
 - <a style="color: var(--main);" href="https://pixabay.com" target="_blank">Music & SFX effect</a>
-- <a style="color: var(--main);" href="https://logo.com" target="_blank">Logo</a>
 
-<b style="background-color: green; padding: 2px; font-family: 'Vollkorn, serif';">The arts are currently AI-generated, as it's just me working on the project, and you don't want to see my attempt of drawing,believe me! Let's just cross fingers I will replace them when I'm able to afford real artist commissions.</b>
+
+This is my <a href="https://ko-fi.com/keiworks" target="_blank">Kofi</a> page if you interested supporting me financially: <a href="https://ko-fi.com/keiworks" target="_blank">Kofi</a> 
+Would really appreciated of all the support I can get, you can show me what your thought on the comments section and maybe leave <i>*Uhum*</i> a nice rating for this project?
+
 
 :: storyAuthor [change] 
-by <a href="https://tumblr.com/yourblog" target="_blank">Name</a> | <<link "Credits">><<script>>
+by <a href="https://kei-works.tumblr.com/" target="_blank">Kei</a> | <<link "Credits">><<script>>
 			Dialog.setup("Credits: About This Tale");
 			Dialog.wiki(Story.get("Credits").processText());
 			Dialog.open();
 		<</script>><</link>>
 
 :: PassageFooter [noreturn]
+<<nobr>><<if tags().includes("game-start")>>
+<<else>>
 <div class="systemButton"><<button '<span id="player-toggle-icon" class="lnr lnr-user"></span>'>>
 <<script>>
 Dialog.setup(`${State.getVar("$pC.FName")} Page`);
@@ -149,4 +205,13 @@ Dialog.wiki(Story.get("Player Page").processText());
 Dialog.open();
 <</script>>
 <</button>></div> /* **************/
+<</if>><</nobr>>
 
+:: PassageHeader 
+<<nobr>><<if tags().includes("no-history")>>
+<<else>>
+  <div class="sidebar-history-nav">
+	  <span id="backwards-button" class="lnr lnr-arrow-left"></span>
+	  <span id="forwards-button" class="lnr lnr-arrow-right"></span>
+  </div>
+<</if>><</nobr>>

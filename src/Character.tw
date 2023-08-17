@@ -1,0 +1,61 @@
+:: Prologue [game-start]
+<<fadein 3s>>!Prologue <<set $chapter = "Prologue">>
+!!Circle
+In the dead of night, a piercing cry echoed through the air as a woman's face contorted with pure agony and pain, tears streaming down her <<nobr>><<cycle "$pC.sktone">>
+<<optionsfrom $skinColor>><</cycle>><</nobr>> complexion. The midwives, working in perfect unison, attended to her with complete determination and encouragement, their actions are methodical amidst the sea of blood that surrounded them.
+
+A man stood in the corner, consumed by concern and confusion, attempting several times to assist, only to be firmly rebuffed by the commanding ladies, who ordered him to step back. He realized that this was a battle he could never fully comprehend, despite all his experiences of mud-crawling, clashing swords, and charging hooves. All the hardships he had faced in the past were difficult. But this and that are different, with each possessing its own challenges, at least he understood that now.
+
+Forced to be back in the corner, memories of his childhood flooded back, a time when he often felt small and powerless, witnessing his sister and brothers bravely carrying the weight of the world on their shoulders. But now, they were all gone, leaving just the two of them behind. Moving tears streamed down his cheeks, as he could no longer hold back his emotions. The facade of strength he had worn for so long shattered, granting him permission to grieve for all that he had lost when the baby is finally born.
+
+The baby is born and loudly cried, while the woman softly smiled and died.
+
+What is the gender the baby is gifted upon their birth?<center>
+<<link 'A boy' "Prologue">>  <<set $pC.ygender = "boy", $pC.Ygender = "Boy", $pC.gender = "man", $pC.Gender = "Man", $pC.gender2 = "male", $pC.Gender2 = "Male">> <<set $pC.as = "he", $pC.ao = "him", $pC.ap = "his", $pC.ar = "himself", $pC.As = "He", $pC.Ao = "Him", $pC.Ap = "His", $pC.Ar = "Himself", $pC.Atobe = "is", $pC.atobe = "is", $pC.sibling = "brother", $pC.Sibling = "Brother">> <<script>>
+        Dialog.setup(`Name Input`);
+        Dialog.wiki(Story.get("00").processText());
+        Dialog.open();
+        <</script>> <</link>>
+<<link 'A girl' "Prologue">> <<set $pC.ygender = "girl", $pC.Ygender = "Girl", $pC.gender = "woman", $pC.Gender = "Woman", $pC.gender2 = "female", $pC.Gender2 = "Female">> <<set $pC.as = "she", $pC.ao = "her", $pC.ap = "her", $pC.ar = "herself", $pC.As = "She", $pC.Ao = "Her", $pC.Ap = "Her", $pC.Ar = "Herself", $pC.Atobe = "is", $pC.atobe = "is", $pC.sibling = "sister", $pC.Sibling = "Sister">><<script>>
+        Dialog.setup(`Name Input`);
+        Dialog.wiki(Story.get("00").processText());
+        Dialog.open();
+        <</script>> <</link>></center>
+<</fadein>> 
+
+:: 00
+<style>#ui-dialog-body {background: none}</style>
+What name do they call the $pC.ygender?
+<div style="display:flex; align-items: center; gap:5px;">
+<<textbox "$pC.fname" "">> <<link '<div style="display:inline;" class="co"><img style="width:50px;" src="./images/logo.png"/></div>'>> 
+	<<set $pC.inputFirstName = $pC.fname.trim().split(' ')[0]>> // Extract the first part before any space
+	<<set $pC.fname = $pC.inputFirstName.toLowerCase()>> // Convert the first name to lowercase
+	<<set $pC.FNAME = $pC.fname.toUpperCase()>>
+	<<set $pC.FName = $pC.fname.charAt(0).toUpperCase() + $pC.fname.slice(1)>>
+	
+	<<if $pC.fname === ''>> // Check for empty first name
+		<<replace "#input-error">>Please enter a valid first name. The input cannot be empty or contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<elseif $pC.inputFirstName.length < 3 or $pC.inputFirstName.length > 10 or /[^\p{L}'\s]/u.test($pC.inputFirstName)>>
+		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<elseif /[\u{1F300}-\u{1F6FF}]/u.test($pC.inputFirstName)>>
+		<<replace "#input-error">>Please enter a valid first name with a minimum of 3 letters and a maximum of 10 letters. The input cannot contain spaces, first sentence would be the value assigned if you enter multiple sentences for the first name.<</replace>>
+	<<else>>
+        <<script>>
+        Dialog.setup(`Name Confirmation`);
+        Dialog.wiki(Story.get("Name Confirmation").processText());
+        Dialog.open();
+        <</script>>
+	<</if>>
+<</link>>
+</div>
+@@#input-error;@@
+
+:: Name Confirmation
+<style>#ui-dialog-body {
+  background: none;
+} button {width: 60% !important;} #ui-dialog-close{width: auto !important} </style> <center><big>My name is $pC.FName <<print $pC.ygender === "boy" ? "Fils": "Fille">> de Jean?</big>
+
+<<button "Yes, continue on." "01">><</button>></center>
+
+
+
