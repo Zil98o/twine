@@ -50,9 +50,14 @@ $(document).on(":passagedisplay", function () {
 // POPULATING SETTINGS
 
 // CHANGE FONT FAMILY
-var settingFontFamily = ["Montserrat", "Merriweather", "Open Dyslexic"];
+var settingFontFamily = ["Vollkorn","Montserrat", "Merriweather", "Open Dyslexic"];
 var setFont = function () {
   var passages = document.getElementById("passages");
+  switch (settings.fontFamily) {
+    case "Vollkorn":
+      passages.style.fontFamily = "'Vollkorn', sans-serif";
+      break;
+  }
   switch (settings.fontFamily) {
     case "Montserrat":
       passages.style.fontFamily = "'Montserrat', sans-serif";
@@ -597,17 +602,17 @@ Setting.addToggle("fullscreen", {
   onChange: settingFullscreenHandler,
 });
 
-// Disable the context menu (right-click menu) to prevent copying
-$(document).on('contextmenu', function () {
-	return false;
-  });
+// // Disable the context menu (right-click menu) to prevent copying
+// $(document).on('contextmenu', function () {
+// 	return false;
+//   });
 
-  // Disable Ctrl+C (copy) and Ctrl+V (paste) keyboard shortcuts
-  $(document).keydown(function (event) {
-	if ((event.ctrlKey || event.metaKey) && (event.key === 'c' || event.key === 'v')) {
-	  event.preventDefault();
-	}
-  });
+//   // Disable Ctrl+C (copy) and Ctrl+V (paste) keyboard shortcuts
+//   $(document).keydown(function (event) {
+// 	if ((event.ctrlKey || event.metaKey) && (event.key === 'c' || event.key === 'v')) {
+// 	  event.preventDefault();
+// 	}
+//   });
 
 // Set the favicon
 $(document).ready(function () {
@@ -723,4 +728,97 @@ function lock(orientation) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const inputField = document.getElementById("textbox-pcfname");
 
+  inputField.addEventListener("click", function() {
+    this.focus();
+    const scrollHeight = this.scrollHeight;
+    this.style.height = scrollHeight + "px";
+  });
+
+  inputField.addEventListener("blur", function() {
+    this.style.height = ""; // Reset the height
+  });
+});
+
+// message-macro.min.js, for SugarCube 2, by Chapel
+// v1.0.1, 2022-07-21, 3bdbdfbe5ae47a46e4f4e52766d78701939ae9a6
+;setup.messageMacro={},setup.messageMacro.default="Help",Macro.add("message",{tags:null,handler:function(){var e=this.payload[0].contents,a=$(document.createElement("span")),s=$(document.createElement(this.args.includes("btn")?"button":"a")),t=$(document.createElement("span"));s.wiki(this.args.length>0&&"btn"!==this.args[0]?this.args[0]:setup.messageMacro.default).ariaClick(this.createShadowWrapper((function(){a.hasClass("open")?t.css("display","none").empty():t.css("display","block").wiki(e),a.toggleClass("open")}))),a.attr("id","macro-"+this.name+"-"+this.args.join("").replace(/[^A-Za-z0-9]/g,"")).addClass("message-text").append(s).append(t).appendTo(this.output)}});
+// end message-macro.min.js
+
+$(document).on(":passagedisplay", function () {
+  $("#story").scrollTop(0);
+  var stubStat = State.getVar("$pC.sb") + "%";
+  $("#stub-stat").attr("style", "width: " + stubStat);
+});
+$(document).on(":passagedisplay", function () {
+  $("#story").scrollTop(0);
+  var emphStat = State.getVar("$pC.em") + "%";
+  $("#emph-stat").attr("style", "width: " + emphStat);
+});
+$(document).on(":passagedisplay", function () {
+  $("#story").scrollTop(0);
+  var trustStat = State.getVar("$pC.tr") + "%";
+  $("#trust-stat").attr("style", "width: " + trustStat);
+});
+$(document).on(":passagedisplay", function () {
+  $("#story").scrollTop(0);
+  var honestStat = State.getVar("$pC.hn") + "%";
+  $("#honest-stat").attr("style", "width: " + honestStat);
+});
+
+
+
+$(document).ready(function() {
+  
+});
+
+$(function() {
+  // Use a timer to repeatedly check if the element is available
+  var checkElementInterval = setInterval(function() {
+    var stubStatElement = document.getElementById("stub-stat");
+    if (stubStatElement) {
+      clearInterval(checkElementInterval); // Stop the timer
+      // Your code here, e.g., updating the progress bar width
+      document.getElementById("stub-stat").style.width = `${State.getVar("$pC.sb")}%`
+    }
+  }, 100); // Check every 100 milliseconds
+});
+
+$(function() {
+  // Use a timer to repeatedly check if the element is available
+  var checkElementInterval = setInterval(function() {
+    var stubStatElement = document.getElementById("trust-stat");
+    if (stubStatElement) {
+      // clearInterval(checkElementInterval); // Stop the timer
+      // // Your code here, e.g., updating the progress bar width
+      console.log(`${State.getVar("$pC.tr")}%`);
+      document.getElementById("trust-stat").style.width = `${State.getVar("$pC.tr")}%`
+    }
+  }, 100); // Check every 100 milliseconds
+});
+
+$(function() {
+  // Use a timer to repeatedly check if the element is available
+  var checkElementInterval = setInterval(function() {
+    var stubStatElement = document.getElementById("emph-stat");
+    if (stubStatElement) {
+      // clearInterval(checkElementInterval); // Stop the timer
+      // Your code here, e.g., updating the progress bar width
+      document.getElementById("emph-stat").style.width = `${State.getVar("$pC.em")}%`
+    }
+  }, 100); // Check every 100 milliseconds
+});
+
+$(function() {
+  // Use a timer to repeatedly check if the element is available
+  var checkElementInterval = setInterval(function() {
+    var stubStatElement = document.getElementById("honest-stat");
+    if (stubStatElement) {
+      // clearInterval(checkElementInterval); // Stop the timer
+      // Your code here, e.g., updating the progress bar width
+      document.getElementById("honest-stat").style.width = `${State.getVar("$pC.hn")}%`
+    }
+  }, 100); // Check every 100 milliseconds
+});

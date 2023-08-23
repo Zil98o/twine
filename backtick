@@ -1,8 +1,6 @@
 “”
 ’‘
 Nicolás De Flores
-
-Tomas De Alçaga
 There's not a whole lot I can remember, but at least I remember my name.
 <<print $temp.details === 5 || $temp.details === 6 ? "“You want to fall asleep already, don't you?” she teases." :"“You always are a good listener, my dear,” she says.>>
 
@@ -42,38 +40,31 @@ There's not a whole lot I can remember, but at least I remember my name.
 /*stat tracker Emphatetic: $pC.emp, Stubborn: $pC.sb, Pragmatic: $pC.pr, Compliant: $pC.cp
 */
 
-The archery lesson finally comes to an end as the late afternoon sun casts long shadows across the training field. As if on cue, snowflakes start to fall from the gray sky, a common occurrence in the northern regions. The air feels crisp and invigorating, and I take a moment to savor the tranquility that comes after physical exertion.
+<div style="border-top: 1px solid var(--contrast)">
+<center><big>Alright, I think that's it for now. I would split this in two parts for chapter 1? Let's see what's the word count! its ~10k including the code for the passage logic. I'm still pretty new to coding and writing in general, it's been overall fun so far, so I want to continue. 
 
-As the rest of the group disperses, I make my way over to Nicolás, who is carefully inspecting his bow and arrows. I clear my throat, catching his attention.
+Your saves file probably don't work in the future because I don't even implement the stats system yet in this version. But it still short read anyway right? I hope you don't mind, I would research how can I make sure old saves are compatible with newer version next time.
 
-“Hey, Nicolás,” I begin, choosing my words carefully, “I wanted to talk to you about something.”
+So... Thanks for reading it this far, hope you are excited for more. Enjoy your day, and please take care of yourself. I would see you next when I bring you more of my works!</big></center>
+<img src="./images/rigby.gif"/>
 
-He looks up, his expression curious. “Sure, what's on your mind?”
+<<link "What's Next">>
+<<script>>
+Dialog.setup(`What's Next`);
+Dialog.wiki(Story.get("What's Next").processText());
+Dialog.open();
+<</script>>
+<</link>>
+</div>
 
-I take a deep breath, not entirely sure how to approach the subject. “It's about Tomas and his missing whistle.”
+:: What's Next
+- Meet Father.
+- More adventures.
+- Encounter with Grandmother.
+- The later part of the story would be to attending to the academy. Maybe think of it like Highschool or University, I think it's a nice concept that can be quite easy to implement and interesting plot progression especially in interactive fiction. For now I want to establish relationship between the player and their close friends and family first. 
 
-Nicolás's eyebrows furrow as he sets down his equipment. “What about it?”
-
-“Well, he's really upset about it,” I explain. “He's been searching for it all morning, and he was pretty distressed when I found him in his room. He couldn't find it anywhere.”
-
-Nicolás's gaze narrows, and I can tell he's processing the information. “Ehem? That's important to him.”
-
-I nod. “Exactly. He's worried and frustrated, and I thought maybe you could help.”
-
-Nicolás's expression shifts from curiosity to concern. “Why do you think I can help?”
-
-“I don't know,” I admit, “but you have a way of figuring things out. Maybe you've seen it somewhere or heard something about it.”
-
-He sighs, running a hand through his hair. “I haven't seen anything unusual, but I'll keep an eye out. I know how much that whistle means to him.”
-
-“Thanks, Nicolás. I appreciate it,” I say sincerely.
-
-He gives me a small smile. “No problem. Family looks out for each other, right?”
-
-I smile back, grateful for his willingness to help. “Right.”
-
-We stand there for a moment, the snow falling around us, before Nicolás picks up his bow again. “Well, I should probably head back. See you later, okay?”
-
-“Sure thing,” I reply, watching as he walks away.
-
-With a sense of relief, I turn and make my way back to the castle, feeling hopeful that Nicolás might be able to shed some light on Tomas's missing whistle. The snowfall continues, adding a touch of magic to the surroundings, and I can't help but feel a renewed sense of determination to help my younger brother find what's important to him.
+Anyway... Have you open the Credits page yet? If not open it: <<link "Credits">><<script>>
+			Dialog.setup("Credits: About This Tale");
+			Dialog.wiki(Story.get("Credits").processText());
+			Dialog.open();
+		<</script>><</link>>

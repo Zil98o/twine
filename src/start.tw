@@ -27,8 +27,38 @@ For easier navigation on desktop, these quick key shortcuts can be quite helpful
 <li>Left arrow: Go back to the previous passage.</li>
 <li>Right arrow: Go forward to the last opened passage.</li>
 <li>F11: Enter fullscreen mode. If you're on mobile and want to toggle fullscreen, you can access the settings in the sidebar and find the fullscreen toggle button.</li>
-</ul>
-<<link '<div class="co"><img style="width:70px;" src="./images/logo.png"/></div>' "Prologue">> <</link>>
+</ul><<nobr>>
+<<set $currentPassage = passage()>>
+<<if $timeObj.time == 1>>
+<<set $timeString = "Morning">>
+<<elseif $timeObj.time == 2>>
+<<set $timeString = "Late Morning">>
+<<elseif $timeObj.time == 3>>
+<<set $timeString = "Noon">>
+<<elseif $timeObj.time == 4>>
+<<set $timeString = "Afternoon">>
+<<elseif $timeObj.time == 5>>
+<<set $timeString = "Late Afternoon">>
+<<elseif $timeObj.time == 6>>
+<<set $timeString = "Night">>
+<</if>>
+
+
+<<if $timeObj.day == 1>>
+<<set $dayString = "Lunara">>
+<<elseif $timeObj.day == 2>>\
+<<set $dayString = "Martarum">>
+<<elseif $timeObj.day == 3>>
+<<set $dayString = "Mercuria">>
+<<elseif $timeObj.day == 4>>
+<<set $dayString = "Jovia">>
+<<elseif $timeObj.day == 5>>
+<<set $dayString = "Veneria">>
+<<elseif $timeObj.day == 6>>
+<<set $dayString = "Saturnia">>
+<<elseif $timeObj.day == 7>>
+<<set $dayString = "Osura">>
+<</if>><</nobr>> <<link '<div class="co"><img style="width:70px;" src="./images/logo.png"/></div>' "Prologue">> <</link>>
 :: 01 [game-start]
 <<nobr>><<set $chapter = "Prologue">>
  <<script>>
@@ -48,7 +78,7 @@ These spectral beings are said to be the remaining souls of cursed mages who pai
 Sealing his ear shut, my other half-brother Tomas, and two or three other children huddle close together, scared and not really eager to hear anything Old Nan tells right now. As they shiver with fear, Tomas' loyal familiar, Breezeclaw, nuzzles close against him. Breezeclaw's large, round eyes possess an otherworldly quality, a shimmering blend of stars surrounded by the depths of the night sky. Many kinds of familiars from the Shade often resemble animals from our world with a slight twist to them. In Breezeclaw's case, the tufts of feathers atop its head resemble the distinctive ear of an owl, full of wisdom and sometimes childlike fascination. Breezeclaw's front paws, lithe and agile, are reminiscent of a cat's with normal wings and birdlike hinds for the back legs.
 
 Tomas' small hand reaches up to scratch behind Breezeclaw's ear tufts, and a soft, melodic hoot emanates from the creature. It nuzzles even closer, sensing its master's need for comfort and reassurance. Meanwhile, I...<center>
-<<link "Am not scared and paying rapt attention." "02">> <<set $temp.choice = 1, $temp.details = 1>> <</link>>
+<<link "Am not scared and paying rapt attention." "02">> <<set $temp.choice = 1, $temp.details = 1>> <<set $pC.sb -= 20; $pC.cp += 20>><</link>>
 <<link "Am not scared but pretend to be scared." "02">> <<set $temp.choice = 2, $temp.details = 2>> <</link>>
 <<link "Am scared and huddle up along with others." "02">> <<set $temp.choice = 3, $temp.details = 3>> <</link>>
 <<link "Am scared but pretend to be not scared." "02">> <<set $temp.choice = 4, $temp.details = 4>> <</link>>
@@ -74,7 +104,7 @@ It's easy to see where Nicolás and Tomas inherited their dark brown hair, flowi
 
 Hearing her mother's voice, Tomas hastily bolts out and hugs her, Breezeclaw silent clapping wings rotating around them, while Lady Rohanne softly laughs and hugs him back. The other children in the room also slowly rise from their seats to greet their mothers who come with Lady Rohanne. From the corner of my eye, Old Nan's hand raises, grabbing tightly onto her cane, intending to stand.
 <center>
-<<link "Help Old Nan stand and say goodbye." "03">> <<set $temp.choice = 1>> <</link>>
+<<link "Help Old Nan stand and say goodbye." "03">> <<set $temp.choice = 1>> <<set $pC.tr -= 20; $pC.su += 20>><</link>>
 <<link "Get close to my step-mother and half-brothers." "03">> <<set $temp.choice = 2>> <</link>>
 <<link "Hang around in the background" "03">> <<set $temp.choice = 3>> <</link>>
 </center>
@@ -205,7 +235,7 @@ The castle's imposing silhouette is framed against a backdrop of snow-capped mou
 My thoughts are broken when I hear some rustling come from Tomas' room, indiscernible murmurs escape from it because the door is slightly open.
 
 <center>
-<<link "Call his name one more time." "08">><<set $temp.choice = 1>><</link>>
+<<link "Call his name one more time." "08">><<set $temp.choice = 1>><<set $pC.tr -= 20; $pC.su += 20>><</link>>
 <<link "Just wait." "08">><<set $temp.choice = 2>><</link>>
 <<link "Check to see what's wrong." "08">><<set $temp.choice = 3>><</link>>
 </center>
@@ -633,31 +663,47 @@ Her husband, unfortunately, perished in battle, they have five children but two 
 
 In truth, this situation is not exclusive to House Fiocarda. The civil war that broke out right around when I was born is taking so many lives, noble and common folk alike, that succession crises are happening left and right. Father's family was also one of them, first his parents died, then his oldest brother, after that his sibling and lastly his sister, he was the only one left, all alone.
 
-<div style="border-top: 1px solid var(--contrast)">
-<center><big>Alright, I think that's it for now. I would split this in two parts for chapter 1? Let's see what's the word count! its ~10k including the code for the passage logic. I'm still pretty new to coding and writing in general, it's been overall fun so far, so I want to continue. 
+<<link "continue" "cn">><</link>>
+<style></style>
+:: cn 
+<<set $version = "0.2">>
+<<if $version == "0.2">>
+	<<set $bRo = {
+	fname: "",
+	FNAME: "",
+	FName: "",
+	lname: "",
+	Lname: "",
+	as : "", 
+	ao : "",
+	ap : "",
+	ar : "",
+	As : "",
+	Ao : "",
+	Ap : "",
+	Ar : "",
+	sibling: "",
+	Sibling: "",
+	Atobe : "",
+	atobe : "",
+	hon: "",
+	Hon: "",
+	hon1: "",
+	Hon1: "",   
+	}>>
+<</if>>
+In truth, this situation is not exclusive to House Fiocarda. The civil war that broke out right around when I was born is taking so many lives, noble and common folk alike, that succession crises are happening left and right. Father's family was also one of them, first his parents died, then his oldest brother, after that his sibling and lastly his sister, he was the only one left, all alone.
 
-Your saves file probably don't work in the future because I don't even implement the stats system yet in this version. But it still short read anyway right? I hope you don't mind, I would research how can I make sure old saves are compatible with newer version next time.
+$dayString $timeString
+<<link "CheckVar" "CheckVariables">><</link>>
+:: CheckVariables
+<<set _checkVariables = function() {
+  var variables = State.variables;
+  for (var variable in variables) {
+    var value = variables[variable];
+    console.log(variable + ": " + value);
+    console.log(State.getVar("$timeObj"))
+  }
+}>>
 
-So... Thanks for reading it this far, hope you are excited for more. Enjoy your day, and please take care of yourself. I would see you next when I bring you more of my works!</big></center>
-<img src="./images/rigby.gif"/>
-
-<<link "What's Next">>
-<<script>>
-Dialog.setup(`What's Next`);
-Dialog.wiki(Story.get("What's Next").processText());
-Dialog.open();
-<</script>>
-<</link>>
-</div>
-
-:: What's Next
-- Meet Father.
-- More adventures.
-- Encounter with Grandmother.
-- The later part of the story would be to attending to the academy. Maybe think of it like Highschool or University, I think it's a nice concept that can be quite easy to implement and interesting plot progression especially in interactive fiction. For now I want to establish relationship between the player and their close friends and family first. 
-
-Anyway... Have you open the Credits page yet? If not open it: <<link "Credits">><<script>>
-			Dialog.setup("Credits: About This Tale");
-			Dialog.wiki(Story.get("Credits").processText());
-			Dialog.open();
-		<</script>><</link>>
+<<link "Check Variables">><<run _checkVariables()>><</link>>

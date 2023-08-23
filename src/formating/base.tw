@@ -18,7 +18,14 @@ Bastard's Tale
 
 :: StoryInit
 <<set $temp = {choice: 0, details: 0}>>
-<<set $version = 0.1>>
+<<set $timeObj = {
+time : 1,
+day : 1,
+dayNumber : 0
+}>>
+<<set $timeString = "">>
+<<set $dayString = "">>
+<<set $version = "0.1">>
 <<set $chapter = "">>
 <<preload './images/logo.png' './images/tile.png' './images/ui.png'  './images/twine-logo.jpg' './images/k&m.png'>>
 
@@ -99,6 +106,32 @@ Hon: "",
 hon1: "",
 Hon1: "",   
 }>> 
+
+
+<<set $bRo = {
+	fname: "",
+	FNAME: "",
+	FName: "",
+	lname: "",
+	Lname: "",
+	as : "", 
+	ao : "",
+	ap : "",
+	ar : "",
+	As : "",
+	Ao : "",
+	Ap : "",
+	Ar : "",
+	sibling: "",
+	Sibling: "",
+	Atobe : "",
+	atobe : "",
+	hon: "",
+	Hon: "",
+	hon1: "",
+	Hon1: "",   
+}>>
+
 :: StoryInterface [maybe-don't-change] 
 <!-- SIDEBAR -->
 
@@ -200,7 +233,7 @@ by <a href="https://kei-works.tumblr.com/" target="_blank">Kei</a> | <<link "Cre
 <<else>>
 <div class="systemButton"><<button '<span id="player-toggle-icon" class="lnr lnr-user"></span>'>>
 <<script>>
-Dialog.setup(`${State.getVar("$pC.FName")} Page`);
+Dialog.setup(`${State.getVar("$pC.FName")}'s Page`);
 Dialog.wiki(Story.get("Player Page").processText());
 Dialog.open();
 <</script>>

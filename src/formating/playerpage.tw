@@ -1,12 +1,35 @@
 :: Player Page [noreturn]
-<style>#ui-dialog-body {
-  background: none;
-}</style>
-Name: $pC.FName <<print $pC.ygender === "boy" ? "Fils": "Fille">> de Jean
-Age: $age years old
+<div style="font-weight: 600; font-family: 'Vollkorn'; text-align:right;"> Current Day&Time
+$dayString, $timeString</div><div style="font-weight: 600; font-family: 'Vollkorn';">Name: $pC.FName <<print $pC.ygender === "boy" ? "Fils": "Fille">> de Jean
+Age: $age years old<<if true>>
+Growing $pC.ygender with $pC.eyec eyes and $pC.hairc hair.<</if>>
+<center><h3>Personality</h3></center>\
+\
 
-{little bit detail about player} **UNDER CONSTRUCTION**
-
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Empathetic $pC.emp%</div>\
+<div class="stat-bar-overlay-right">Pragmatic $pC.pr%</div>\
+<div class="stat-bar" id="emph-stat"></div></div></div>\
+\
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Stubborn $pC.sb%</div>\
+<div class="stat-bar-overlay-right">Compliant $pC.cp%</div>\
+<div class="stat-bar" id="stub-stat"></div></div></div>\
+\
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Trusting $pC.tr%</div>\
+<div class="stat-bar-overlay-right">Suspicious $pC.su%</div>\
+<div class="stat-bar" id="trust-stat"></div></div></div>\
+\
+<div class="stat-bar-group">\
+<div class="stat-bar-container">\
+<div class="stat-bar-overlay-left">Manipulative $pC.mp%</div>\
+<div class="stat-bar-overlay-right">Honest $pC.hn%</div>\
+<div class="stat-bar" id="honest-stat"></div></div></div>\
+</div>
 <div class="sysButton"><<button 'Stats'>>
 <<script>>
 Dialog.setup(`${State.getVar("$pC.FName")} Stats`);
@@ -21,37 +44,91 @@ Dialog.wiki(Story.get("Player Relationship").processText());
 Dialog.open();
 <</script>>
 <</button>></div> /* **************/
-
+<div class="sysButton"><<button 'Quest'>>
+<<script>>
+Dialog.setup(`Quest`);
+Dialog.wiki(Story.get("Quest").processText());
+Dialog.open();
+<</script>>
+<</button>></div> /* **************/
+<div class="sysButton"><<button 'Compendium'>>
+<<script>>
+Dialog.setup(`Compendium`);
+Dialog.wiki(Story.get("Compendium").processText());
+Dialog.open();
+<</script>>
+<</button>></div> /* **************/
 :: Player Stats [noreturn]
-<style>#ui-dialog-body {
-  background: none;
-}</style>
 
 
-<big>#Under Construction#</big>
 
-
-<<link '«Return to your Page'>>
+<p class="ui-dialog-link"><<link '«Return to your Page'>>
 <<script>>
 Dialog.setup(`${State.getVar("$pC.FName")} Page`);
 Dialog.wiki(Story.get("Player Page").processText());
 Dialog.open();
 <</script>>
-<</link>> /* **************/
+<</link>></p> /* **************/
 
 :: Player Relationship [noreturn]
-<style>#ui-dialog-body {
-  background: none;
-}</style>
 
 
 <big>#Under Construction#</big>
 
 
-<<link '«Return to your Page'>>
+<p class="ui-dialog-link"><<link '«Return to your Page'>>
 <<script>>
 Dialog.setup(`${State.getVar("$pC.FName")} Page`);
 Dialog.wiki(Story.get("Player Page").processText());
 Dialog.open();
 <</script>>
-<</link>> /* **************/
+<</link>></p> /* **************/
+
+:: Quest [noreturn]
+<big>#Under Construction#</big>
+
+
+<p class="ui-dialog-link"><<link '«Return to your Page'>>
+<<script>>
+Dialog.setup(`${State.getVar("$pC.FName")} Page`);
+Dialog.wiki(Story.get("Player Page").processText());
+Dialog.open();
+<</script>>
+<</link>></p> /* **************/
+
+:: Compendium [noreturn]
+<<message '<big style="color: var(--dark-contrast);">Days of The Week</big><small style="color: var(--contrast);">-Click to toggle</small>' 'Daysoftheweeek'>><div>
+In the realm of Verlaine, the passage of time is not merely a matter of hours and minutes but a reflection of our beliefs and our thoughts on the way of life.  Our days of the week are named in honor of seven revered deities, each bestowing their unique qualities upon the day they govern.
+
+<big>Osura (Dies Osura): The Day of Osus</big>
+Osura, Osus the radiant and benevolent deity of the sun, ushers in the week with warmth and light. On this day, we pay homage to Osus for illuminating our lives.
+
+<big>Lunara (Dies Lunara): The Day of the Moon</big>
+Lunara, Luna the ethereal guardian of the moon. This day is a time for reflection and contemplation under the gentle glow of her celestial presence.
+
+<big>Martarum (Dies Martarum): The Day of Mars</big>
+Martarum is governed by the formidable Mars, the god of war and strength. This day are marked by vitality and courage, as we draw inspiration from the boisterous Mars.
+
+<big>Mercuria (Dies Mercuria): The Day of Mercury</big>
+Mercuria, associated with Mercury, the messenger of the gods and the patron of communication. It is a day for discourse, learning, and connection.
+
+<big>Jovia (Dies Jovia): The Day of Jupiter</big>
+This day belongs to the wise Jupiter, bestowing wisdom and prosperity. On Jovia, we seek knowledge and fortune, striving for our aspirations in life.
+
+<big>Veneria (Dies Veneria): The Day of Venus</big>
+Venus, the goddess of love and beauty, oversee this day. It is a day to celebrate art, romance, and the splendor of life.
+
+<big>Saturnia (Dies Saturnia): The Day of Saturn</big>
+Saturnia, presided over by Saturn, they reminds us of the importance of discipline and structure. It is a day for reflection on the past week and preparation for the one ahead.</div><</message>>
+<<message "<big style='color: var(--dark-contrast);'>Kol'osus days</big><small style='color: var(--contrast);'>-Click to toggle</small>" "Kolosusdays">>A grand festival held in the city of Osaxon once every two years during mid-summer. The event celebrates and honors The Sun God, Osus. The festivities encompass a range of activities, including physical competitions like combat and jousting, as well as other captivating events such as public art displays, theatrical performances, and poetry recitals.<</message>>
+<<message "<big style='color: var(--dark-contrast);'>Merisora Sea</big><small style='color: var(--contrast);'>-Click to toggle</small>" "Merisorasea">>The sea that located to the easternmost of the Verlaine Empire, its name is taken from the closest region which consists of multiple islands often called the Sora Islands.<</message>>
+<<message "<big style='color: var(--dark-contrast);'>Reimond Rebellion</big><small style='color: var(--contrast);'>-Click to toggle</small>" "reimondrebellion">>The Great civil war that happen over last decade ago, the topic were still common to be found in Verlaine everyday discussions and it's impact still can be felt in the present day.<</message>>
+<<message "<big style='color: var(--dark-contrast);'>The Shade</big><small style='color: var(--contrast);'>-Click to toggle</small>" "theshade">>A different plane of existence where benevolent and malevolent strange creatures roam.<</message>>
+<<message "<big style='color: var(--dark-contrast);'>Vierluçon</big><small style='color: var(--contrast);'>-Click to toggle</small>" "Vierluçon">>The ancestral home of House De Vorlais.<</message>>
+<p class="ui-dialog-link"><<link '«Return to your Page'>>
+<<script>>
+Dialog.setup(`${State.getVar("$pC.FName")} Page`);
+Dialog.wiki(Story.get("Player Page").processText());
+Dialog.open();
+<</script>>
+<</link>></p> /* **************/

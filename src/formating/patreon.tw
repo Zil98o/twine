@@ -6,10 +6,10 @@ Who's Mom? Why, my very first supporter, that's who! In honor of my Mom, any of 
 
 P.S There were supposed to be an art doodle at this page that I have created for you mom, but I feel embarrassed so I decided not to include it.
 
-<<link '«Go back to Credits'>>
+<p class="ui-dialog-link"><<link '«Go back to Credits'>>
 <<script>>
 Dialog.setup(`Credits`);
 Dialog.wiki(Story.get("Credits").processText());
 Dialog.open();
 <</script>>
-<</link>>
+<</link>></p>

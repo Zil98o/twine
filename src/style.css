@@ -39,7 +39,7 @@
 }
 @font-face {
   font-family: "Dyslexic";
-  src: url(fonts/OpenDyslexic-BoldItalic.otf) format("oopentypet");
+  src: url(fonts/OpenDyslexic-BoldItalic.otf) format("opentype");
   font-style: italic;
   font-weight: 700;
 }
@@ -53,7 +53,7 @@ body {
   margin: 0;
   color: #111;
   background-color: #dcd3d3;
-  font-family: "Marryweather", sans-serif;
+  font-family: "Vollkorn", sans-serif;
 }
 
 @font-face {
@@ -530,12 +530,15 @@ a:active {
 #ui-dialog-body button {
   background-color: var(--dark-contrast);
   border: none;
-  color: white;
+  color: var(--dark);
   padding: 12px 0;
-  width: 100%;
+  width: 80%;
+  font-weight: 600;
+  font-size: 150%;
+  font-family: "Vollkorn";
 }
 #ui-dialog-body button:hover {
-  background-color: var(--dark-contrast);
+  background-color: var(--darker-main);
 }
 #ui-dialog-body ul.buttons {
   list-style-type: none;
@@ -871,11 +874,14 @@ input[type="text"] {
 
 .systemButton {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 50px;
+  bottom: -15px;
+  right: 5px;
+  width: 35px;
 }
-
+.sysButton {
+  display: flex;
+  justify-content: center;
+}
 .systemButton button:hover {
   border-radius: 10px;
   text-shadow: 2px 2px #e05a00;
@@ -1008,4 +1014,71 @@ html.dark #sidebar-body .story-author a {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
+}
+.ui-dialog-link .link-internal.macro-link{
+  color: var(--dark-contrast);
+}
+.ui-dialog-link .link-internal.macro-link:hover {
+  color: var(--contrast);
+}
+
+button#setting-control-autoname, button#setting-control-fullscreen, button#setting-control-autosave {
+  font-size: 100%;
+}
+
+html.dark #ui-dialog-body.saves, #ui-dialog-body.saves {
+  font-size: 10px !important;
+}
+
+/**/
+.stat-bar-group {
+  max-width: 95%;
+  margin: 0 auto;
+}
+html.dark .stat-bar-container {
+  background-color: var(--contrast);
+  color: #ffffff;
+  position: relative;
+  font-size: 90%;
+  height: 3vh;
+  width: 100%;
+  padding: 1em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 13px;
+  margin-top: 10px;
+}
+.stat-bar-container {
+  background-color: var(--contrast);
+  color: #000000;
+  position: relative;
+  font-size: 90%;
+  height: 3vh;
+  width: 100%;
+  padding: 1em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 13px;
+  margin-top: 10px;
+}
+.stat-bar {
+  background-color: var(--dark-contrast);
+  max-width: 100%;
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.stat-bar-overlay-right {
+  position: absolute;
+  right: .5em;
+  bottom: 20%;
+  z-index: 3;
+}
+.stat-bar-overlay-left {
+  position: absolute;
+  left: .5em;
+  bottom: 20%;
+  z-index: 3;
 }
